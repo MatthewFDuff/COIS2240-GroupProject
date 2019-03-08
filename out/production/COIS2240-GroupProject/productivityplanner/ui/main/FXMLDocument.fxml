@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXColorPicker?>
 <?import com.jfoenix.controls.JFXListView?>
@@ -22,31 +29,21 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="861.0" prefWidth="1279.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
+<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
 <children>
     <MenuBar prefHeight="32.0" prefWidth="1279.0" VBox.vgrow="NEVER">
         <menus>
             <Menu mnemonicParsing="false" text="File">
                 <items>
-                    <MenuItem mnemonicParsing="false" text="New" />
-                    <MenuItem mnemonicParsing="false" text="Open…" />
-                    <Menu mnemonicParsing="false" text="Open Recent" />
-                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Sync Changes" />
                     <MenuItem mnemonicParsing="false" text="Close" />
-                    <MenuItem mnemonicParsing="false" text="Save" />
-                    <MenuItem mnemonicParsing="false" text="Save As…" />
                     <MenuItem mnemonicParsing="false" text="Revert" />
-                    <SeparatorMenuItem mnemonicParsing="false" />
-                    <MenuItem mnemonicParsing="false" text="Preferences…" />
                     <SeparatorMenuItem mnemonicParsing="false" />
                     <MenuItem mnemonicParsing="false" text="Quit" />
                 </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Edit">
                 <items>
-                    <MenuItem mnemonicParsing="false" text="Undo" />
-                    <MenuItem mnemonicParsing="false" text="Redo" />
-                    <SeparatorMenuItem mnemonicParsing="false" />
                     <MenuItem mnemonicParsing="false" text="Cut" />
                     <MenuItem mnemonicParsing="false" text="Copy" />
                     <MenuItem mnemonicParsing="false" text="Paste" />
@@ -58,49 +55,49 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
                 <items>
-                    <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                    <MenuItem mnemonicParsing="false" text="About Productivity Planner" />
                 </items>
             </Menu>
         </menus>
     </MenuBar>
-    <SplitPane dividerPositions="0.75" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.75" focusTraversable="true" VBox.vgrow="ALWAYS">
         <items>
-            <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+            <ScrollPane>
                 <content>
-                    <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="785.0" prefWidth="956.0" />
+                    <AnchorPane id="Content" fx:id="calendarPane" prefHeight="800.0" prefWidth="896.0" />
                 </content>
             </ScrollPane>
-            <AnchorPane prefHeight="551.0" prefWidth="194.0">
+            <AnchorPane prefHeight="800.0" prefWidth="194.0">
                 <children>
                     <JFXTabPane prefHeight="800.0" prefWidth="315.0" tabMinWidth="100.0">
                         <tabs>
-                            <Tab text="Tasks">
+                            <Tab fx:id="tabTasks" text="Tasks">
                                 <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                         <children>
-                                            <JFXTabPane prefHeight="766.0" prefWidth="316.0" tabMinWidth="150.0">
+                                            <JFXTabPane prefHeight="800.0" prefWidth="315.0" tabMinWidth="150.0">
                                                 <tabs>
-                                                    <Tab text="To Do">
+                                                    <Tab fx:id="tabToDo" text="To Do">
                                                         <content>
                                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                 <children>
-                                                                    <JFXListView layoutY="7.0" prefHeight="613.0" prefWidth="315.0" />
-                                                                    <AnchorPane layoutX="-1.0" layoutY="630.0" prefHeight="99.0" prefWidth="316.0">
+                                                                    <JFXListView fx:id="listToDo" layoutY="7.0" prefHeight="600.0" prefWidth="315.0" />
+                                                                    <AnchorPane fx:id="panAddTask" layoutX="-1.0" layoutY="630.0" prefHeight="99.0" prefWidth="315.0">
                                                                         <children>
-                                                                            <JFXButton layoutX="14.0" layoutY="53.0" prefHeight="32.0" prefWidth="289.0" text="Add Task" />
-                                                                            <JFXTextField layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="196.0" promptText="Enter Task Name" />
-                                                                            <JFXColorPicker layoutX="227.0" layoutY="18.0" prefHeight="68.0" prefWidth="67.0" promptText="Choose a Colour" />
+                                                                            <JFXButton fx:id="btnAddTask" layoutX="14.0" layoutY="53.0" prefHeight="32.0" prefWidth="289.0" text="Add Task" />
+                                                                            <JFXTextField fx:id="txtTaskName" layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="196.0" promptText="Enter Task Name" />
+                                                                            <JFXColorPicker fx:id="cpTaskColour" layoutX="227.0" layoutY="18.0" prefHeight="68.0" prefWidth="67.0" promptText="Choose a Colour" />
                                                                         </children>
                                                                     </AnchorPane>
                                                                 </children>
                                                             </AnchorPane>
                                                         </content>
                                                     </Tab>
-                                                    <Tab text="Completed">
+                                                    <Tab fx:id="tabCompleted" text="Completed">
                                                         <content>
                                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                                 <children>
-                                                                    <JFXListView layoutY="2.0" prefHeight="723.0" prefWidth="315.0" />
+                                                                    <JFXListView fx:id="listCompleted" layoutY="2.0" prefHeight="723.0" prefWidth="315.0" />
                                                                 </children>
                                                             </AnchorPane>
                                                         </content>
@@ -111,7 +108,7 @@
                                     </AnchorPane>
                                 </content>
                             </Tab>
-                            <Tab text="Journal">
+                            <Tab fx:id="tabJournal" text="Journal">
                                 <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                         <children>
@@ -120,7 +117,7 @@
                                         </children></AnchorPane>
                                 </content>
                             </Tab>
-                            <Tab text="Settings">
+                            <Tab fx:id="tabSettings" text="Settings">
                                 <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                 </content>
@@ -131,9 +128,9 @@
             </AnchorPane>
         </items>
     </SplitPane>
-    <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="1279.0" spacing="5.0" VBox.vgrow="NEVER">
+    <HBox id="HBox" alignment="CENTER_LEFT" minHeight="27.0" prefHeight="27.0" prefWidth="1279.0" spacing="5.0" VBox.vgrow="NEVER">
         <children>
-            <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Used to show last user action (New task added)." HBox.hgrow="ALWAYS">
+            <Label fx:id="lblUserAction" text="Used to show last user action (New task added)." HBox.hgrow="ALWAYS">
                 <font>
                     <Font size="11.0" fx:id="x3" />
                 </font>
@@ -141,8 +138,8 @@
                     <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
                 </textFill>
             </Label>
-            <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
-            <Label font="$x3" maxWidth="-1.0" text="Used to show program actions (loading...)" textFill="$x4" HBox.hgrow="NEVER" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblProgramAction" font="$x3" text="Used to show program actions (loading...)" textFill="$x4" HBox.hgrow="NEVER" />
         </children>
         <padding>
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
