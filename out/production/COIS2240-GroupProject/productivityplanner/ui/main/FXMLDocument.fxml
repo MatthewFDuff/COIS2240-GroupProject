@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
@@ -29,106 +30,49 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
-<children>
-    <MenuBar prefHeight="32.0" prefWidth="1279.0" VBox.vgrow="NEVER">
+<BorderPane prefHeight="768.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
         <menus>
-            <Menu mnemonicParsing="false" text="File">
-                <items>
-                    <MenuItem mnemonicParsing="false" text="Sync Changes" />
-                    <MenuItem mnemonicParsing="false" text="Close" />
-                    <MenuItem mnemonicParsing="false" text="Revert" />
-                    <SeparatorMenuItem mnemonicParsing="false" />
-                    <MenuItem mnemonicParsing="false" text="Quit" />
-                </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
-                <items>
-                    <MenuItem mnemonicParsing="false" text="Cut" />
-                    <MenuItem mnemonicParsing="false" text="Copy" />
-                    <MenuItem mnemonicParsing="false" text="Paste" />
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                    <SeparatorMenuItem mnemonicParsing="false" />
-                    <MenuItem mnemonicParsing="false" text="Select All" />
-                    <MenuItem mnemonicParsing="false" text="Unselect All" />
-                </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Help">
-                <items>
-                    <MenuItem mnemonicParsing="false" text="About Productivity Planner" />
-                </items>
-            </Menu>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
         </menus>
-    </MenuBar>
-    <SplitPane dividerPositions="0.75" focusTraversable="true" VBox.vgrow="ALWAYS">
-        <items>
-            <ScrollPane>
-                <content>
-                    <AnchorPane id="Content" fx:id="calendarPane" prefHeight="800.0" prefWidth="896.0" />
-                </content>
-            </ScrollPane>
-            <AnchorPane prefHeight="800.0" prefWidth="194.0">
-                <children>
-                    <JFXTabPane prefHeight="800.0" prefWidth="315.0" tabMinWidth="100.0">
-                        <tabs>
-                            <Tab fx:id="tabTasks" text="Tasks">
-                                <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                        <children>
-                                            <JFXTabPane prefHeight="800.0" prefWidth="315.0" tabMinWidth="150.0">
-                                                <tabs>
-                                                    <Tab fx:id="tabToDo" text="To Do">
-                                                        <content>
-                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                                <children>
-                                                                    <JFXListView fx:id="listToDo" layoutY="7.0" prefHeight="600.0" prefWidth="315.0" />
-                                                                    <AnchorPane fx:id="panAddTask" layoutX="-1.0" layoutY="630.0" prefHeight="99.0" prefWidth="315.0">
-                                                                        <children>
-                                                                            <JFXButton fx:id="btnAddTask" layoutX="14.0" layoutY="53.0" prefHeight="32.0" prefWidth="289.0" text="Add Task" />
-                                                                            <JFXTextField fx:id="txtTaskName" layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="196.0" promptText="Enter Task Name" />
-                                                                            <JFXColorPicker fx:id="cpTaskColour" layoutX="227.0" layoutY="18.0" prefHeight="68.0" prefWidth="67.0" promptText="Choose a Colour" />
-                                                                        </children>
-                                                                    </AnchorPane>
-                                                                </children>
-                                                            </AnchorPane>
-                                                        </content>
-                                                    </Tab>
-                                                    <Tab fx:id="tabCompleted" text="Completed">
-                                                        <content>
-                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                                <children>
-                                                                    <JFXListView fx:id="listCompleted" layoutY="2.0" prefHeight="723.0" prefWidth="315.0" />
-                                                                </children>
-                                                            </AnchorPane>
-                                                        </content>
-                                                    </Tab>
-                                                </tabs>
-                                            </JFXTabPane>
-                                        </children>
-                                    </AnchorPane>
-                                </content>
-                            </Tab>
-                            <Tab fx:id="tabJournal" text="Journal">
-                                <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                        <children>
-                                            <JFXTextArea layoutX="13.0" layoutY="14.0" prefHeight="708.0" prefWidth="289.0" promptText="Enter text..." />
-                                            <JFXButton layoutX="11.0" layoutY="730.0" prefHeight="32.0" prefWidth="294.0" text="Save Entry" />
-                                        </children></AnchorPane>
-                                </content>
-                            </Tab>
-                            <Tab fx:id="tabSettings" text="Settings">
-                                <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                </content>
-                            </Tab>
-                        </tabs>
-                    </JFXTabPane>
-                </children>
-            </AnchorPane>
-        </items>
-    </SplitPane>
-    <HBox id="HBox" alignment="CENTER_LEFT" minHeight="27.0" prefHeight="27.0" prefWidth="1279.0" spacing="5.0" VBox.vgrow="NEVER">
+      </MenuBar>
+   </top>
+   <center>
+      <BorderPane maxWidth="-Infinity" prefHeight="720.0" prefWidth="910.0" BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane fx:id="calendarPane" prefHeight="720.0" prefWidth="910.0" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <Pane prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+         </top>
+         <left>
+            <Pane prefHeight="200.0" prefWidth="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Pane prefHeight="574.0" prefWidth="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <Pane prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </center>
+   <bottom>
+    <HBox id="HBox" alignment="CENTER_LEFT" minHeight="27.0" prefHeight="27.0" prefWidth="1279.0" spacing="5.0" style="-fx-background-color: #1976D2;" stylesheets="@../style/test.css" BorderPane.alignment="CENTER">
         <children>
             <Label fx:id="lblUserAction" text="Used to show last user action (New task added)." HBox.hgrow="ALWAYS">
                 <font>
@@ -145,5 +89,60 @@
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
         </padding>
     </HBox>
-</children>
-</VBox>
+   </bottom>
+   <right>
+      <BorderPane maxWidth="1.7976931348623157E308" prefHeight="716.0" prefWidth="267.0" BorderPane.alignment="CENTER">
+         <center>
+            <JFXTabPane fx:id="tabsMainBar" prefHeight="696.0" prefWidth="300.0" stylesheets="@../style/tab-pane.css" BorderPane.alignment="CENTER">
+               <tabs>
+                  <Tab fx:id="tabTasks" closable="false" text="Tasks">
+                    <content>
+                      <AnchorPane prefHeight="180.0" prefWidth="100.0">
+                           <children>
+                              <JFXTabPane fx:id="tabsTasks" prefHeight="700.0" prefWidth="300.0" styleClass="task-tab-pane" stylesheets="@../style/tab-pane.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="35.0" tabMaxWidth="150.0" tabMinHeight="35.0" tabMinWidth="100.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <tabs>
+                                    <Tab fx:id="tabUncompletedTasks" closable="false" text="To Do">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                      </content>
+                                    </Tab>
+                                    <Tab fx:id="tabCompletedTasks" closable="false" text="Completed">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </JFXTabPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabJournal" closable="false" text="Journal">
+                    <content>
+                        <Pane>
+                           <children>
+                              <JFXButton fx:id="btnSaveJournal" layoutX="34.0" layoutY="612.0" prefHeight="35.0" prefWidth="200.0" text="Save" />
+                              <Label fx:id="lblJournalDate" layoutX="8.0" layoutY="6.0" prefHeight="38.0" prefWidth="258.0" text="Journal Entry">
+                                 <font>
+                                    <Font size="26.0" />
+                                 </font>
+                              </Label>
+                              <TextArea layoutY="44.0" prefHeight="559.0" prefWidth="267.0" wrapText="true" />
+                           </children>
+                        </Pane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabSettings" closable="false" text="Settings">
+                    <content>
+                      <AnchorPane minWidth="0.0" prefHeight="100.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </center>
+         <bottom>
+            <Pane prefHeight="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </right>
+</BorderPane>

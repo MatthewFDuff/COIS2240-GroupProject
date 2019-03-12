@@ -1,0 +1,23 @@
+
+.jfx-tab-pane .tab-header-background .task-tab-pane {
+    -fx-background-color: #808080;
+}
+
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: #292929;
+}
+
+.jfx-tab-pane .headers-region > .tab > .jfx-rippler {
+    -jfx-rippler-fill: #BBDEFB;
+}
+
+.jfx-tab-pane .headers-region .tab-selected-line {
+    -fx-background-color: #BBDEFB;;
+}
+
+.jfx-tab-pane .headers-region .tab .tab-container .tab-label {
+    -fx-font: 16px "Roboto";
+    -fx-text-fill: rgba(255,255,255, .87);
+    /*-fx-font-weight: BOLD;*/
+    -fx-padding: 6 10 6 10;
+}

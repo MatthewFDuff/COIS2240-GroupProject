@@ -1,0 +1,11 @@
+.calendar-title {
+    -fx-font: 24px "Roboto";
+}
+
+.calendar-title-pane {
+    -fx-background-color: #292929;
+}
+
+.weekday-pane {
+    -fx-background-color: #607D8B;
+}

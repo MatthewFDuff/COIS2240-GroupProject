@@ -1,0 +1,47 @@
+/*
+CSS/JavaFX Reference:
+    https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html
+*/
+
+* {
+    dark-primary-color: #1976D2;
+    default-primary-color: #2196F3;
+    light-primary-color: #BBDEFB;
+    text-primary-color: #FFFFFF;
+    accent-color: #607D8B;
+    primary-text-color: #212121;
+    secondary-text-color: #757575;
+    divider-color: #BDBDBD;
+}
+
+.root {
+    -fx-background-color: divider-color;
+    -fx-text-fill: secondary-text-color;
+}
+
+.button {
+    -fx-font: 16px "Roboto";
+    -fx-text-fill: text-primary-color;
+    -fx-padding: 5;
+    -fx-background-color: accent-color;
+    -fx-background-radius: 8;
+}
+
+.button:hover {
+    -fx-background-color: divider-color;
+}
+
+.label {
+    -fx-font: 16px "Roboto";
+    -fx-text-fill: text-primary-color;
+    -fx-text-alignment: center;
+}
+
+.v-box {
+    -fx-background-color: #292929;
+}
+
+.text-area {
+    -fx-font: 16px "Roboto";
+    -fx-text-fill: primary-text-color;
+}
