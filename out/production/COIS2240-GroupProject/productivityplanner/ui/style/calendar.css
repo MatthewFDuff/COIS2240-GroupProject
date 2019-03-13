@@ -1,11 +1,39 @@
+@import url("test.css");
+
 .calendar-title {
-    -fx-font: 24px "Roboto";
+    -fx-font: 48px "Roboto";
+    -fx-fill: #FFFFFF; /* Text objects don't use -fx-text-fill to change the font colour */
+    /*-fx-padding: 70, 20, 70, 20;*/
 }
 
 .calendar-title-pane {
-    -fx-background-color: #292929;
+    -fx-background-color: primary-text-color;
 }
 
 .weekday-pane {
-    -fx-background-color: #607D8B;
+    -fx-background-color: default-primary-color;
+}
+
+.calendar-grid {
+    -fx-background-color: text-primary-color;
+}
+
+.weekday {
+    /*-fx-background-color: text-primary-color;*/
+}
+
+.weekend {
+    /*-fx-background-color: light-primary-color;*/
+}
+
+#btnNextMonth{
+    -fx-graphic: url("../icons/outline_arrow_forward_ios_white_48dp.png");
+}
+
+#btnPreviousMonth {
+    -fx-graphic: url("../icons/outline_arrow_back_ios_white_48dp.png");
+}
+
+.day {
+
 }

@@ -6,16 +6,18 @@ CSS/JavaFX Reference:
 * {
     dark-primary-color: #1976D2;
     default-primary-color: #2196F3;
+    default-secondary-color: #FF9800; /* ORANGE */
     light-primary-color: #BBDEFB;
     text-primary-color: #FFFFFF;
     accent-color: #607D8B;
-    primary-text-color: #212121;
+    primary-text-color: #292929;
     secondary-text-color: #757575;
     divider-color: #BDBDBD;
+
 }
 
 .root {
-    -fx-background-color: divider-color;
+    -fx-background-color: default-primary-color;
     -fx-text-fill: secondary-text-color;
 }
 
@@ -23,7 +25,7 @@ CSS/JavaFX Reference:
     -fx-font: 16px "Roboto";
     -fx-text-fill: text-primary-color;
     -fx-padding: 5;
-    -fx-background-color: accent-color;
+    -fx-background-color: default-secondary-color;
     -fx-background-radius: 8;
 }
 
@@ -37,11 +39,27 @@ CSS/JavaFX Reference:
     -fx-text-alignment: center;
 }
 
-.v-box {
-    -fx-background-color: #292929;
-}
-
 .text-area {
     -fx-font: 16px "Roboto";
     -fx-text-fill: primary-text-color;
+}
+
+.menu-bar {
+    -fx-background-fill: secondary-text-color;
+}
+
+.menu-bar .label {
+    -fx-text-fill: white;
+}
+
+.menu:hover {
+    -fx-background-fill: white;
+}
+
+.menu .label {
+    -fx-text-fill: primary-text-color;
+}
+
+#lblJournalDate {
+    -fx-font: 24px "Roboto";
 }

@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXColorPicker?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTabPane?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="768.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -53,23 +51,142 @@
       </MenuBar>
    </top>
    <center>
-      <BorderPane maxWidth="-Infinity" prefHeight="720.0" prefWidth="910.0" BorderPane.alignment="CENTER">
-         <center>
-            <AnchorPane fx:id="calendarPane" prefHeight="720.0" prefWidth="910.0" BorderPane.alignment="CENTER" />
-         </center>
-         <top>
-            <Pane prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-         </top>
-         <left>
-            <Pane prefHeight="200.0" prefWidth="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-         </left>
-         <right>
-            <Pane prefHeight="574.0" prefWidth="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-         </right>
-         <bottom>
-            <Pane prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane maxWidth="-Infinity" prefHeight="720.0" prefWidth="910.0">
+               <center>
+                  <AnchorPane fx:id="calendarPane" prefHeight="720.0" prefWidth="910.0" BorderPane.alignment="CENTER" />
+               </center>
+               <top>
+                  <Pane prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+               </top>
+               <left>
+                  <Pane prefHeight="200.0" prefWidth="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <Pane prefHeight="200.0" prefWidth="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+               </right>
+               <bottom>
+                  <Pane prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
+            <BorderPane maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="369.0">
+               <center>
+                  <JFXTabPane fx:id="tabsMainBar" prefHeight="700.0" stylesheets="@../style/tab-pane.css" tabMinHeight="40.0" BorderPane.alignment="CENTER">
+                     <tabs>
+                        <Tab fx:id="tabTasks" closable="false">
+                          <content>
+                            <AnchorPane prefHeight="180.0" prefWidth="100.0">
+                                 <children>
+                                    <JFXTabPane fx:id="tabsTasks" prefHeight="659.0" prefWidth="300.0" styleClass="task-tab-pane" stylesheets="@../style/tab-pane.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0" tabMinWidth="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <tabs>
+                                          <Tab fx:id="tabUncompletedTasks" closable="false">
+                                            <content>
+                                                <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                                   <bottom>
+                                                      <Pane prefHeight="53.0" prefWidth="267.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <JFXButton layoutX="249.0" layoutY="7.0" prefHeight="40.0" text="New Task">
+                                                               <graphic>
+                                                                   <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
+                                                                       <image>
+                                                                           <Image url="/productivityplanner/ui/icons/outline_add_white_48dp.png" />
+                                                                       </image>
+                                                                   </ImageView>
+                                                               </graphic>
+                                                            </JFXButton>
+                                                         </children>
+                                                      </Pane>
+                                                   </bottom>
+                                                   <center>
+                                                      <JFXListView BorderPane.alignment="CENTER" />
+                                                   </center>
+                                                </BorderPane>
+                                            </content>
+                                             <graphic>
+                                                 <ImageView fitHeight="40" preserveRatio="true">
+                                                     <image>
+                                                         <Image url="/productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png" />
+                                                     </image>
+                                                 </ImageView>
+                                             </graphic>
+                                          </Tab>
+                                          <Tab fx:id="tabCompletedTasks" closable="false">
+                                             <content>
+                                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <JFXListView VBox.vgrow="ALWAYS" />
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                             <graphic>
+                                                 <ImageView fitHeight="40" fitWidth="40.0" preserveRatio="true">
+                                                     <image>
+                                                         <Image url="/productivityplanner/ui/icons/outline_check_box_white_48dp.png" />
+                                                     </image>
+                                                 </ImageView>
+                                             </graphic>
+                                          </Tab>
+                                       </tabs>
+                                    </JFXTabPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                            <graphic>
+                                <ImageView fitHeight="50" fitWidth="50.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="/productivityplanner/ui/icons/outline_format_list_bulleted_white_48dp.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Tab>
+                        <Tab fx:id="tabJournal" closable="false">
+                          <content>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="lblJournalDate" minHeight="40" prefHeight="38.0" text="Journal Entry">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea prefHeight="1000.0" wrapText="true" />
+                                    <JFXButton fx:id="btnSaveJournal" minHeight="40" prefHeight="35.0" prefWidth="200.0" text="Save">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </JFXButton>
+                                 </children>
+                              </VBox>
+                          </content>
+                            <graphic>
+                                <ImageView fitHeight="50" fitWidth="50.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="/productivityplanner/ui/icons/outline_book_white_48dp.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Tab>
+                        <Tab fx:id="tabSettings" closable="false">
+                          <content>
+                            <AnchorPane minWidth="0.0" prefHeight="100.0" prefWidth="200.0" />
+                          </content>
+                            <graphic>
+                                <ImageView fitHeight="50" fitWidth="50.0" preserveRatio="true">
+                                    <image>
+                                        <Image url="/productivityplanner/ui/icons/outline_settings_white_48dp.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </center>
+               <bottom>
+                  <Pane prefHeight="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
+         </children>
+      </HBox>
    </center>
    <bottom>
     <HBox id="HBox" alignment="CENTER_LEFT" minHeight="27.0" prefHeight="27.0" prefWidth="1279.0" spacing="5.0" style="-fx-background-color: #1976D2;" stylesheets="@../style/test.css" BorderPane.alignment="CENTER">
@@ -90,59 +207,4 @@
         </padding>
     </HBox>
    </bottom>
-   <right>
-      <BorderPane maxWidth="1.7976931348623157E308" prefHeight="716.0" prefWidth="267.0" BorderPane.alignment="CENTER">
-         <center>
-            <JFXTabPane fx:id="tabsMainBar" prefHeight="696.0" prefWidth="300.0" stylesheets="@../style/tab-pane.css" BorderPane.alignment="CENTER">
-               <tabs>
-                  <Tab fx:id="tabTasks" closable="false" text="Tasks">
-                    <content>
-                      <AnchorPane prefHeight="180.0" prefWidth="100.0">
-                           <children>
-                              <JFXTabPane fx:id="tabsTasks" prefHeight="700.0" prefWidth="300.0" styleClass="task-tab-pane" stylesheets="@../style/tab-pane.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="35.0" tabMaxWidth="150.0" tabMinHeight="35.0" tabMinWidth="100.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <tabs>
-                                    <Tab fx:id="tabUncompletedTasks" closable="false" text="To Do">
-                                      <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                      </content>
-                                    </Tab>
-                                    <Tab fx:id="tabCompletedTasks" closable="false" text="Completed">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                       </content>
-                                    </Tab>
-                                 </tabs>
-                              </JFXTabPane>
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </Tab>
-                  <Tab fx:id="tabJournal" closable="false" text="Journal">
-                    <content>
-                        <Pane>
-                           <children>
-                              <JFXButton fx:id="btnSaveJournal" layoutX="34.0" layoutY="612.0" prefHeight="35.0" prefWidth="200.0" text="Save" />
-                              <Label fx:id="lblJournalDate" layoutX="8.0" layoutY="6.0" prefHeight="38.0" prefWidth="258.0" text="Journal Entry">
-                                 <font>
-                                    <Font size="26.0" />
-                                 </font>
-                              </Label>
-                              <TextArea layoutY="44.0" prefHeight="559.0" prefWidth="267.0" wrapText="true" />
-                           </children>
-                        </Pane>
-                    </content>
-                  </Tab>
-                  <Tab fx:id="tabSettings" closable="false" text="Settings">
-                    <content>
-                      <AnchorPane minWidth="0.0" prefHeight="100.0" prefWidth="200.0" />
-                    </content>
-                  </Tab>
-               </tabs>
-            </JFXTabPane>
-         </center>
-         <bottom>
-            <Pane prefHeight="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
-   </right>
 </BorderPane>

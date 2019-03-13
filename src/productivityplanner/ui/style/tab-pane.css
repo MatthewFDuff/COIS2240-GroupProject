@@ -7,6 +7,10 @@
     -fx-background-color: #292929;
 }
 
+.jfx-tab-pane .tab-header-area{
+
+}
+
 .jfx-tab-pane .headers-region > .tab > .jfx-rippler {
     -jfx-rippler-fill: #BBDEFB;
 }
@@ -19,5 +23,4 @@
     -fx-font: 16px "Roboto";
     -fx-text-fill: rgba(255,255,255, .87);
     /*-fx-font-weight: BOLD;*/
-    -fx-padding: 6 10 6 10;
 }

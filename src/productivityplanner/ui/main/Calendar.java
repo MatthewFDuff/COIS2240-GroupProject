@@ -3,10 +3,8 @@ package productivityplanner.ui.main;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -15,12 +13,13 @@ import java.time.YearMonth;
 import java.util.ArrayList;
 
 // Reference: https://github.com/SirGoose3432/javafx-calendar
-class Calendar {
-
-    private ArrayList<Day> calendarDays = new ArrayList<>(42); // 6 rows * 7 columns
+public class Calendar {
+    private static ArrayList<Day> calendarDays = new ArrayList<>(42); // 6 rows * 7 columns = all the visible months
     private VBox view;
     private Text calendarTitle;
     private YearMonth currentYearMonth;
+    public static LocalDate currentDate;
+    public static Day selectedDay;
 
     public Calendar(YearMonth yearMonth){
         int CALENDAR_WIDTH = 910;
@@ -29,10 +28,13 @@ class Calendar {
         int DAY_HEIGHT = CALENDAR_WIDTH / 6;    // 720/6 = 120
 
         currentYearMonth = yearMonth; // Get the current year and month.
+        currentDate = LocalDate.now();
+        System.out.println(currentDate);
 
         // Create a new grid for the calendar.
         GridPane calendar = new GridPane();
-        calendar.setPrefSize(CALENDAR_WIDTH,CALENDAR_HEIGHT);
+        calendar.setPrefSize(CALENDAR_WIDTH, CALENDAR_HEIGHT);
+        calendar.getStyleClass().add("calendar-grid");
         calendar.setGridLinesVisible(true);
 
         // For every day in the calendar
@@ -40,59 +42,103 @@ class Calendar {
             for(int j = 0; j < 7; j++){
                 Day day = new Day();
                 day.setPrefSize(DAY_WIDTH, DAY_HEIGHT);
+
+                if (j == 0 || j == 6) // Day is a weekend
+                    day.getStyleClass().add("weekend");
+                else
+                    day.getStyleClass().add("weekday");
+
                 calendar.add(day, j, i);    // Add to the grid
                 calendarDays.add(day);      // Add the day to a list so we can reference specific days quickly or iterate through days which are currently displayed.
             }
         }
 
         // Create labels for each day of the week.
-        Text[] Weekdays = {new Text("Sunday"), new Text("Monday"), new Text("Tuesday"), new Text("Wednesday"), new Text("Thursday"), new Text("Friday"), new Text("Saturday")};
-
         GridPane weekdayLabels = new GridPane();
         weekdayLabels.setPrefWidth(CALENDAR_WIDTH);
+        weekdayLabels.setAlignment(Pos.CENTER);
+        weekdayLabels.setGridLinesVisible(true);
 
-        Integer col = 0; // Determines the order the days appear in our grid.
-        // TODO: Would it be better to just use an HBox here? We don't need rows, so we don't technically need a grid box.
+        HBox weekdayLabelBox = new HBox(DAY_WIDTH); // This is the container which holds 7 more hbox panes. One for each weekday label.
+        weekdayLabelBox.setId("weekdayLabelBox");
+        weekdayLabelBox.setPrefHeight(30);
+        weekdayLabelBox.setSpacing(0); // Must be 0, the default value causes issues
+
+        Text[] Weekdays = {new Text("Sunday"), new Text("Monday"), new Text("Tuesday"), new Text("Wednesday"), new Text("Thursday"), new Text("Friday"), new Text("Saturday")};
+
         for (Text text: Weekdays){
             text.setFont(new Font(16)); // Set weekday font size
 
-            AnchorPane pane = new AnchorPane();
-            pane.getStyleClass().add("weekday-pane");
+            HBox pane = new HBox(); // Use HBox here to have the labels easily centered (Panes/AnchorPanes do not have alignment properties)
+            pane.setAlignment(Pos.CENTER);
+            pane.getStyleClass().add("weekday-pane");   //TODO: Separate weekday colours and weekend colours
             pane.setPrefSize(DAY_WIDTH, 30);
-            pane.setPadding(new Insets(0,0,0,20));
-            pane.setBottomAnchor(text, 5.0);
-            pane.getChildren().add(text);
-            weekdayLabels.add(pane, col++, 0);
+            pane.getChildren().add(text);               // Add the text to the day box
+            weekdayLabelBox.getChildren().add(pane);    // Add the pane to the weekday box
         }
 
         // Create calendarTitle and buttons to change current month
         calendarTitle = new Text();
         calendarTitle.getStyleClass().add("calendar-title");
 
-        // Create new buttons
-        Button previousMonth = new Button("<");
-        Button nextMonth = new Button(">");
+        // Create the arrow images which will be used to change the current month
+        int arrowButtonSize = 40;
 
-        // Allows us to change the CSS for the month selection arrows without changing other buttons too
-        previousMonth.getStyleClass().add("month-selector");
-        nextMonth.getStyleClass().add("month-selector");
+        ImageView nextArrow = new ImageView("productivityplanner/ui/icons/outline_arrow_forward_ios_white_48dp.png");
+        nextArrow.setFitHeight(arrowButtonSize);
+        nextArrow.setPreserveRatio(true);
+
+        ImageView previousArrow = new ImageView("productivityplanner/ui/icons/outline_arrow_back_ios_white_48dp.png");
+        previousArrow.setFitHeight(arrowButtonSize);
+        previousArrow.setPreserveRatio(true);
+
+        // Create new buttons
+        Button nextMonth = new Button("", nextArrow);
+        Button previousMonth = new Button("", previousArrow);
 
         // If a button is pressed, call a function to change the calendar.
         previousMonth.setOnAction(e -> previousMonth());
         nextMonth.setOnAction(e -> nextMonth());
 
+        // Create new panes for the arrows and the current month/year
+        HBox previousPane = new HBox(previousMonth);
+        HBox nextPane = new HBox(nextMonth);
+        HBox titlePane = new HBox(calendarTitle);
 
-        HBox titleBar = new HBox(previousMonth, calendarTitle, nextMonth);
+        // Set alignment of each
+        previousPane.setAlignment(Pos.CENTER_RIGHT);
+        nextPane.setAlignment(Pos.CENTER);
+        titlePane.setAlignment(Pos.CENTER_LEFT);
+
+        HBox titleBar = new HBox(previousPane, titlePane, nextPane);
+        //titleBar.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+        titleBar.setPadding(new Insets(0, 0, 20, 0));
+        titleBar.setSpacing(50);
         titleBar.getStyleClass().add("calendar-title-pane");
-        titleBar.setAlignment(Pos.BASELINE_CENTER);
+        titleBar.setAlignment(Pos.BOTTOM_CENTER);
 
         // Populate calendar with the appropriate day numbers
         updateCalendar(yearMonth);
-
+        selectedDay = FindDay(currentDate);
+        selectedDay.updateSelectedDate(selectedDay); // Highlight the current date.
         // Create the calendar view (which is added to the calendarPane AnchorPane which you can see in Scenebuilder).
-        view = new VBox(titleBar, weekdayLabels, calendar);
+        view = new VBox(titleBar, weekdayLabelBox, calendar);
     }
 
+    public static Day FindDay(LocalDate newDay)
+    {
+        for(Day day: calendarDays) // Find the current day
+        {
+            if (day.getDate().compareTo(newDay) == 0)
+            {
+                return day;
+            }
+        }
+        System.out.println("FindDay: Could not find day.");
+        return null;
+    }
+
+    // Sets up each day that is currently visible, including setting their dates.
     public void updateCalendar(YearMonth yearMonth) {
         // Get the date we want to start with on the calendar
         LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
@@ -127,12 +173,14 @@ class Calendar {
     private void previousMonth() {
         currentYearMonth = currentYearMonth.minusMonths(1);
         updateCalendar(currentYearMonth);
+        selectedDay.updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
     }
 
     // Switch the calendar to the next month and update the calendar.
     private void nextMonth() {
         currentYearMonth = currentYearMonth.plusMonths(1);
         updateCalendar(currentYearMonth);
+        selectedDay.updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
     }
 
     //
