@@ -5,12 +5,15 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
+
+import static productivityplanner.ui.main.Main.getFXMLController;
 
 // Reference: https://github.com/SirGoose3432/javafx-calendar
 public class Calendar {
@@ -120,7 +123,6 @@ public class Calendar {
         // Populate calendar with the appropriate day numbers
         updateCalendar(yearMonth);
         selectedDay = FindDay(currentDate);
-        selectedDay.updateSelectedDate(selectedDay); // Highlight the current date.
         // Create the calendar view (which is added to the calendarPane AnchorPane which you can see in Scenebuilder).
         view = new VBox(titleBar, weekdayLabelBox, calendar);
     }
@@ -173,14 +175,14 @@ public class Calendar {
     private void previousMonth() {
         currentYearMonth = currentYearMonth.minusMonths(1);
         updateCalendar(currentYearMonth);
-        selectedDay.updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
+        getFXMLController().updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
     }
 
     // Switch the calendar to the next month and update the calendar.
     private void nextMonth() {
         currentYearMonth = currentYearMonth.plusMonths(1);
         updateCalendar(currentYearMonth);
-        selectedDay.updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
+        getFXMLController().updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
     }
 
     //

@@ -10,7 +10,7 @@ CSS/JavaFX Reference:
     light-primary-color: #BBDEFB;
     text-primary-color: #FFFFFF;
     accent-color: #607D8B;
-    primary-text-color: #292929;
+    dark-text-color: #292929;
     secondary-text-color: #757575;
     divider-color: #BDBDBD;
 
@@ -41,7 +41,7 @@ CSS/JavaFX Reference:
 
 .text-area {
     -fx-font: 16px "Roboto";
-    -fx-text-fill: primary-text-color;
+    -fx-text-fill: dark-text-color;
 }
 
 .menu-bar {
@@ -57,7 +57,7 @@ CSS/JavaFX Reference:
 }
 
 .menu .label {
-    -fx-text-fill: primary-text-color;
+    -fx-text-fill: dark-text-color;
 }
 
 #lblJournalDate {

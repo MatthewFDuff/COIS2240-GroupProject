@@ -2,12 +2,12 @@
 
 .calendar-title {
     -fx-font: 48px "Roboto";
-    -fx-fill: #FFFFFF; /* Text objects don't use -fx-text-fill to change the font colour */
+    -fx-fill: text-primary-color; /* Text objects don't use -fx-text-fill to change the font colour */
     /*-fx-padding: 70, 20, 70, 20;*/
 }
 
 .calendar-title-pane {
-    -fx-background-color: primary-text-color;
+    -fx-background-color: dark-text-color;
 }
 
 .weekday-pane {

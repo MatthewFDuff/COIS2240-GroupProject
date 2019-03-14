@@ -7,31 +7,53 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
     // References:
     // Icons: https://material.io/tools/icons/?icon=settings&style=outline
 
-    // TODO: Switch anchor panes where they're unnecessary
-    // TODO: Add Icons
-    // TODO: Settings?
+    // TASKS AND JOURNAL
+    // TODO: Each time a new day is selected, the task lists and journal need to update.
+
+    // TASKS/TASKLISTS
+    // TODO: Delete Task
+    // TODO: Add New Task
+    // TODO: Edit Task
+
+
+    // OPTIONAL
+    // TODO: Settings: Add the ability to switch colour schemes?
+
+    static FXMLDocumentController controller;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
-        FXMLDocumentController documentController = new FXMLDocumentController();
-        Parent root = fxmlLoader.load();
-        primaryStage.setTitle("Productivity Planner");
-        Scene scene = new Scene(root);
+    public void start(Stage primaryStage) {
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+            Parent root = fxmlLoader.load();
 
+            controller = (FXMLDocumentController) fxmlLoader.getController();
 
-        // Add CSS files
-        scene.getStylesheets().add("productivityplanner/ui/style/tab-pane.css");
-        scene.getStylesheets().add("productivityplanner/ui/style/calendar.css");
-        scene.getStylesheets().add("productivityplanner/ui/style/test.css");
+            primaryStage.setTitle("Productivity Planner");
+            Scene scene = new Scene(root);
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            // Add CSS files
+            scene.getStylesheets().add("productivityplanner/ui/style/tab-pane.css");
+            scene.getStylesheets().add("productivityplanner/ui/style/calendar.css");
+            scene.getStylesheets().add("productivityplanner/ui/style/test.css");
+
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static FXMLDocumentController getFXMLController()
+    {
+        return controller;
     }
 
     public static void main(String[] args) {

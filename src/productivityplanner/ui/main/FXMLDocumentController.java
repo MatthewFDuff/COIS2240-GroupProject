@@ -6,14 +6,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+
+import static productivityplanner.ui.main.Main.getFXMLController;
 
 public class FXMLDocumentController implements Initializable{
 
@@ -34,11 +36,42 @@ public class FXMLDocumentController implements Initializable{
         YearMonth date = YearMonth.now();
         // Generate the calendar
         calendarPane.getChildren().add(new Calendar(date).getView());
-        lblJournalDate.setText(Calendar.FindDay(LocalDate.now()).getDate().format(DateTimeFormatter.ofPattern("MMMM dd, YYYY")));
+        updateSelectedDate(Calendar.selectedDay); // Highlight the current date.
+        updateJournalTitle();
+    }
+
+    @FXML
+    private void updateJournalTitle() {
+        lblJournalDate.setText(Calendar.selectedDay.getDate().format(DateTimeFormatter.ofPattern("MMMM dd, YYYY")));
     }
 
 
-    @FXML
+    public void setSelectedDay(Day date){
+        System.out.println("The date of this day is: " + date.getDate());
+        // Create a border around the currently selected day
+        updateSelectedDate(date);
+    }
+
+    public void updateSelectedDate(Day currentSelectedDay){
+        if (currentSelectedDay != null)
+        {
+            // HIGHLIGHT/BORDER
+            // Clear the border from the current selected date.
+            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.NONE, CornerRadii.EMPTY, new BorderWidths(2))));
+            // Change the currently selected day to the one that's just been clicked on
+            Calendar.selectedDay = currentSelectedDay;
+            // Add a border to the new selected date
+            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("#292929"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(4))));
+            // UPDATE JOURNAL
+            updateJournalTitle();
+            // UPDATE TASKS
+        }
+        else
+        {
+            System.out.println("Unable to update selected date.");
+        }
+    }
+
     public void updateJournal(LocalDate date){
         // Update title based on the selected date
         lblJournalDate.setText(date.toString());
