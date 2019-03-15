@@ -1,5 +1,6 @@
 package productivityplanner.ui.tasklist;
 
+import com.jfoenix.controls.JFXListView;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -10,42 +11,41 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
+import productivityplanner.ui.main.FXMLDocumentController;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Observable;
-import java.util.ResourceBundle;
+import java.time.LocalDate;
+import java.util.*;
+
+import static productivityplanner.ui.main.Main.getFXMLController;
 
 public class TaskListController implements Initializable {
 
-    ObservableList<Task> list = FXCollections.observableArrayList();
-    DatabaseHandler databaseHandler;
+    ObservableList<Task> taskList = FXCollections.observableArrayList();
+
     @FXML
     private AnchorPane rootPane;
 
-    @FXML
-    private TableView<Task> table;
-    @FXML
-    private TableColumn<Task, String> nameCol;
-    @FXML
-    private TableColumn<Task, Boolean> cbCol;
-    @FXML
-    private TableColumn<Task, String> colourCol;
-    @FXML
-    private TableColumn<Task, String> dateCol;
+    JFXListView<Task> completedTaskList;
+    JFXListView<Task> uncompletedTaskList;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initializeColumns();
+        completedTaskList = getFXMLController().getCompletedTaskList();
+        uncompletedTaskList = getFXMLController().getUncompletedTaskList();
+
         loadData();
     }
 
     private void loadData() {
-        list.clear();
+        taskList.clear();
+        DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
 
-        databaseHandler = new DatabaseHandler();
         String query = "SELECT * FROM TASK";
         ResultSet results = databaseHandler.executeQuery(query);
         try{
@@ -56,55 +56,18 @@ public class TaskListController implements Initializable {
                 String date = results.getString("date");
                 System.out.println(name + " " + color + " " + compl + " " + date);
 
-                list.add(new Task(name, color, compl, date));
+                taskList.add(new Task(LocalDate.parse(date), name, Color.web(color), compl));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        table.setItems(list);
-    }
-
-    private void initializeColumns() {
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colourCol.setCellValueFactory(new PropertyValueFactory<>("colour"));
-        cbCol.setCellValueFactory(new PropertyValueFactory<>("isComplete"));
-        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-    }
-
-    public static class Task{
-        private final SimpleStringProperty name;
-        private final SimpleStringProperty colour;
-        private final SimpleStringProperty complete;
-        private final SimpleStringProperty date;
-
-        public Task(String n, String colour, boolean b, String date){
-            this.name = new SimpleStringProperty(n);
-            this.colour = new SimpleStringProperty(colour);
-            this.date = new SimpleStringProperty(date);
-
-            if (b){
-                complete = new SimpleStringProperty("Completed");
-            }else{
-                complete = new SimpleStringProperty("Not Completed");
+        for(Task task : taskList){
+            if (task.getCompleted()){
+                completedTaskList.getItems().add(task);
+            } else {
+                uncompletedTaskList.getItems().add(task);
             }
-        }
-
-        public String getName() {
-            return name.get();
-        }
-
-        public String getColour() {
-            return colour.get();
-        }
-
-
-        public String getComplete() {
-            return complete.get();
-        }
-
-        public String getDate() {
-            return date.get();
         }
     }
 }

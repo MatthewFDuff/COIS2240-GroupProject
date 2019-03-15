@@ -2,38 +2,66 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="COIS2240-GroupProject:jar" />
+      <artifact name="COIS2240-GroupProject" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/productivityplanner/database/DataAssistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTask.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productivityplanner/data/JournalEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTask.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTaskLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/productivityplanner/utility/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/COIS2240-GroupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COIS2240-GroupProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c101.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c111.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c121.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c130.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c141.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c20.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c31.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c41.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c490.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c4a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c51.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c60.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c71.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c81.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c90.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/ca1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/cb1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/cf0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/data/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/data/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/database/DataAssistant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/database/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/database/DatabaseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/addtask/AddNewTaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/addtask/AddNewTaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/addtask/AddNewTaskLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/addtask/AddNewTaskLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Day.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Day.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocument.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/style/calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/style/calendar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/style/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/style/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/task/Task.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/tasklist/AddNewTask.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/tasklist/AddNewTaskController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/tasklist/TaskListController$Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/tasklist/TaskListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/tasklist/TaskListController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/data/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/data/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/database/DataAssistant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/Day.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/style/calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/style/calendar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/style/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/style/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/data/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/AddNewTask.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/AddNewTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,66 +113,51 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1504">
-                    <caret line="110" column="55" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
+            <state relative-caret-position="2125">
+              <caret line="181" column="20" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1627#1628#0" expanded="true" />
-                <element signature="e#1660#1661#0" expanded="true" />
-                <element signature="e#1732#1733#0" expanded="true" />
+                <element signature="method#setSelectedDay#0;class#FXMLDocumentController#0" />
+                <element signature="method#updateSelectedDate#0;class#FXMLDocumentController#0" />
+                <element signature="method#loadAddNewTask#0;class#FXMLDocumentController#0" />
+                <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
+                <element signature="method#saveJournal#0;class#FXMLDocumentController#0" />
+                <element signature="method#addNewJournalEntry#0;class#FXMLDocumentController#0" />
+                <element signature="method#loadJournal#0;class#FXMLDocumentController#0" />
+                <element signature="method#updateJournal#0;class#FXMLDocumentController#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+            <state relative-caret-position="1360">
+              <caret line="87" column="23" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="29" />
               <folding>
-                <element signature="n#Tab#0;n#tabs#0;n#JFXTabPane#0;n#center#0;n#BorderPane#1;n#children#0;n#HBox#0;n#center#0;n#BorderPane#0;n#!!top" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#updateTask#0;class#DatabaseHandler#0" />
+                <element signature="e#3926#3927#0" expanded="true" />
+                <element signature="e#3959#3960#0" expanded="true" />
               </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Day.java">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
+            <state relative-caret-position="459">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,25 +166,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="189" column="20" lean-forward="true" selection-start-line="189" selection-start-column="20" selection-end-line="189" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#FindDay#0;class#Calendar#0" />
-                <element signature="e#8197#8198#0" expanded="true" />
-                <element signature="e#8224#8225#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="586">
+              <caret line="91" column="6" lean-forward="true" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+            <state relative-caret-position="680">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -225,25 +232,36 @@
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/tab-pane.css" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/task/Task.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/style/tab-pane.css" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/style/test.css" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/style/calendar.css" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/AddNewTaskLoader.java" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/data/Task.java" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/database/DataAssistant.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/AddNewTaskController.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/AddNewTask.fxml" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTask.fxml" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListLoader.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.java" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/Day.java" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/utility/Utility.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/TaskCell.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellFactory.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/data/Task.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/database/DataAssistant.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/data/JournalEntry.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/Day.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/edittask/AddNewTask.fxml" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTask.fxml" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/style/test.css" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTaskController.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java" />
       </list>
     </option>
   </component>
@@ -263,7 +281,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,6 +296,11 @@
             <path>
               <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -286,20 +308,6 @@
               <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
@@ -307,14 +315,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="addtask" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
@@ -326,20 +326,13 @@
             </path>
             <path>
               <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="tasklist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -352,10 +345,10 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552603034042" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552686261026" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="D:/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -363,6 +356,9 @@
     <property name="settings.editor.splitter.proportion" value="0.12040701" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\GitHub\COIS2240-GroupProject\src\productivityplanner\ui\edittask" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\GitHub\COIS2240-GroupProject\src\productivityplanner\ui\style" />
       <recent name="D:\Documents\GitHub\COIS2240-GroupProject\src\productivityplanner\ui\main" />
@@ -500,7 +496,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22814499" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17270789" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -535,58 +531,10 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.4011353" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Learn" order="4" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="UI Designer" order="6" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19365427" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="14" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -630,13 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2208">
-          <caret line="2618" selection-start-line="2618" selection-end-line="2618" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/style/calendar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -644,51 +585,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/style/test.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/database/DataAssistant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/data/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTask.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.java" />
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="79" lean-forward="true" selection-start-line="12" selection-start-column="79" selection-end-line="12" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/paint/Color.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
@@ -696,89 +593,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="88" column="68" lean-forward="true" selection-start-line="88" selection-start-column="68" selection-end-line="88" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="72" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ColorPicker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
           <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1504">
-          <caret line="110" column="55" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Day.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-          <folding>
-            <element signature="n#Tab#0;n#tabs#0;n#JFXTabPane#0;n#center#0;n#BorderPane#1;n#children#0;n#HBox#0;n#center#0;n#BorderPane#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1660#1661#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,10 +613,307 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/layout/Border.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="226" column="11" selection-start-line="226" selection-start-column="11" selection-end-line="226" selection-end-column="11" />
+          <folding>
+            <element signature="e#10000#10001#0" expanded="true" />
+            <element signature="e#10035#10036#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/utility/Utility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#173#174#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="72" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/data/JournalEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/database/DataAssistant.java" />
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="79" selection-start-line="12" selection-start-column="79" selection-end-line="12" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/data/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/IndexedCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ListCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1609">
+          <caret line="329" selection-start-line="329" selection-end-line="329" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Day.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTask.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTaskLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="66" lean-forward="true" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTask.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182">
+          <caret line="14" column="92" lean-forward="true" selection-start-line="14" selection-start-column="92" selection-end-line="14" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/MultipleSelectionModelBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
+          <folding>
+            <element signature="e#5965#5966#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
+          <folding>
+            <element signature="e#66921#66922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="79" column="131" selection-start-line="79" selection-start-column="131" selection-end-line="79" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/style/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/TabPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="180" column="64" selection-start-line="180" selection-start-column="64" selection-end-line="180" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/IntegerPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ReadOnlyIntegerWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#2665#2666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ReadOnlyObjectWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#2653#2654#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/SelectionModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="119" column="38" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="458" selection-start-line="458" selection-end-line="458" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+        <state relative-caret-position="2125">
+          <caret line="181" column="20" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setSelectedDay#0;class#FXMLDocumentController#0" />
+            <element signature="method#updateSelectedDate#0;class#FXMLDocumentController#0" />
+            <element signature="method#loadAddNewTask#0;class#FXMLDocumentController#0" />
+            <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
+            <element signature="method#saveJournal#0;class#FXMLDocumentController#0" />
+            <element signature="method#addNewJournalEntry#0;class#FXMLDocumentController#0" />
+            <element signature="method#loadJournal#0;class#FXMLDocumentController#0" />
+            <element signature="method#updateJournal#0;class#FXMLDocumentController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="87" column="23" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#updateTask#0;class#DatabaseHandler#0" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#3959#3960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="91" column="6" lean-forward="true" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -811,11 +926,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>COIS2240-GroupProject:jar</last-edited>
+          <last-edited>COIS2240-GroupProject</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

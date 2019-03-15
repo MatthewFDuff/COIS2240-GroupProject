@@ -5,10 +5,6 @@ import java.time.LocalDate;
 import javafx.scene.paint.Color;
 
 public class Task {
-    // TODO: Create a FXML file for a Task
-    // TODO: Add Task Events (Delete, Edit, etc).
-
-    // Fields:
     private LocalDate date;
     private String name;
     private Color color;
@@ -22,7 +18,14 @@ public class Task {
         this.isCompleted = false;
     }
 
-    // GET/SET
+    public Task(LocalDate dateCreated, String taskName, Color taskColor, boolean complete)
+    {
+        this.date = dateCreated;
+        this.name = taskName;
+        this.color = taskColor;
+        this.isCompleted = complete;
+    }
+
     public LocalDate getDate() { return date; }
     public void setDate(LocalDate date) { this.date = date; }
     public String getName() { return name; }

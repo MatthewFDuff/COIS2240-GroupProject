@@ -14,14 +14,16 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import productivityplanner.data.Task;
-import productivityplanner.database.DataAssistant;
 import productivityplanner.database.DatabaseHandler;
+import productivityplanner.ui.main.Calendar;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+
+import static productivityplanner.ui.main.Main.getFXMLController;
 
 public class AddNewTaskController implements Initializable {
 
@@ -53,9 +55,8 @@ public class AddNewTaskController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        databaseHandler = new DatabaseHandler();
-
-        checkData();
+        databaseHandler = DatabaseHandler.getInstance();
+        //checkData();
     }
 
     @FXML
@@ -77,29 +78,23 @@ public class AddNewTaskController implements Initializable {
                 "'"+ taskName + "'," +
                 "'"+ taskColour + "'," +
                 ""+ "false" + "," +
-                "'"+ LocalDate.now() + "'" +
+                "'"+ Calendar.selectedDay.getDate().toString() + "'" +
                 ")";
         System.out.println(action); // DEBUG
 
         if (databaseHandler.executeAction(action)) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setContentText("Success.");
-            alert.showAndWait();
+            getFXMLController().loadTasks(Calendar.selectedDay.getDate());
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setHeaderText(null);
+//            alert.setContentText("Success.");
+//            alert.showAndWait();
+            addCancel(new ActionEvent());
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Failed.");
             alert.showAndWait();
             System.out.println("Error: Unable to execute action.");
-        }
-
-        Task task = new Task(LocalDate.now(), taskName, taskColour);
-        boolean result = DataAssistant.insertNewTask(task);
-        if (result) {
-            System.out.println("Task Added.");
-        }else {
-            System.out.println("Unable to add task.");
         }
     }
 
@@ -114,7 +109,6 @@ public class AddNewTaskController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML

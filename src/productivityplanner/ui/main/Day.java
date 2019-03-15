@@ -6,6 +6,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import static productivityplanner.ui.main.Main.getFXMLController;
 
@@ -19,7 +20,6 @@ public class Day extends AnchorPane {
     }
 
     public LocalDate getDate(){ return date; }
-    public void setDate(LocalDate date){
-        this.date = date;
-    }
+    public String getFormattedDate() { return date.format(DateTimeFormatter.ofPattern("MMMM dd, YYYY")); }
+    public void setDate(LocalDate date){ this.date = date; }
 }

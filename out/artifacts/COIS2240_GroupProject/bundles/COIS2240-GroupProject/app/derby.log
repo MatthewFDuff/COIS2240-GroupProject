@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Mar 15 17:10:19 EDT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0169-8330-faa8-00000dde0f08 
+on database directory D:\Documents\GitHub\COIS2240-GroupProject\out\artifacts\COIS2240_GroupProject\bundles\COIS2240-GroupProject\app\database\calendar with class loader sun.misc.Launcher$AppClassLoader@c387f44 
+Loaded from file:/D:/Documents/GitHub/COIS2240-GroupProject/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_201-b09
+user.dir=D:\Documents\GitHub\COIS2240-GroupProject\out\artifacts\COIS2240_GroupProject\bundles\COIS2240-GroupProject\app
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

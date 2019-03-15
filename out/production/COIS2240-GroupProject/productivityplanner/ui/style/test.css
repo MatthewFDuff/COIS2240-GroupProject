@@ -6,14 +6,13 @@ CSS/JavaFX Reference:
 * {
     dark-primary-color: #1976D2;
     default-primary-color: #2196F3;
-    default-secondary-color: #FF9800; /* ORANGE */
+    default-secondary-color: #FF9800;
     light-primary-color: #BBDEFB;
     text-primary-color: #FFFFFF;
     accent-color: #607D8B;
     dark-text-color: #292929;
     secondary-text-color: #757575;
     divider-color: #BDBDBD;
-
 }
 
 .root {
@@ -63,3 +62,27 @@ CSS/JavaFX Reference:
 #lblJournalDate {
     -fx-font: 24px "Roboto";
 }
+
+#cell {
+    -fx-font: 16px "Roboto";
+    -fx-alignment: center-left;
+    -fx-background-radius: 15;
+    -fx-padding: 10;
+}
+
+#lblTaskName {
+    /*-fx-padding: 0 20 0 0;*/
+}
+
+#btnDelete {
+    -fx-background-color: #FF5252
+}
+
+.check-box .box {
+    -fx-border-color: text-primary-color;
+}
+
+.check-box:selected .box {
+    -fx-background-color: transparent;
+}
+

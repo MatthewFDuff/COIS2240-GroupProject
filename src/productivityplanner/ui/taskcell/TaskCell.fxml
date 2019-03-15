@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<fx:root type="javafx.scene.control.ListCell" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <graphic>
+        <HBox fx:id="cell" spacing="10" maxWidth="350">
+            <children>
+                <JFXCheckBox fx:id="cbComplete"/>
+                <Label fx:id="lblTaskName" prefWidth="220" wrapText="true"/>
+                <JFXButton fx:id="btnEdit" maxWidth="40" prefHeight="40.0">
+                    <graphic>
+                        <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
+                            <image>
+                                <Image url="/productivityplanner/ui/icons/outline_edit_white_18dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnDelete" maxWidth="40" prefHeight="40.0" style="-fx-background-fill: #FF5252;">
+                    <graphic>
+                        <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
+                            <image>
+                                <Image url="/productivityplanner/ui/icons/outline_delete_white_48dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </HBox>
+    </graphic>
+</fx:root>

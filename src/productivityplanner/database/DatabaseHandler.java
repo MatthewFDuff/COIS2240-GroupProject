@@ -1,19 +1,36 @@
 package productivityplanner.database;
 
+import javafx.scene.paint.Color;
+import productivityplanner.data.Task;
+import productivityplanner.ui.main.Calendar;
+import productivityplanner.ui.taskcell.TaskCellController;
+
 import java.sql.*;
+
+import static productivityplanner.ui.main.Main.getFXMLController;
 
 // Reference: https://github.com/afsalashyana/Library-Assistant
 // Video Explanation: https://www.youtube.com/watch?v=XZAQxZcjSVE
 public class DatabaseHandler {
-    private static DatabaseHandler handler;
+    private static DatabaseHandler handler = null;
 
     private static final String DB_URL = "jdbc:derby:database/calendar;create=true";
     private static Connection connection = null;
     private static Statement statement = null;
 
-    public DatabaseHandler() {
+    private DatabaseHandler() {
         createConnection();
         setupTaskTable();
+        setupJournalTable();
+    }
+
+    // Creates a new handler the first time it's called and returns it each time it's called.
+    public static DatabaseHandler getInstance(){
+        if (handler == null) {
+            handler = new DatabaseHandler();
+        }
+
+        return handler;
     }
 
     void createConnection(){
@@ -54,6 +71,47 @@ public class DatabaseHandler {
         }
     }
 
+    public boolean updateJournalEntry(String text){
+        try{
+            String query = "UPDATE JOURNAL SET TEXT = ? WHERE DATE=?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, text);
+            statement.setString(2, Calendar.selectedDay.getDate().toString());
+            int result = statement.executeUpdate();
+            return (result > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean updateTask(String taskName, String taskColour, Task task){
+        String previousName = task.getName();
+        Color previousColor = task.getColor();
+        try{
+            String query = "UPDATE TASK SET NAME = ?, COLOUR = ? WHERE (NAME = ? AND COLOUR = ? AND DATE = ?)";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, taskName);
+            statement.setString(2, taskColour);
+            statement.setString(3,previousName);
+            statement.setString(4,previousColor.toString());
+            statement.setString(5, Calendar.selectedDay.getDate().toString());
+            int result = statement.executeUpdate();
+            if (result > 0)
+            {
+                getFXMLController().loadTasks(Calendar.selectedDay.getDate());
+            }
+            return (result > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static Connection getConnection() {
+        return connection;
+    }
+
     void setupTaskTable(){
         String TABLE_NAME = "TASK";
         try{
@@ -67,7 +125,7 @@ public class DatabaseHandler {
                             + "name varchar(200),\n"
                             + "colour varchar(200), \n"
                             + "isComplete boolean default false, \n"
-                            + "date varchar(200), \n"
+                            + "date varchar(20), \n"
                             + "primary key(name, colour, date))");
                 System.out.println("Database successfully created.");
             }
@@ -87,13 +145,56 @@ public class DatabaseHandler {
             }else
             {
                 statement.execute("CREATE TABLE " + TABLE_NAME + "("
-                            + "date varchar(200) primary key,\n"
-                            + "text varchar(255)");
+                            + "date varchar(20) primary key,\n" // Only one journal entry allowed per day, which is why the date is the primary key.
+                            + "text long varchar)");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
+    public boolean deleteTask(Task task) {
+        //TODO: Add confirmation before deleting? Or a way to see what was deleted.
+        try{
+            String query = "DELETE FROM TASK WHERE (NAME=? AND COLOUR=? AND DATE=?)";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, task.getName());
+            statement.setString(2, task.getColor().toString());
+            statement.setString(3, task.getDate().toString());
+            int result = statement.executeUpdate();
+            getFXMLController().loadTasks(task.getDate());
+            return (result > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean toggleComplete(Task task) {
+        System.out.println("toggling complete");
+        Boolean complete = task.getCompleted();
+
+        // TOGGLE COMPLETE
+        if (complete)
+            complete = false;
+        else
+            complete = true;
+
+        try{
+            String query = "UPDATE TASK SET ISCOMPLETE = ? WHERE (NAME = ? AND COLOUR = ? AND DATE = ?)";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, complete.toString());
+            statement.setString(2, task.getName());
+            statement.setString(3, task.getColor().toString());
+            statement.setString(4, Calendar.selectedDay.getDate().toString());
+            int result = statement.executeUpdate();
+            if (result > 0){
+                getFXMLController().loadTasks(Calendar.selectedDay.getDate());
+            }
+            return (result > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

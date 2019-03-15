@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="COIS2240-GroupProject">
+    <output-path>$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="productivityplanner.ui.main.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="Productivity Planner" />
+        <option name="vendor" value="COIS 2240 Group 13" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="COIS2240_GroupProject.jar">
+        <element id="module-output" name="COIS2240-GroupProject" />
+      </element>
+      <element id="file-copy" path="D:/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar" />
+      <element id="file-copy" path="D:/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derbyclient.jar" />
+      <element id="file-copy" path="$USER_HOME$/Desktop/Java/Libraries/jfoenix-8.0.8.jar" />
+    </root>
+  </artifact>
+</component>
