@@ -8,9 +8,8 @@
    <children>
       <TableView fx:id="table" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-            <TableColumn fx:id="nameCol" prefWidth="75.0" text="Task Name" />
-            <TableColumn fx:id="cbCol" prefWidth="75.0" text="Checkbox" />
-            <TableColumn fx:id="colourCol" prefWidth="75.0" text="Colour" />
+            <TableColumn fx:id="nameCol" prefWidth="295.0" text="Task Name" />
+            <TableColumn fx:id="cbCol" prefWidth="104.0" text="Completed" />
             <TableColumn fx:id="dateCol" prefWidth="75.0" text="Date" />
         </columns>
          <columnResizePolicy>

@@ -31,13 +31,13 @@ public class TaskListController implements Initializable {
     @FXML
     private AnchorPane rootPane;
 
-    JFXListView<Task> completedTaskList;
-    JFXListView<Task> uncompletedTaskList;
+//    JFXListView<Task> completedTaskList;
+//    JFXListView<Task> uncompletedTaskList;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        completedTaskList = getFXMLController().getCompletedTaskList();
-        uncompletedTaskList = getFXMLController().getUncompletedTaskList();
+//        completedTaskList = getFXMLController().getCompletedTaskList();
+//        uncompletedTaskList = getFXMLController().getUncompletedTaskList();
 
         loadData();
     }
@@ -62,12 +62,12 @@ public class TaskListController implements Initializable {
             e.printStackTrace();
         }
 
-        for(Task task : taskList){
-            if (task.getCompleted()){
-                completedTaskList.getItems().add(task);
-            } else {
-                uncompletedTaskList.getItems().add(task);
-            }
-        }
+//        for(Task task : taskList){
+//            if (task.getCompleted()){
+//                completedTaskList.getItems().add(task);
+//            } else {
+//                uncompletedTaskList.getItems().add(task);
+//            }
+//        }
     }
 }

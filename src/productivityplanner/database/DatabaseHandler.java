@@ -99,7 +99,7 @@ public class DatabaseHandler {
             int result = statement.executeUpdate();
             if (result > 0)
             {
-                getFXMLController().loadTasks(Calendar.selectedDay.getDate());
+                getFXMLController().loadTasks();
             }
             return (result > 0);
         } catch (SQLException e) {
@@ -153,6 +153,7 @@ public class DatabaseHandler {
         }
     }
 
+    // TODO: Requires more testing.
     public boolean deleteTask(Task task) {
         //TODO: Add confirmation before deleting? Or a way to see what was deleted.
         try{
@@ -162,7 +163,7 @@ public class DatabaseHandler {
             statement.setString(2, task.getColor().toString());
             statement.setString(3, task.getDate().toString());
             int result = statement.executeUpdate();
-            getFXMLController().loadTasks(task.getDate());
+            getFXMLController().loadTasks();
             return (result > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -189,7 +190,7 @@ public class DatabaseHandler {
             statement.setString(4, Calendar.selectedDay.getDate().toString());
             int result = statement.executeUpdate();
             if (result > 0){
-                getFXMLController().loadTasks(Calendar.selectedDay.getDate());
+                getFXMLController().loadTasks();
             }
             return (result > 0);
         } catch (SQLException e) {

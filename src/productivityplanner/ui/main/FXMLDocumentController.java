@@ -85,7 +85,7 @@ public class FXMLDocumentController implements Initializable {
 
         updateJournalTitle(); // Update the journal view
 
-        loadTasks(Calendar.currentDate); // Update the task lists.
+        loadTasks(); // Update the task lists.
         completedTasks.setCellFactory(completedListView -> new TaskCellController());
         uncompletedTasks.setCellFactory(uncompletedTaskView -> new TaskCellController());
     }
@@ -102,6 +102,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
     public void updateSelectedDate(Day currentSelectedDay){
+        //TODO: Don't update if the day is still the same as before.
         if (currentSelectedDay != null)
         {
             // HIGHLIGHT/BORDER
@@ -115,7 +116,7 @@ public class FXMLDocumentController implements Initializable {
             loadJournal(Calendar.selectedDay.getDate());
             updateJournal();
             // UPDATE TASKS
-            loadTasks(Calendar.selectedDay.getDate());
+            loadTasks();
         }
         else
         {
@@ -133,8 +134,8 @@ public class FXMLDocumentController implements Initializable {
         loadWindow("/productivityplanner/ui/edittask/edittask.fxml", "Edit Task");
     }
 
-    // Load tasks for the given date.
-    public void loadTasks(LocalDate dateToLoad) {
+    public void loadTasks() {
+        LocalDate dateToLoad = Calendar.selectedDay.getDate();
         taskList.clear();
         completedTasks.getItems().clear();
         uncompletedTasks.getItems().clear();
@@ -154,7 +155,6 @@ public class FXMLDocumentController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         for(Task task : taskList){
             if (task.getCompleted()){
                 completedTasks.getItems().add(task);
@@ -275,11 +275,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     public void refreshTaskList(ActionEvent actionEvent) {
-        // Find all "uncompleted" tasks that have been checked and are marked
-        ObservableList<Task> selected = uncompletedTasks.getSelectionModel().getSelectedItems();
-
-        //completedTasks.getItems().clear();
-        //uncompletedTasks.getItems().clear();
+        loadTasks();
     }
 
     @FXML
@@ -289,5 +285,35 @@ public class FXMLDocumentController implements Initializable {
 
     public void refreshTask(Task task) {
 
+    }
+
+    public void viewAllTasks(ActionEvent actionEvent) {
+        loadTasks();
+        loadWindow("/productivityplanner/ui/tasklist/tasklist.fxml", "Task List");
+    }
+
+    public void updateSelectedTask() {
+        Task selectedTask;
+        try{
+            selectedTask = TaskCellController.getSelected().getTask();
+        }catch(Exception e){
+            selectedTask = null;
+        }
+
+        for(Task task : taskList){
+            if (task.getCompleted()){
+                if (selectedTask != null)
+                {
+                    if (selectedTask.equals(task))
+                        completedTasks.getSelectionModel().select(selectedTask);
+                }
+            } else {
+                if (selectedTask != null)
+                {
+                    if (selectedTask.equals(task))
+                        uncompletedTasks.getSelectionModel().select(selectedTask);
+                }
+            }
+        }
     }
 }

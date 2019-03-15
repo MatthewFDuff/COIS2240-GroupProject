@@ -35,6 +35,11 @@
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="View">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="View All Tasks" onAction="#viewAllTasks"/>
+                </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />

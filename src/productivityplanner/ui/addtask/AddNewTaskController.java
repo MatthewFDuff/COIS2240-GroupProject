@@ -83,7 +83,7 @@ public class AddNewTaskController implements Initializable {
         System.out.println(action); // DEBUG
 
         if (databaseHandler.executeAction(action)) {
-            getFXMLController().loadTasks(Calendar.selectedDay.getDate());
+            getFXMLController().loadTasks();
 //            Alert alert = new Alert(Alert.AlertType.INFORMATION);
 //            alert.setHeaderText(null);
 //            alert.setContentText("Success.");

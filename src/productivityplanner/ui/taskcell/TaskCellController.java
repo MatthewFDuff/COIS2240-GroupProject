@@ -21,9 +21,20 @@ import java.io.IOException;
 
 import static productivityplanner.ui.main.Main.getFXMLController;
 
-// Reference:   https://stackoverflow.com/questions/47511132/javafx-custom-listview
+// References:  https://stackoverflow.com/questions/47511132/javafx-custom-listview
 //              https://www.turais.de/how-to-custom-listview-cell-in-javafx/
+
 public class TaskCellController extends ListCell<Task> {
+    private static TaskCellController selected;
+
+    public static TaskCellController getSelected() {
+        return selected;
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
     @FXML
     Label lblTaskName;
     @FXML
@@ -37,7 +48,6 @@ public class TaskCellController extends ListCell<Task> {
 
     Task task;
     DatabaseHandler databaseHandler;
-    boolean selected;
 
     public TaskCellController() {
         loadFXML();
@@ -46,18 +56,17 @@ public class TaskCellController extends ListCell<Task> {
         btnDelete.setOnAction(e -> databaseHandler.deleteTask(this.task));
         btnEdit.setOnAction((e -> getFXMLController().loadEditTask(new ActionEvent())));
         cbComplete.setOnAction(e -> databaseHandler.toggleComplete(this.task));
-        cell.setOnMouseClicked(e -> cellSelected());
+        cell.setOnMouseClicked(e ->{
+            System.out.println("cell clicked");
+            selected = this;
+            getFXMLController().loadTasks();
+            getFXMLController().updateSelectedTask();
+        });
     }
 
-    private void cellSelected() {
-        if (selected){
-            selected = false;
-        } else{
-            selected = true;
-        }
-
-        btnDelete.setVisible(selected);
-        btnEdit.setVisible(selected);
+    private void setCellSelected(boolean bool) {
+        btnDelete.setVisible(bool);
+        btnEdit.setVisible(bool);
         setGraphic(cell);
     }
 
@@ -75,7 +84,6 @@ public class TaskCellController extends ListCell<Task> {
     @Override
     protected void updateItem(Task item, boolean empty){
         super.updateItem(item, empty);
-
         task = item;
 
         if (empty || item == null) {
@@ -86,8 +94,12 @@ public class TaskCellController extends ListCell<Task> {
             lblTaskName.setText(item.getName());
             cell.setStyle("-fx-background-color: #" + taskColour);
             cbComplete.setSelected(item.getCompleted());
-            btnDelete.setVisible(selected);
-            btnEdit.setVisible(selected);
+
+            if (selected == this)
+                setCellSelected(true);
+            else
+                setCellSelected(false);
+
             setGraphic(cell);
         }
     }
