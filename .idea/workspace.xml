@@ -9,21 +9,51 @@
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/calendar/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/calendar/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/calendar/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/log1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/calendar/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/logmirror.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c490.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c4a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c4b0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocument.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/COIS2240_GroupProject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/COIS2240_GroupProject.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/COIS2240_GroupProject.jnlp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/COIS2240_GroupProject.jnlp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/COIS2240_GroupProject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/COIS2240_GroupProject.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c10.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c101.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c111.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c121.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c130.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c141.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c150.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c150.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c161.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c161.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c171.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c171.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c180.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c180.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c1a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c1a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c1b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c1b1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c20.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c230.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c230.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c241.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c241.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c31.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c380.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c380.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c391.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c391.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c3a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c3a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c3b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c3b1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c41.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c490.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c4b0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c51.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c60.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c71.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c81.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c90.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/ca1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/cb1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/cf0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240_GroupProject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240_GroupProject.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240_GroupProject.jnlp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240_GroupProject.jnlp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCellController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCellController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,8 +113,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="238" column="12" lean-forward="true" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="12" />
+            <state relative-caret-position="292">
+              <caret line="129" column="43" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
+                <element signature="e#9687#9688#0" expanded="true" />
+                <element signature="e#9714#9715#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="85" column="42" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,8 +188,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+            <state relative-caret-position="451">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -275,38 +332,6 @@
             </path>
             <path>
               <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="taskcell" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COIS2240-GroupProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="tasklist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -316,6 +341,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="cois2240-groupproject" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -324,7 +353,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552709618680" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552775829112" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="D:/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -475,7 +504,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17430703" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17430703" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -484,8 +513,8 @@
       <window_info id="UI Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19176598" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19176598" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -514,20 +543,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java</url>
-          <line>181</line>
-          <properties class="productivityplanner.ui.main.FXMLDocumentController" method="loadWindow">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -626,16 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/IndexedCell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -647,14 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1609">
           <caret line="329" selection-start-line="329" selection-end-line="329" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTask.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -767,16 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="85" column="42" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -846,16 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/style/tab-pane.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -903,12 +880,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="238" column="12" lean-forward="true" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="12" />
+        <state relative-caret-position="451">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTask.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="85" column="42" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="129" column="43" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
+            <element signature="e#9687#9688#0" expanded="true" />
+            <element signature="e#9714#9715#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -918,7 +936,12 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
           <last-edited>COIS2240-GroupProject</last-edited>
           <splitter-proportions>
             <option name="proportions">

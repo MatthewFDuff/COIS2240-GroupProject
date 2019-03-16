@@ -121,13 +121,13 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     public void loadAddNewTask(ActionEvent actionEvent) {
-        loadWindow("/productivityplanner/ui/addtask/addnewtask.fxml", "Add New Task");
+        loadWindow(getClass().getResource("/productivityplanner/ui/addtask/AddNewTask.fxml"), "Add New Task", null);
     }
 
     @FXML
     public void loadEditTask(Task task) {
         updateSelectedTask(task);
-        loadWindow("/productivityplanner/ui/edittask/edittask.fxml", "Edit Task");
+        loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
     }
 
     public void loadTasks() {
@@ -179,16 +179,25 @@ public class FXMLDocumentController implements Initializable {
     }
 
     // Loads a new window (such as for adding a new task).
-    void loadWindow(String path, String title) {
+    public static Object loadWindow(URL path, String title, Stage parentStage) {
+        Object controller = null;
         try{
-            Parent parent = FXMLLoader.load(getClass().getResource(path));
-            Stage stage = new Stage(StageStyle.DECORATED);
+            FXMLLoader loader = new FXMLLoader(path);
+            Parent parent = loader.load();
+            controller = loader.getController();
+            Stage stage = null;
+            if (parentStage != null){
+                stage = parentStage;
+            }else{
+                stage = new Stage(StageStyle.DECORATED);
+            }
             stage.setTitle(title);
             stage.setScene(new Scene(parent));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return controller;
     }
 
     // Save the journal entry to the database. (Requires a rewrite, because only one entry is allowed per day)
@@ -252,42 +261,30 @@ public class FXMLDocumentController implements Initializable {
         return true;
     }
 
+    // Update the journal title, and text.
     private void updateJournal(){
         updateJournalTitle();
         if (!entryList.isEmpty()){
-            txtJournal.setText(entryList.get(0).getText());
+            txtJournal.setText(entryList.get(0).getText()); // entryList is the journal entry list, which should only be length 1 (index 0)
         } else{
             txtJournal.clear();
         }
         lblProgramAction.setText("Journal Updated");
     }
 
-    public JFXListView<Task> getCompletedTaskList() {
-        return completedTasks;
-    }
-    public JFXListView<Task> getUncompletedTaskList() {
-        return uncompletedTasks;
-    }
-
     @FXML
+    // Refresh the task lists by reloading the date's tasks.
     public void refreshTaskList(ActionEvent actionEvent) {
         loadTasks();
     }
 
-    @FXML
-    public void deleteTask(ActionEvent actionEvent){
-        // If the delete button is clicked.
-    }
-
-    public void refreshTask(Task task) {
-
-    }
-
+    // TODO: Decide if this should show every task ever created or just the details of the current task (date created, date completed, etc).
     public void viewAllTasks(ActionEvent actionEvent) {
-        loadTasks();
-        loadWindow("/productivityplanner/ui/tasklist/tasklist.fxml", "Task List");
+        loadTasks(); // Reload the full task list from the database TODO: Make this LoadAllTasks because currently it's only loading the current day's tasks.
+        loadWindow(getClass().getResource("/productivityplanner/ui/tasklist/TaskList.fxml"), "Task List", null);
     }
 
+    // Finds the task cell that's provided and selects in in the appropriate list view.
     public void updateSelectedTask(Task task) {
         for(Task currentTask : taskList){ // Go through all the
             if (task.getCompleted()){
