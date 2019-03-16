@@ -50,13 +50,15 @@ public class Main extends Application {
             controller = (FXMLDocumentController) fxmlLoader.getController();
 
             primaryStage.setTitle("Productivity Planner");
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root, 1280, 800);
 
             // Add CSS files
             scene.getStylesheets().add("productivityplanner/ui/style/tab-pane.css");
             scene.getStylesheets().add("productivityplanner/ui/style/calendar.css");
             scene.getStylesheets().add("productivityplanner/ui/style/test.css");
 
+            primaryStage.setMinWidth(1280);
+            primaryStage.setMinHeight(800);
             primaryStage.setScene(scene);
             primaryStage.show();
             Utility.setProgramIcon(primaryStage);

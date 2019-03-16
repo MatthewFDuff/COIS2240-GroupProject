@@ -13,17 +13,15 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
+<VBox alignment="CENTER_LEFT" minHeight="800.0" minWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
    <children>
-      <MenuBar>
+      <MenuBar minHeight="27.0" VBox.vgrow="NEVER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -37,7 +35,7 @@
           </Menu>
             <Menu mnemonicParsing="false" text="View">
                 <items>
-                    <MenuItem mnemonicParsing="false" text="View All Tasks" onAction="#viewAllTasks"/>
+                    <MenuItem mnemonicParsing="false" onAction="#viewAllTasks" text="View All Tasks" />
                 </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -47,42 +45,39 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox alignment="CENTER">
+      <HBox alignment="CENTER" minHeight="600.0" minWidth="1024.0" VBox.vgrow="ALWAYS">
          <children>
-            <BorderPane maxWidth="-Infinity" prefHeight="720.0" prefWidth="910.0">
-               <center>
-                  <AnchorPane fx:id="calendarPane" prefHeight="720.0" prefWidth="910.0" BorderPane.alignment="CENTER" />
-               </center>
-               <top>
-                  <Pane prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-               </top>
-               <left>
-                  <Pane prefHeight="200.0" prefWidth="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-               </left>
-               <right>
-                  <Pane prefHeight="200.0" prefWidth="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-               </right>
-               <bottom>
-                  <Pane prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-               </bottom>
-            </BorderPane>
-            <BorderPane maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="369.0">
-               <center>
-                  <JFXTabPane fx:id="tabsMainBar" prefHeight="700.0" stylesheets="@../style/tab-pane.css" tabMinHeight="40.0" BorderPane.alignment="CENTER">
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Pane layoutX="10.0" layoutY="610.0" prefHeight="20.0" style="-fx-background-color: #292929;" />
+                  <HBox>
+                     <children>
+                        <Pane minWidth="20.0" prefWidth="20.0" style="-fx-background-color: #292929;" HBox.hgrow="ALWAYS" />
+                        <VBox fx:id="calendarPane" alignment="CENTER_LEFT" minHeight="600.0" minWidth="700.0" />
+                        <Pane layoutX="10.0" layoutY="10.0" minWidth="20.0" prefWidth="20.0" style="-fx-background-color: #292929;" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="20.0" style="-fx-background-color: #292929;" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <VBox minHeight="600.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXTabPane fx:id="tabsMainBar" tabMinHeight="40.0" VBox.vgrow="ALWAYS">
                      <tabs>
                         <Tab fx:id="tabTasks" closable="false">
                           <content>
-                            <AnchorPane prefHeight="180.0" prefWidth="100.0">
+                              <VBox>
                                  <children>
-                                    <JFXTabPane fx:id="tabsTasks" prefHeight="659.0" prefWidth="300.0" styleClass="task-tab-pane" stylesheets="@../style/tab-pane.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0" tabMinWidth="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <JFXTabPane fx:id="tabsTasks" prefWidth="300.0" styleClass="task-tab-pane" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0" tabMinWidth="40.0">
                                        <tabs>
                                           <Tab fx:id="tabUncompletedTasks" closable="false">
                                             <content>
-                                                <BorderPane prefHeight="200.0" prefWidth="200.0">
-                                                   <bottom>
-                                                      <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                                <VBox>
+                                                   <children>
+                                                      <JFXListView fx:id="uncompletedTasks" prefHeight="800.0" VBox.vgrow="ALWAYS" />
+                                                      <HBox fx:id="newTaskPane" alignment="CENTER_LEFT" minHeight="50.0" spacing="10.0" VBox.vgrow="NEVER">
                                                          <children>
-                                                            <JFXButton fx:id="btnAddTask" layoutX="249.0" layoutY="7.0" onAction="#loadAddNewTask" prefHeight="40.0" text="New Task">
+                                                            <JFXButton fx:id="btnAddTask" layoutX="249.0" layoutY="7.0" onAction="#loadAddNewTask" prefHeight="40.0" text="New Task" HBox.hgrow="ALWAYS">
                                                                <graphic>
                                                                    <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                                                                        <image>
@@ -91,7 +86,7 @@
                                                                    </ImageView>
                                                                </graphic>
                                                             </JFXButton>
-                                                             <JFXButton fx:id="btnRefreshTaskList" onAction="#refreshTaskList" prefHeight="40.0" text="Refresh">
+                                                             <JFXButton fx:id="btnRefreshTaskList" onAction="#refreshTaskList" prefHeight="40.0" text="Refresh" HBox.hgrow="ALWAYS">
                                                                  <graphic>
                                                                      <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                                                                          <image>
@@ -108,11 +103,8 @@
                                                             <Insets />
                                                          </opaqueInsets>
                                                       </HBox>
-                                                   </bottom>
-                                                   <center>
-                                                      <JFXListView fx:id="uncompletedTasks" BorderPane.alignment="CENTER" />
-                                                   </center>
-                                                </BorderPane>
+                                                   </children>
+                                                </VBox>
                                             </content>
                                              <graphic>
                                                  <ImageView fitHeight="40" preserveRatio="true">
@@ -141,7 +133,7 @@
                                        </tabs>
                                     </JFXTabPane>
                                  </children>
-                              </AnchorPane>
+                              </VBox>
                           </content>
                             <graphic>
                                 <ImageView fitHeight="50" fitWidth="50.0" preserveRatio="true">
@@ -153,19 +145,15 @@
                         </Tab>
                         <Tab fx:id="tabJournal" closable="false">
                           <content>
-                              <VBox alignment="CENTER">
+                              <VBox alignment="CENTER" style="-fx-background-color: #2196F3">
                                  <children>
-                                    <Label fx:id="lblJournalDate" minHeight="40" prefHeight="38.0" text="Journal Entry">
+                                    <Label fx:id="lblJournalDate" minHeight="40" prefHeight="40.0" text="Journal Entry" VBox.vgrow="NEVER">
                                        <font>
                                           <Font size="26.0" />
                                        </font>
                                     </Label>
-                                    <TextArea fx:id="txtJournal" prefHeight="1000.0" wrapText="true" />
-                                    <JFXButton fx:id="btnSaveJournal" minHeight="40" onAction="#saveJournal" prefHeight="35.0" prefWidth="200.0" text="Save">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </JFXButton>
+                                    <TextArea fx:id="txtJournal" wrapText="true" VBox.vgrow="ALWAYS" />
+                                    <JFXButton fx:id="btnSaveJournal" minHeight="40" onAction="#saveJournal" prefHeight="40.0" prefWidth="200.0" text="Save"/>
                                  </children>
                               </VBox>
                           </content>
@@ -179,7 +167,7 @@
                         </Tab>
                         <Tab fx:id="tabSettings" closable="false">
                           <content>
-                            <AnchorPane minWidth="0.0" prefHeight="100.0" prefWidth="200.0" />
+                            <VBox minWidth="0.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #2196F3"/>
                           </content>
                             <graphic>
                                 <ImageView fitHeight="50" fitWidth="50.0" preserveRatio="true">
@@ -191,14 +179,12 @@
                         </Tab>
                      </tabs>
                   </JFXTabPane>
-               </center>
-               <bottom>
-                  <Pane prefHeight="20.0" style="-fx-background-color: #292929;" BorderPane.alignment="CENTER" />
-               </bottom>
-            </BorderPane>
+                  <Pane minHeight="-Infinity" prefHeight="20.0" style="-fx-background-color: #292929;" />
+               </children>
+            </VBox>
          </children>
       </HBox>
-    <HBox id="HBox" alignment="BOTTOM_CENTER" minHeight="27.0" prefHeight="27.0" prefWidth="1279.0" spacing="5.0" style="-fx-background-color: #1976D2;" stylesheets="@../style/test.css">
+    <HBox id="HBox" alignment="BOTTOM_CENTER" minHeight="27.0" prefHeight="27.0" prefWidth="1279.0" spacing="5.0" style="-fx-background-color: #1976D2;" stylesheets="@../style/test.css" VBox.vgrow="NEVER">
         <children>
             <Label fx:id="lblUserAction" text="Used to show last user action (New task added)." HBox.hgrow="ALWAYS">
                 <font>

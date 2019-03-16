@@ -28,7 +28,9 @@ public class Calendar {
         int CALENDAR_WIDTH = 910;
         int CALENDAR_HEIGHT = 720;
         int DAY_WIDTH = CALENDAR_WIDTH / 7;     // 910/7 = 130
-        int DAY_HEIGHT = CALENDAR_WIDTH / 6;    // 720/6 = 120
+        int DAY_HEIGHT = CALENDAR_HEIGHT / 6;    // 720/6 = 120
+        int MIN_DAY_HEIGHT = 100;
+        int MIN_DAY_WIDTH = 100;
 
         currentYearMonth = yearMonth; // Get the current year and month.
         currentDate = LocalDate.now();
@@ -36,14 +38,17 @@ public class Calendar {
 
         // Create a new grid for the calendar.
         GridPane calendar = new GridPane();
+        calendar.setMinSize(700, 600);
         calendar.setPrefSize(CALENDAR_WIDTH, CALENDAR_HEIGHT);
         calendar.getStyleClass().add("calendar-grid");
         calendar.setGridLinesVisible(true);
+        calendar.setAlignment(Pos.CENTER);
 
         // For every day in the calendar
         for(int i = 0; i < 6; i++){
             for(int j = 0; j < 7; j++){
                 Day day = new Day();
+                day.setMinSize(MIN_DAY_WIDTH, MIN_DAY_HEIGHT);
                 day.setPrefSize(DAY_WIDTH, DAY_HEIGHT);
 
                 if (j == 0 || j == 6) // Day is a weekend
@@ -58,14 +63,16 @@ public class Calendar {
 
         // Create labels for each day of the week.
         GridPane weekdayLabels = new GridPane();
+        weekdayLabels.setMinSize(MIN_DAY_WIDTH, 20);
         weekdayLabels.setPrefWidth(CALENDAR_WIDTH);
         weekdayLabels.setAlignment(Pos.CENTER);
         weekdayLabels.setGridLinesVisible(true);
 
         HBox weekdayLabelBox = new HBox(DAY_WIDTH); // This is the container which holds 7 more hbox panes. One for each weekday label.
+        weekdayLabelBox.setMinSize(MIN_DAY_WIDTH, 30);
         weekdayLabelBox.setId("weekdayLabelBox");
-        weekdayLabelBox.setPrefHeight(30);
         weekdayLabelBox.setSpacing(0); // Must be 0, the default value causes issues
+        weekdayLabelBox.setAlignment(Pos.CENTER);
 
         Text[] Weekdays = {new Text("Sunday"), new Text("Monday"), new Text("Tuesday"), new Text("Wednesday"), new Text("Thursday"), new Text("Friday"), new Text("Saturday")};
 
@@ -75,6 +82,7 @@ public class Calendar {
             HBox pane = new HBox(); // Use HBox here to have the labels easily centered (Panes/AnchorPanes do not have alignment properties)
             pane.setAlignment(Pos.CENTER);
             pane.getStyleClass().add("weekday-pane");   //TODO: Separate weekday colours and weekend colours
+            pane.setMinSize(MIN_DAY_WIDTH, 30);
             pane.setPrefSize(DAY_WIDTH, 30);
             pane.getChildren().add(text);               // Add the text to the day box
             weekdayLabelBox.getChildren().add(pane);    // Add the pane to the weekday box
@@ -85,7 +93,7 @@ public class Calendar {
         calendarTitle.getStyleClass().add("calendar-title");
 
         // Create the arrow images which will be used to change the current month
-        int arrowButtonSize = 40;
+        int arrowButtonSize = 30;
 
         ImageView nextArrow = new ImageView("productivityplanner/ui/icons/outline_arrow_forward_ios_white_48dp.png");
         nextArrow.setFitHeight(arrowButtonSize);
@@ -115,7 +123,6 @@ public class Calendar {
 
         HBox titleBar = new HBox(previousPane, titlePane, nextPane);
         //titleBar.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-        titleBar.setPadding(new Insets(0, 0, 20, 0));
         titleBar.setSpacing(50);
         titleBar.getStyleClass().add("calendar-title-pane");
         titleBar.setAlignment(Pos.BOTTOM_CENTER);
@@ -125,6 +132,7 @@ public class Calendar {
         selectedDay = FindDay(currentDate);
         // Create the calendar view (which is added to the calendarPane AnchorPane which you can see in Scenebuilder).
         view = new VBox(titleBar, weekdayLabelBox, calendar);
+        view.setMinSize(700, 600);
     }
 
     public static Day FindDay(LocalDate newDay)

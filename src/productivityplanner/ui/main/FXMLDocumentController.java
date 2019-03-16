@@ -33,7 +33,7 @@ import java.util.ResourceBundle;
 
 public class FXMLDocumentController implements Initializable {
     @FXML
-    private AnchorPane calendarPane;
+    private VBox calendarPane;
     @FXML
     private JFXTabPane tabsMainBar;
     @FXML
@@ -60,10 +60,6 @@ public class FXMLDocumentController implements Initializable {
     private Tab tabSettings;
     @FXML
     private Label lblUserAction;
-    @FXML
-    private Font x3;
-    @FXML
-    private Color x4;
     @FXML
     private Label lblProgramAction;
     @FXML
@@ -118,8 +114,7 @@ public class FXMLDocumentController implements Initializable {
             // UPDATE TASKS
             loadTasks();
         }
-        else
-        {
+        else {
             System.out.println("Unable to update selected date.");
         }
     }
@@ -148,7 +143,7 @@ public class FXMLDocumentController implements Initializable {
                 String color = results.getString("colour");
                 Boolean compl = results.getBoolean("isComplete");
                 String date = results.getString("date");
-                System.out.println(name + " " + color + " " + compl + " " + date);
+                //System.out.println(name + " " + color + " " + compl + " " + date);
 
                 taskList.add(new Task(LocalDate.parse(date), name, Color.web(color), compl));
             }
@@ -166,15 +161,15 @@ public class FXMLDocumentController implements Initializable {
 
     // Get the selected task from the uncomplete or completed listview.
     public Task getSelectedTask(){
-        // Check which tab is open. . Completed or Uncomplete tasks
+        // Check which tab is open.. Completed or Uncomplete tasks
         String selectedTab = tabsTasks.getSelectionModel().getSelectedItem().getId();
-        System.out.println("ID: " + selectedTab);
-        if (selectedTab.equals("tabCompletedTasks")) // Uncomplete
+
+        if (selectedTab.equals("tabCompletedTasks")) // Complete
         {
             System.out.println("Complete Tab Selected");
             return completedTasks.getSelectionModel().getSelectedItem();
         }
-        else if (selectedTab.equals("tabUncompletedTasks"))
+        else if (selectedTab.equals("tabUncompletedTasks")) // Uncompleted
         {
             System.out.println("UnComplete TabSelected");
             return uncompletedTasks.getSelectionModel().getSelectedItem();
@@ -294,26 +289,28 @@ public class FXMLDocumentController implements Initializable {
 
     public void updateSelectedTask() {
         Task selectedTask;
-        try{
-            selectedTask = TaskCellController.getSelected().getTask();
-        }catch(Exception e){
-            selectedTask = null;
-        }
 
-        for(Task task : taskList){
-            if (task.getCompleted()){
-                if (selectedTask != null)
-                {
-                    if (selectedTask.equals(task))
-                        completedTasks.getSelectionModel().select(selectedTask);
-                }
-            } else {
-                if (selectedTask != null)
-                {
-                    if (selectedTask.equals(task))
-                        uncompletedTasks.getSelectionModel().select(selectedTask);
+        try{
+            selectedTask = TaskCellController.getSelected().getTask(); // Get the currently selected task.
+
+            if (selectedTask != null) { // It might be null (like at the start of the program).
+                for(Task task : taskList){ // Go through all the
+                    if (task.getCompleted()){
+                        if (selectedTask != null)
+                        {
+                            if (selectedTask.equals(task))
+                                completedTasks.getSelectionModel().select(selectedTask);
+                        }
+                    } else {
+                        if (selectedTask != null)
+                        {
+                            if (selectedTask.equals(task))
+                                uncompletedTasks.getSelectionModel().select(selectedTask);
+                        }
+                    }
                 }
             }
+        }catch(Exception e){
         }
     }
 }

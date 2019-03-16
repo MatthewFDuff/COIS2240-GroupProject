@@ -60,7 +60,7 @@ public class TaskCellController extends ListCell<Task> {
             System.out.println("cell clicked");
             selected = this;
             getFXMLController().loadTasks();
-            getFXMLController().updateSelectedTask();
+            //getFXMLController().updateSelectedTask();
         });
     }
 
@@ -84,18 +84,21 @@ public class TaskCellController extends ListCell<Task> {
     @Override
     protected void updateItem(Task item, boolean empty){
         super.updateItem(item, empty);
-        task = item;
+
+        btnDelete.setMinSize(30,30);
+        btnEdit.setMinSize(30,30);
 
         if (empty || item == null) {
             setText(null);
             setGraphic(null);
         } else {
-            String taskColour = item.getColor().toString().substring(2,8); // Substring makes 0xff66cc33 = ff66cc
-            lblTaskName.setText(item.getName());
-            cell.setStyle("-fx-background-color: #" + taskColour);
-            cbComplete.setSelected(item.getCompleted());
+            task = item;
+            String taskColour = item.getColor().toString().substring(2,8); // Substring makes "0xff66cc33" into this "ff66cc"
+            lblTaskName.setText(item.getName());                    // Set the cell's name to the name of the task.
+            cell.setStyle("-fx-background-color: #" + taskColour);  // Set the cell colour to the task colour.
+            cbComplete.setSelected(item.getCompleted());            // Set the cell's checkbox to be toggled on or off if the task is completed.
 
-            if (selected == this)
+            if (this == selected)
                 setCellSelected(true);
             else
                 setCellSelected(false);

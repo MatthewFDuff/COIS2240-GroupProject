@@ -16,7 +16,7 @@ CSS/JavaFX Reference:
 }
 
 .root {
-    -fx-background-color: default-primary-color;
+    -fx-background-color: #292929;
     -fx-text-fill: secondary-text-color;
 }
 
@@ -86,3 +86,6 @@ CSS/JavaFX Reference:
     -fx-background-color: transparent;
 }
 
+#newTaskPane {
+    -fx-background-color: default-primary-color;
+}

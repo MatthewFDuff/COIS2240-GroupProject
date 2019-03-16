@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.image.ImageView?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListCell?>
 <?import javafx.scene.image.Image?>
-<fx:root type="javafx.scene.control.ListCell" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<fx:root type="javafx.scene.control.ListCell" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <graphic>
-        <HBox fx:id="cell" spacing="10" maxWidth="350">
+        <HBox fx:id="cell" minHeight="60" minWidth="300" spacing="10">
             <children>
-                <JFXCheckBox fx:id="cbComplete"/>
-                <Label fx:id="lblTaskName" prefWidth="220" wrapText="true"/>
-                <JFXButton fx:id="btnEdit" maxWidth="40" prefHeight="40.0">
+                <JFXCheckBox fx:id="cbComplete" HBox.hgrow="NEVER" />
+                <Label fx:id="lblTaskName" wrapText="true" HBox.hgrow="ALWAYS" />
+                <JFXButton fx:id="btnEdit" maxWidth="40" minHeight="40" prefHeight="40.0" HBox.hgrow="NEVER">
                     <graphic>
                         <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                             <image>
@@ -25,7 +23,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnDelete" maxWidth="40" prefHeight="40.0" style="-fx-background-fill: #FF5252;">
+                <JFXButton fx:id="btnDelete" maxWidth="40" minHeight="40" prefHeight="40.0" style="-fx-background-fill: #FF5252;" HBox.hgrow="NEVER">
                     <graphic>
                         <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                             <image>
