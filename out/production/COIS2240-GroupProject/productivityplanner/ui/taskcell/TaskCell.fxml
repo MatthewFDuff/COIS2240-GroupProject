@@ -12,9 +12,9 @@
     <graphic>
         <HBox fx:id="cell" minHeight="60" minWidth="300" spacing="10">
             <children>
-                <JFXCheckBox fx:id="cbComplete" HBox.hgrow="NEVER" />
-                <Label fx:id="lblTaskName" wrapText="true" HBox.hgrow="ALWAYS" />
-                <JFXButton fx:id="btnEdit" maxWidth="40" minHeight="40" prefHeight="40.0" HBox.hgrow="NEVER">
+                <JFXCheckBox fx:id="cbComplete" minHeight="20.0" minWidth="20.0" HBox.hgrow="NEVER" />
+                <Label fx:id="lblTaskName" prefWidth="300.0" wrapText="true" HBox.hgrow="ALWAYS" />
+                <JFXButton fx:id="btnEdit" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" HBox.hgrow="NEVER">
                     <graphic>
                         <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                             <image>
@@ -23,7 +23,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnDelete" maxWidth="40" minHeight="40" prefHeight="40.0" style="-fx-background-fill: #FF5252;" HBox.hgrow="NEVER">
+                <JFXButton fx:id="btnDelete" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" style="-fx-background-fill: #FF5252;" HBox.hgrow="NEVER">
                     <graphic>
                         <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                             <image>

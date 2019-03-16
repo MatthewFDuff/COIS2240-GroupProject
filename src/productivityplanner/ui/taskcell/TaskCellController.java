@@ -54,14 +54,8 @@ public class TaskCellController extends ListCell<Task> {
         databaseHandler = DatabaseHandler.getInstance();
 
         btnDelete.setOnAction(e -> databaseHandler.deleteTask(this.task));
-        btnEdit.setOnAction((e -> getFXMLController().loadEditTask(new ActionEvent())));
+        btnEdit.setOnAction((e -> getFXMLController().loadEditTask(this.task)));
         cbComplete.setOnAction(e -> databaseHandler.toggleComplete(this.task));
-        cell.setOnMouseClicked(e ->{
-            System.out.println("cell clicked");
-            selected = this;
-            getFXMLController().loadTasks();
-            //getFXMLController().updateSelectedTask();
-        });
     }
 
     private void setCellSelected(boolean bool) {
@@ -98,10 +92,7 @@ public class TaskCellController extends ListCell<Task> {
             cell.setStyle("-fx-background-color: #" + taskColour);  // Set the cell colour to the task colour.
             cbComplete.setSelected(item.getCompleted());            // Set the cell's checkbox to be toggled on or off if the task is completed.
 
-            if (this == selected)
-                setCellSelected(true);
-            else
-                setCellSelected(false);
+            setCellSelected(true);
 
             setGraphic(cell);
         }

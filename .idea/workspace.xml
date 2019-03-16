@@ -14,20 +14,14 @@
       <change beforePath="$PROJECT_DIR$/database/calendar/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/logmirror.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c490.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c4a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/seg0/c4b0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Calendar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Calendar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocument.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/style/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/style/test.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCell.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCellController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCellController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/style/tab-pane.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/style/tab-pane.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/style/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/style/test.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" afterDir="false" />
     </list>
@@ -86,11 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1672">
-              <caret line="145" column="18" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
+            <state relative-caret-position="528">
+              <caret line="238" column="12" lean-forward="true" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="100" column="33" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+            <state relative-caret-position="289">
+              <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1011#1012#0" expanded="true" />
@@ -115,10 +109,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/style/tab-pane.css">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="204">
+              <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -126,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+            <state relative-caret-position="698">
+              <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -210,8 +215,8 @@
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/style/tab-pane.css" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" />
       </list>
     </option>
   </component>
@@ -515,7 +520,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java</url>
-          <line>180</line>
+          <line>181</line>
           <properties class="productivityplanner.ui.main.FXMLDocumentController" method="loadWindow">
             <option name="EMULATED" value="true" />
           </properties>
@@ -782,28 +787,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="155" column="35" selection-start-line="155" selection-start-column="35" selection-end-line="155" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -834,14 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -869,8 +848,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+        <state relative-caret-position="698">
+          <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -884,26 +863,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1672">
-          <caret line="145" column="18" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
+        <state relative-caret-position="204">
+          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="100" column="33" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+        <state relative-caret-position="289">
+          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1011#1012#0" expanded="true" />
             <element signature="e#1042#1043#0" expanded="true" />
             <element signature="e#1071#1072#0" expanded="true" />
             <element signature="e#1098#1099#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="238" column="12" lean-forward="true" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

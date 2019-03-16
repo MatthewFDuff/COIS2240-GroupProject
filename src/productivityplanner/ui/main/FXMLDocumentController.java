@@ -125,7 +125,8 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @FXML
-    public void loadEditTask(ActionEvent actionEvent) {
+    public void loadEditTask(Task task) {
+        updateSelectedTask(task);
         loadWindow("/productivityplanner/ui/edittask/edittask.fxml", "Edit Task");
     }
 
@@ -287,30 +288,21 @@ public class FXMLDocumentController implements Initializable {
         loadWindow("/productivityplanner/ui/tasklist/tasklist.fxml", "Task List");
     }
 
-    public void updateSelectedTask() {
-        Task selectedTask;
-
-        try{
-            selectedTask = TaskCellController.getSelected().getTask(); // Get the currently selected task.
-
-            if (selectedTask != null) { // It might be null (like at the start of the program).
-                for(Task task : taskList){ // Go through all the
-                    if (task.getCompleted()){
-                        if (selectedTask != null)
-                        {
-                            if (selectedTask.equals(task))
-                                completedTasks.getSelectionModel().select(selectedTask);
-                        }
-                    } else {
-                        if (selectedTask != null)
-                        {
-                            if (selectedTask.equals(task))
-                                uncompletedTasks.getSelectionModel().select(selectedTask);
-                        }
-                    }
+    public void updateSelectedTask(Task task) {
+        for(Task currentTask : taskList){ // Go through all the
+            if (task.getCompleted()){
+                if (currentTask != null)
+                {
+                    if (currentTask.equals(task))
+                        completedTasks.getSelectionModel().select(currentTask);
+                }
+            } else {
+                if (currentTask != null)
+                {
+                    if (currentTask.equals(task))
+                        uncompletedTasks.getSelectionModel().select(currentTask);
                 }
             }
-        }catch(Exception e){
         }
     }
 }
