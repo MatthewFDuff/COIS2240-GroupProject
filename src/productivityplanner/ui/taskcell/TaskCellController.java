@@ -53,7 +53,9 @@ public class TaskCellController extends ListCell<Task> {
         loadFXML();
         databaseHandler = DatabaseHandler.getInstance();
 
-        btnDelete.setOnAction(e -> databaseHandler.deleteTask(this.task));
+        //TODO: edit task delete
+        //btnDelete.setOnAction(e -> databaseHandler.deleteTask(this.task));
+        btnDelete.setOnAction(e -> getFXMLController().loadDeleteTask(this.task));
         btnEdit.setOnAction((e -> getFXMLController().loadEditTask(this.task)));
         cbComplete.setOnAction(e -> databaseHandler.toggleComplete(this.task));
     }

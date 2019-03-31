@@ -118,8 +118,8 @@ public class Calendar {
 
         // Set alignment of each
         previousPane.setAlignment(Pos.CENTER_RIGHT);
-        nextPane.setAlignment(Pos.CENTER);
-        titlePane.setAlignment(Pos.CENTER_LEFT);
+        nextPane.setAlignment(Pos.CENTER_LEFT);
+        titlePane.setAlignment(Pos.CENTER);
 
         HBox titleBar = new HBox(previousPane, titlePane, nextPane);
         //titleBar.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
@@ -133,6 +133,10 @@ public class Calendar {
         // Create the calendar view (which is added to the calendarPane AnchorPane which you can see in Scenebuilder).
         view = new VBox(titleBar, weekdayLabelBox, calendar);
         view.setMinSize(700, 600);
+
+        //set the titlePane's minimum width so that the the month arrows don't move
+        titlePane.setMinSize((view.getMinWidth()/1.8),titleBar.getMinHeight());
+
     }
 
     public static Day FindDay(LocalDate newDay)
