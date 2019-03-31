@@ -178,7 +178,7 @@ public class FXMLDocumentController implements Initializable {
         return null;
     }
 
-    // Loads a new window (such as for adding a new task).
+    // Loads a new window (such as for then window for adding a new task).
     public static Object loadWindow(URL path, String title, Stage parentStage) {
         Object controller = null;
         try{
@@ -200,7 +200,7 @@ public class FXMLDocumentController implements Initializable {
         return controller;
     }
 
-    // Save the journal entry to the database. (Requires a rewrite, because only one entry is allowed per day)
+    // Save the journal entry to the database. (Requires an update/rewrite, because only one entry is allowed per day)
     public void saveJournal(ActionEvent actionEvent) {
         // Get journal text from the form.
         String journalText = txtJournal.getText();
@@ -212,10 +212,11 @@ public class FXMLDocumentController implements Initializable {
         // Check if the database has a journal entry yet.
         if (loadJournal(Calendar.selectedDay.getDate())){
             databaseHandler.updateJournalEntry(journalText);
-        }else {
+        } else {
             addNewJournalEntry(journalText);
         }
     }
+
 
     private boolean addNewJournalEntry(String text) {
         try {
