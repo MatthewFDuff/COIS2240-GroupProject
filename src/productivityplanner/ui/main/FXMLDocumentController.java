@@ -12,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -46,7 +45,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private JFXButton btnAddTask;
     @FXML
-    private JFXListView<Task> tasks;
+    private JFXListView<Task> uncompletedTasks;
+    @FXML
+    private JFXListView<Task> completedTasks;
     @FXML
     private Tab tabCompletedTasks;
     @FXML
@@ -65,17 +66,10 @@ public class FXMLDocumentController implements Initializable {
     private TextArea txtJournal;
     @FXML
     private JFXButton btnRefreshTaskList;
-    @FXML
-    private JFXButton btnToggleCompleted;
-    @FXML
-    private JFXButton btnToggleUncompleted;
 
     ObservableList<Task> taskList = FXCollections.observableArrayList();
     ObservableList<JournalEntry> entryList = FXCollections.observableArrayList();
     DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
-
-    static public Boolean toggleComplete = true;
-    static public Boolean toggleUncomplete = true;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -88,7 +82,8 @@ public class FXMLDocumentController implements Initializable {
         updateJournalTitle(); // Update the journal view
 
         loadTasks(); // Update the task lists.
-        tasks.setCellFactory(completedListView -> new TaskCellController());
+        completedTasks.setCellFactory(completedListView -> new TaskCellController());
+        uncompletedTasks.setCellFactory(uncompletedTaskView -> new TaskCellController());
     }
 
     @FXML
@@ -138,7 +133,8 @@ public class FXMLDocumentController implements Initializable {
     public void loadTasks() {
         LocalDate dateToLoad = Calendar.selectedDay.getDate();
         taskList.clear();
-        tasks.getItems().clear();
+        completedTasks.getItems().clear();
+        uncompletedTasks.getItems().clear();
 
         String query = "SELECT * FROM TASK WHERE date=\'" + dateToLoad + "\'";
         ResultSet results = databaseHandler.executeQuery(query);
@@ -156,22 +152,30 @@ public class FXMLDocumentController implements Initializable {
             e.printStackTrace();
         }
         for(Task task : taskList){
-            if (task.getCompleted())
-            {
-                if (toggleComplete)
-                    tasks.getItems().add(task);
-            }
-            else
-            {
-                if (toggleUncomplete)
-                    tasks.getItems().add(task);
+            if (task.getCompleted()){
+                completedTasks.getItems().add(task);
+            } else {
+                uncompletedTasks.getItems().add(task);
             }
         }
     }
 
     // Get the selected task from the uncomplete or completed listview.
     public Task getSelectedTask(){
-        return tasks.getSelectionModel().getSelectedItem();
+        // Check which tab is open.. Completed or Uncomplete tasks
+        String selectedTab = tabsTasks.getSelectionModel().getSelectedItem().getId();
+
+        if (selectedTab.equals("tabCompletedTasks")) // Complete
+        {
+            System.out.println("Complete Tab Selected");
+            return completedTasks.getSelectionModel().getSelectedItem();
+        }
+        else if (selectedTab.equals("tabUncompletedTasks")) // Uncompleted
+        {
+            System.out.println("UnComplete TabSelected");
+            return uncompletedTasks.getSelectionModel().getSelectedItem();
+        }
+        return null;
     }
 
     // Loads a new window (such as for then window for adding a new task).
@@ -283,50 +287,20 @@ public class FXMLDocumentController implements Initializable {
 
     // Finds the task cell that's provided and selects in in the appropriate list view.
     public void updateSelectedTask(Task task) {
-        for(Task currentTask : taskList){ // Go through all the tasks
-            if (currentTask != null)
-            {
-                if (currentTask.equals(task))
-                    tasks.getSelectionModel().select(currentTask);
+        for(Task currentTask : taskList){ // Go through all the
+            if (task.getCompleted()){
+                if (currentTask != null)
+                {
+                    if (currentTask.equals(task))
+                        completedTasks.getSelectionModel().select(currentTask);
+                }
+            } else {
+                if (currentTask != null)
+                {
+                    if (currentTask.equals(task))
+                        uncompletedTasks.getSelectionModel().select(currentTask);
+                }
             }
         }
-    }
-
-    public void toggleCompleted(ActionEvent actionEvent) {
-        if (toggleComplete) {
-            toggleComplete = false;
-            ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
-            image.setFitHeight(30);
-            image.setFitWidth(30);
-            btnToggleCompleted.setGraphic(image);
-        }
-        else
-        {
-            toggleComplete = true;
-            ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
-            image.setFitHeight(30);
-            image.setFitWidth(30);
-            btnToggleCompleted.setGraphic(image);
-        }
-        refreshTaskList(null);
-    }
-//TODO: Change the imageviews to be created ONCE and then ACCESSED, rather than created each time the button is pressed.
-    public void toggleUncompleted(ActionEvent actionEvent) {
-        if (toggleUncomplete) {
-            toggleUncomplete = false;
-            ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
-            image.setFitHeight(30);
-            image.setFitWidth(30);
-            btnToggleUncompleted.setGraphic(image);
-        }
-        else
-        {
-            toggleUncomplete = true;
-            ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
-            image.setFitHeight(30);
-            image.setFitWidth(30);
-            btnToggleUncompleted.setGraphic(image);
-        }
-        refreshTaskList(null);
     }
 }

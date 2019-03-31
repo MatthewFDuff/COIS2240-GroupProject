@@ -15,7 +15,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
-import productivityplanner.ui.main.FXMLDocumentController;
 
 import java.awt.*;
 import java.io.IOException;
@@ -87,13 +86,11 @@ public class TaskCellController extends ListCell<Task> {
             setText(null);
             setGraphic(null);
         } else {
-
             task = item;
             String taskColour = item.getColor().toString().substring(2,8); // Substring makes "0xff66cc33" into this "ff66cc"
             lblTaskName.setText(item.getName());                    // Set the cell's name to the name of the task.
             cell.setStyle("-fx-background-color: #" + taskColour);  // Set the cell colour to the task colour.
-            Boolean completed = item.getCompleted();
-            cbComplete.setSelected(completed);            // Set the cell's checkbox to be toggled on or off if the task is completed.
+            cbComplete.setSelected(item.getCompleted());            // Set the cell's checkbox to be toggled on or off if the task is completed.
 
             setCellSelected(true);
 
