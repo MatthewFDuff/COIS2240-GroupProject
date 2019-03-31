@@ -130,6 +130,13 @@ public class FXMLDocumentController implements Initializable {
         loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
     }
 
+    //TODO: create delete window method
+    @FXML
+    public void loadDeleteTask(Task task){
+        updateSelectedTask(task);
+        loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
+    }
+
     public void loadTasks() {
         LocalDate dateToLoad = Calendar.selectedDay.getDate();
         taskList.clear();

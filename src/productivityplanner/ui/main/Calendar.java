@@ -118,8 +118,8 @@ public class Calendar {
 
         // Set alignment of each
         previousPane.setAlignment(Pos.CENTER_RIGHT);
-        nextPane.setAlignment(Pos.CENTER);
-        titlePane.setAlignment(Pos.CENTER_LEFT);
+        nextPane.setAlignment(Pos.CENTER_LEFT);
+        titlePane.setAlignment(Pos.CENTER);
 
         HBox titleBar = new HBox(previousPane, titlePane, nextPane);
         //titleBar.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
