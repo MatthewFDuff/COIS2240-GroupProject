@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Java/Libraries/charm-glisten-4.4.1.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Libraries/jfoenix-8.0.8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Java/Libraries/jfoenix-8.0.8.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Libraries/derby.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,16 +28,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://D:/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derbyclient.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://D:/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Libraries/derbyclient.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

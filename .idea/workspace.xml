@@ -7,52 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/calendar/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/COIS2240_GroupProject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/COIS2240_GroupProject.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/COIS2240_GroupProject.jnlp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/COIS2240_GroupProject.jnlp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/COIS2240_GroupProject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/COIS2240_GroupProject.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/log1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/log/logmirror.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c10.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c101.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c111.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c121.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c130.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c141.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c150.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c150.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c161.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c161.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c171.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c171.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c180.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c180.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c1a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c1a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c1b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c1b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c20.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c230.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c230.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c241.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c241.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c31.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c380.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c380.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c391.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c391.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c3a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c3a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c3b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c3b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c41.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c490.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c4b0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c51.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c60.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c71.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c81.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/c90.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/ca1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/cb1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/seg0/cf0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/database/calendar/service.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240-GroupProject/app/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240_GroupProject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240_GroupProject.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240_GroupProject.jnlp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/COIS2240_GroupProject/bundles/COIS2240_GroupProject.jnlp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COIS2240-GroupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COIS2240-GroupProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/META-INF/COIS2240-GroupProject.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/data/JournalEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/data/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/database/DatabaseHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/addtask/AddNewTaskController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/addtask/AddNewTaskLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/edittask/EditTaskController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/edittask/EditTaskLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Calendar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Day.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/FXMLDocumentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCellController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/taskcell/TaskCellFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/tasklist/TaskListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/tasklist/TaskListLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/utility/Utility.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -113,13 +87,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="129" column="43" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
+            <state relative-caret-position="34">
+              <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
-                <element signature="e#9687#9688#0" expanded="true" />
-                <element signature="e#9714#9715#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="1054">
               <caret line="85" column="42" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -140,7 +111,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="153">
               <caret line="14" column="36" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -152,7 +123,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="561">
               <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -179,7 +150,7 @@
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="255">
               <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
             </state>
           </provider>
@@ -188,7 +159,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
+            <state relative-caret-position="935">
               <caret line="64" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -293,8 +264,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -330,14 +299,12 @@
               <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="COIS2240-GroupProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,8 +322,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552775829112" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="D:/Downloads/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar!/" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Libraries/derbyclient.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -501,10 +468,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17430703" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17700455" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -525,7 +492,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -561,50 +528,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="164" column="37" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="37" />
-          <folding>
-            <element signature="e#6390#6391#0" expanded="true" />
-            <element signature="e#6438#6439#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/event/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Date.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/event/EventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/paint/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="106" column="19" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ColorPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/layout/Border.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="226" column="11" selection-start-line="226" selection-start-column="11" selection-end-line="226" selection-end-column="11" />
-          <folding>
-            <element signature="e#10000#10001#0" expanded="true" />
-            <element signature="e#10035#10036#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/paint/Color.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ColorPicker.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/layout/Border.java" />
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/utility/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -641,20 +570,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/IndexedCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ListCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1609">
-          <caret line="329" selection-start-line="329" selection-end-line="329" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/IndexedCell.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ListCell.java" />
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTaskLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -682,81 +599,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/MultipleSelectionModelBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
-          <folding>
-            <element signature="e#5965#5966#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
-          <folding>
-            <element signature="e#66921#66922#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/TabPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="180" column="64" selection-start-line="180" selection-start-column="64" selection-end-line="180" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/IntegerPropertyBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="132" selection-start-line="132" selection-end-line="132" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ReadOnlyIntegerWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="e#2665#2666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="131" selection-start-line="131" selection-end-line="131" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ReadOnlyObjectWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="e#2653#2654#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/SelectionModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="119" column="38" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="458" selection-start-line="458" selection-end-line="458" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/MultipleSelectionModelBase.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/TabPane.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/IntegerPropertyBase.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ReadOnlyIntegerWrapper.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/beans/property/ReadOnlyObjectWrapper.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/SelectionModel.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/control/ListView.java" />
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/edittask/EditTaskController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="586">
@@ -840,50 +691,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1042#1043#0" expanded="true" />
-            <element signature="e#1071#1072#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -898,9 +709,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <folding>
+            <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="1054">
           <caret line="85" column="42" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -910,7 +731,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/addtask/AddNewTaskLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="153">
           <caret line="14" column="36" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -918,15 +739,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="129" column="43" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
+        <state relative-caret-position="561">
+          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
-            <element signature="e#9687#9688#0" expanded="true" />
-            <element signature="e#9714#9715#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -938,8 +786,8 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="artifact" />
               <type id="library" />
+              <type id="artifact" />
             </show-content>
           </artifact-editor>
           <last-edited>COIS2240-GroupProject</last-edited>
@@ -978,7 +826,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8 201</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
