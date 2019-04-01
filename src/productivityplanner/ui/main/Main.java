@@ -57,8 +57,8 @@ public class Main extends Application {
             scene.getStylesheets().add("productivityplanner/ui/style/calendar.css");
             scene.getStylesheets().add("productivityplanner/ui/style/test.css");
 
-            primaryStage.setMinWidth(1280);
-            primaryStage.setMinHeight(800);
+            primaryStage.setMinWidth(1175);
+            primaryStage.setMinHeight(725);
             primaryStage.setScene(scene);
             primaryStage.show();
             Utility.setProgramIcon(primaryStage);

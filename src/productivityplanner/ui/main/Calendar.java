@@ -1,5 +1,6 @@
 package productivityplanner.ui.main;
 
+import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -8,6 +9,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import productivityplanner.data.Task;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -29,8 +31,8 @@ public class Calendar {
         int CALENDAR_HEIGHT = 720;
         int DAY_WIDTH = CALENDAR_WIDTH / 7;     // 910/7 = 130
         int DAY_HEIGHT = CALENDAR_HEIGHT / 6;    // 720/6 = 120
-        int MIN_DAY_HEIGHT = 100;
-        int MIN_DAY_WIDTH = 100;
+        int MIN_DAY_HEIGHT = 75;
+        int MIN_DAY_WIDTH = 50;
 
         currentYearMonth = yearMonth; // Get the current year and month.
         currentDate = LocalDate.now();
@@ -38,7 +40,7 @@ public class Calendar {
 
         // Create a new grid for the calendar.
         GridPane calendar = new GridPane();
-        calendar.setMinSize(700, 600);
+        calendar.setMinSize(350, 550);
         calendar.setPrefSize(CALENDAR_WIDTH, CALENDAR_HEIGHT);
         calendar.getStyleClass().add("calendar-grid");
         calendar.setGridLinesVisible(true);
@@ -61,14 +63,10 @@ public class Calendar {
             }
         }
 
-        // Create labels for each day of the week.
-        GridPane weekdayLabels = new GridPane();
-        weekdayLabels.setMinSize(MIN_DAY_WIDTH, 20);
-        weekdayLabels.setPrefWidth(CALENDAR_WIDTH);
-        weekdayLabels.setAlignment(Pos.CENTER);
-        weekdayLabels.setGridLinesVisible(true);
+        calendar.setMinWidth(350);
 
-        HBox weekdayLabelBox = new HBox(DAY_WIDTH); // This is the container which holds 7 more hbox panes. One for each weekday label.
+        // Create labels for each day of the week.
+        HBox weekdayLabelBox = new HBox(DAY_WIDTH); // This is the container which holds 7 more HBoxes. One for each weekday label.
         weekdayLabelBox.setMinSize(MIN_DAY_WIDTH, 30);
         weekdayLabelBox.setId("weekdayLabelBox");
         weekdayLabelBox.setSpacing(0); // Must be 0, the default value causes issues
@@ -81,7 +79,7 @@ public class Calendar {
 
             HBox pane = new HBox(); // Use HBox here to have the labels easily centered (Panes/AnchorPanes do not have alignment properties)
             pane.setAlignment(Pos.CENTER);
-            pane.getStyleClass().add("weekday-pane");   //TODO: Separate weekday colours and weekend colours
+            pane.getStyleClass().add("weekday-pane");
             pane.setMinSize(MIN_DAY_WIDTH, 30);
             pane.setPrefSize(DAY_WIDTH, 30);
             pane.getChildren().add(text);               // Add the text to the day box
@@ -134,9 +132,8 @@ public class Calendar {
         view = new VBox(titleBar, weekdayLabelBox, calendar);
         view.setMinSize(700, 600);
 
-        //set the titlePane's minimum width so that the the month arrows don't move
-        titlePane.setMinSize((view.getMinWidth()/1.8),titleBar.getMinHeight());
-
+        // Set the titlePane's minimum width so that the the month arrows don't move
+        titlePane.setMinSize((view.getMinWidth()/1.8), titleBar.getMinHeight());
     }
 
     public static Day FindDay(LocalDate newDay)
@@ -152,35 +149,46 @@ public class Calendar {
         return null;
     }
 
+    public static void updateDayInfo() {
+            if (!FXMLDocumentController.taskList.isEmpty()) {
+                int completedTaskCount = 0;
+                int uncompletedTaskCount = 0;
+                for (Task task : FXMLDocumentController.taskList) {
+                    if (task.getCompleted()) {
+                        completedTaskCount++;
+                    } else
+                        uncompletedTaskCount++;
+                }
+                Text taskInfo = new Text("Tasks: " + FXMLDocumentController.taskList.size() + "\nCompleted: " + completedTaskCount + "\nUncompleted: " + uncompletedTaskCount);
+                //currentDay.getChildren().add(taskInfo);
+            }
+    }
+
     // Sets up each day that is currently visible, including setting their dates.
     public void updateCalendar(YearMonth yearMonth) {
         // Get the date we want to start with on the calendar
         LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
 
-        // Dial back the day until it is SUNDAY (unless the month starts on a sunday)
+        // Go back one day at a time until it is SUNDAY (unless the month starts on a sunday)
         while (!calendarDate.getDayOfWeek().toString().equals("SUNDAY") ) {
             calendarDate = calendarDate.minusDays(1);
         }
 
-        // Populate the days on the calendar with numbers
+        // Populate the days on the calendar with numbers and information (task and journal data)
         for (Day currentDay : calendarDays) {
             // TODO: Tag days which aren't in the currently selected month so they can be greyed out.
-
-            if (currentDay.getChildren().size() != 0) {
-                currentDay.getChildren().remove(0);
-            }
+            currentDay.getChildren().clear();
 
             // Individual day's number
             Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
             currentDay.setDate(calendarDate);
-            currentDay.setTopAnchor(txt, 5.0);
-            currentDay.setLeftAnchor(txt, 5.0);
             currentDay.getChildren().add(txt);
+
             calendarDate = calendarDate.plusDays(1); // Iterate to next day (Equivalent to: "days++;")
         }
 
         // Change the title of the calendar
-        calendarTitle.setText(yearMonth.getMonth().toString() + " " + String.valueOf(yearMonth.getYear()));
+        calendarTitle.setText(yearMonth.getMonth().toString() + " " + (yearMonth.getYear()));
     }
 
     // Switch the calendar to the previous month and update the calendar.
@@ -197,7 +205,6 @@ public class Calendar {
         getFXMLController().updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
     }
 
-    //
     public VBox getView() {
         return view;
     }

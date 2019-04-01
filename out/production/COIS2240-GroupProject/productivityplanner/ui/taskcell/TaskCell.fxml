@@ -7,14 +7,16 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 
 <fx:root type="javafx.scene.control.ListCell" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <graphic>
         <HBox fx:id="cell" minHeight="60" minWidth="300" spacing="10">
             <children>
                 <JFXCheckBox fx:id="cbComplete" minHeight="20.0" minWidth="20.0" HBox.hgrow="NEVER" />
-                <Label fx:id="lblTaskName" prefWidth="300.0" wrapText="true" HBox.hgrow="ALWAYS" />
-                <JFXButton fx:id="btnEdit" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" HBox.hgrow="NEVER">
+                <Label fx:id="lblTaskName" minWidth="-Infinity" wrapText="true" HBox.hgrow="ALWAYS" />
+            <Pane fx:id="divider" HBox.hgrow="ALWAYS" />
+                <JFXButton fx:id="btnEdit" maxHeight="40.0" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" prefWidth="40.0" HBox.hgrow="NEVER">
                     <graphic>
                         <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                             <image>
@@ -23,7 +25,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnDelete" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" style="-fx-background-fill: #FF5252;" HBox.hgrow="NEVER">
+                <JFXButton fx:id="btnDelete" maxHeight="40.0" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-fill: #FF5252;" HBox.hgrow="NEVER">
                     <graphic>
                         <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                             <image>

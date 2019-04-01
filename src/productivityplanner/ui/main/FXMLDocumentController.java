@@ -61,13 +61,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label lblUserAction;
     @FXML
-    private Label lblProgramAction;
-    @FXML
     private TextArea txtJournal;
     @FXML
     private JFXButton btnRefreshTaskList;
 
-    ObservableList<Task> taskList = FXCollections.observableArrayList();
+    public static ObservableList<Task> taskList = FXCollections.observableArrayList();
     ObservableList<JournalEntry> entryList = FXCollections.observableArrayList();
     DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
 
@@ -158,13 +156,17 @@ public class FXMLDocumentController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        for(Task task : taskList){
+        for(Task task: taskList){
             if (task.getCompleted()){
                 completedTasks.getItems().add(task);
             } else {
                 uncompletedTasks.getItems().add(task);
             }
         }
+    }
+
+    public static ObservableList<Task> getTaskList(){
+        return null;
     }
 
     // Get the selected task from the uncomplete or completed listview.
@@ -241,7 +243,6 @@ public class FXMLDocumentController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Unable to add new entry.");
             alert.showAndWait();
-            lblProgramAction.setText("Unable to add new entry.");
         }
         return false;
     }
@@ -277,7 +278,6 @@ public class FXMLDocumentController implements Initializable {
         } else{
             txtJournal.clear();
         }
-        lblProgramAction.setText("Journal Updated");
     }
 
     @FXML

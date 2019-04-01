@@ -23,24 +23,18 @@ import static productivityplanner.ui.main.Main.getFXMLController;
 
 // References:  https://stackoverflow.com/questions/47511132/javafx-custom-listview
 //              https://www.turais.de/how-to-custom-listview-cell-in-javafx/
-
 public class TaskCellController extends ListCell<Task> {
-    private static TaskCellController selected;
-
-    public static TaskCellController getSelected() {
-        return selected;
-    }
 
     public Task getTask() {
         return task;
     }
 
     @FXML
+    HBox cell;
+    @FXML
     Label lblTaskName;
     @FXML
     CheckBox cbComplete;
-    @FXML
-    HBox cell;
     @FXML
     JFXButton btnDelete;
     @FXML
@@ -90,6 +84,7 @@ public class TaskCellController extends ListCell<Task> {
         } else {
             task = item;
             String taskColour = item.getColor().toString().substring(2,8); // Substring makes "0xff66cc33" into this "ff66cc"
+            lblTaskName.setMinWidth(cell.getMaxWidth());
             lblTaskName.setText(item.getName());                    // Set the cell's name to the name of the task.
             cell.setStyle("-fx-background-color: #" + taskColour);  // Set the cell colour to the task colour.
             cbComplete.setSelected(item.getCompleted());            // Set the cell's checkbox to be toggled on or off if the task is completed.
