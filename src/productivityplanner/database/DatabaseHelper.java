@@ -100,6 +100,32 @@ public class DatabaseHelper {
         return false;
     }
 
+    public static boolean toggleComplete(Task task) {
+        Boolean complete = task.getCompleted();
+
+        // TOGGLE COMPLETE
+        if (complete)
+            complete = false;
+        else
+            complete = true;
+        try{
+            String query = "UPDATE TASK SET ISCOMPLETE = ? WHERE (NAME = ? AND COLOUR = ? AND DATE = ?)";
+            PreparedStatement statement = DatabaseHandler.getConnection().prepareStatement(query);
+            statement.setString(1, complete.toString());
+            statement.setString(2, task.getName());
+            statement.setString(3, task.getColor().toString());
+            statement.setString(4, Calendar.selectedDay.getDate().toString());
+            int result = statement.executeUpdate();
+            if (result > 0){
+                getFXMLController().loadTasks();
+            }
+            return (result > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     public static boolean insertJournalEntry(JournalEntry entry){
         try {
             String action = "INSERT INTO JOURNAL VALUES (?, ?)";

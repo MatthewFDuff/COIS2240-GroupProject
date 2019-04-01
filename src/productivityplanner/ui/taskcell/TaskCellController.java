@@ -1,22 +1,16 @@
 package productivityplanner.ui.taskcell;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
+import productivityplanner.database.DatabaseHelper;
 
-import java.awt.*;
 import java.io.IOException;
 
 import static productivityplanner.ui.main.Main.getFXMLController;
@@ -41,17 +35,13 @@ public class TaskCellController extends ListCell<Task> {
     JFXButton btnEdit;
 
     Task task;
-    DatabaseHandler databaseHandler;
 
     public TaskCellController() {
         loadFXML();
-        databaseHandler = DatabaseHandler.getInstance();
 
-        //TODO: edit task delete
-        //btnDelete.setOnAction(e -> databaseHandler.deleteTask(this.task));
         btnDelete.setOnAction(e -> getFXMLController().loadDeleteTask(this.task));
         btnEdit.setOnAction((e -> getFXMLController().loadEditTask(this.task)));
-        cbComplete.setOnAction(e -> databaseHandler.toggleComplete(this.task));
+        cbComplete.setOnAction(e-> DatabaseHelper.toggleComplete(this.task));
     }
 
     private void setCellSelected(boolean bool) {

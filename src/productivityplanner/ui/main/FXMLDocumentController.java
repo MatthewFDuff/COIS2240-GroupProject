@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -23,9 +24,6 @@ import productivityplanner.ui.taskcell.TaskCellController;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ResourceBundle;
 
@@ -44,16 +42,21 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextArea txtJournal;
 
-    public static ObservableList<Task> taskList = FXCollections.observableArrayList();
+    public ObservableList<Task> taskList = FXCollections.observableArrayList();
     ObservableList<JournalEntry> entryList = FXCollections.observableArrayList();
 
-    DatabaseHandler databaseHandler = DatabaseHandler.getInstance(); // DO NOT REMOVE (This instantiates the database handler on startup and is required)
+    DatabaseHandler databaseHandler = DatabaseHandler.getInstance(); // DO NOT REMOVE (This instantiates the database handler on startup and is required, regardless of if we use it in this class or not)
+
+    Calendar calendar;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         YearMonth date = YearMonth.now();
 
-        calendarPane.getChildren().add(new Calendar(date).getView());   // Generate the calendar GUI.
+        this.calendar = new Calendar(date);
+        Node calendarView = calendar.getView();
+        calendarPane.getChildren().add(calendarView);   // Generate the calendar GUI.
+
         updateSelectedDate(Calendar.selectedDay);                       // Highlight the current date.
         updateJournalTitle();                                           // Update the journal view.
         loadTasks();                                                    // Update the task lists.
@@ -81,11 +84,11 @@ public class FXMLDocumentController implements Initializable {
         {
             // HIGHLIGHT/BORDER:
             // Clear the border from the current selected date.
-            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.NONE, CornerRadii.EMPTY, new BorderWidths(2))));
+            //Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.NONE, CornerRadii.EMPTY, new BorderWidths(2))));
             // Change the currently selected day to the one that's just been clicked on.
             Calendar.selectedDay = currentSelectedDay;
             // Add a border to the new selected date.
-            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("#292929"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(4))));
+            //Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("#292929"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(4))));
             // UPDATE JOURNAL:
             DatabaseHelper.loadJournal(entryList);
             updateJournal();
@@ -130,6 +133,7 @@ public class FXMLDocumentController implements Initializable {
                         uncompletedTasks.getItems().add(task);
                     }
                 }
+                calendar.updateDay(Calendar.selectedDay);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -140,8 +144,9 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
-    public static ObservableList<Task> getTaskList(){
-        return null;
+    public ObservableList<Task> getTaskList(){
+        loadTasks();
+        return taskList;
     }
 
     // Get the selected task from the uncomplete or completed listview.
@@ -192,29 +197,6 @@ public class FXMLDocumentController implements Initializable {
         } else {                                        // OTHERWISE
             DatabaseHelper.insertJournalEntry(entry);   // Create new journal entry.
         }
-    }
-
-    // Loads the current days journal (BUT DOES NOT UPDATE IT)
-    private boolean loadJournal(LocalDate dateToLoad) {
-        entryList.clear();
-        String text = null;
-        String date;
-        String query = "SELECT * FROM JOURNAL WHERE date=\'" + dateToLoad + "\'";
-        ResultSet results = databaseHandler.executeQuery(query);
-        try{
-            while(results.next()) {
-                text = results.getString("text");
-                date = results.getString("date");
-                entryList.add(new JournalEntry(text,LocalDate.parse(date)));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        if (text == null)
-            return false;
-
-        return true;
     }
 
     // Update the journal title, and text.

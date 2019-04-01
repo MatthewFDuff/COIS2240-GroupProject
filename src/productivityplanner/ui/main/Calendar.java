@@ -1,15 +1,12 @@
 package productivityplanner.ui.main;
 
-import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import productivityplanner.data.Task;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -149,23 +146,40 @@ public class Calendar {
         return null;
     }
 
-    public static void updateDayInfo() {
-            if (!FXMLDocumentController.taskList.isEmpty()) {
-                int completedTaskCount = 0;
-                int uncompletedTaskCount = 0;
-                for (Task task : FXMLDocumentController.taskList) {
-                    if (task.getCompleted()) {
-                        completedTaskCount++;
-                    } else
-                        uncompletedTaskCount++;
-                }
-                Text taskInfo = new Text("Tasks: " + FXMLDocumentController.taskList.size() + "\nCompleted: " + completedTaskCount + "\nUncompleted: " + uncompletedTaskCount);
-                //currentDay.getChildren().add(taskInfo);
-            }
+    // Used to update the calendar for a single day, rather than all the days.
+    public void updateDay(Day day){
+        // Then we can change it in the same way we do updateDays();
+        day.getChildren().clear();
+
+        // Individual day's number
+        Text txt = new Text(String.valueOf(day.getDate().getDayOfMonth()));
+        day.setDate(day.getDate());
+        day.getChildren().add(txt);
+        // Individual day's tasks if they exist.
+        day.updateTasks();
+    }
+
+    public void updateDays(LocalDate calendarDate){
+        // Populate the days on the calendar with numbers and information (task and journal data)
+        for (Day currentDay : calendarDays) {
+            // TODO: OPTIONAL - Tag days which aren't in the currently selected month so they can be greyed out.
+            currentDay.getChildren().clear();
+
+            // Individual day's number
+            Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
+            currentDay.setDate(calendarDate);
+            currentDay.getChildren().add(txt);
+            // Individual day's tasks if they exist.
+            currentDay.updateTasks();
+
+            calendarDate = calendarDate.plusDays(1); // Iterate to next day (Equivalent to: "days++;")
+            currentDay.setClip(new Rectangle(currentDay.getWidth(), currentDay.getHeight()));
+        }
     }
 
     // Sets up each day that is currently visible, including setting their dates.
     public void updateCalendar(YearMonth yearMonth) {
+        System.out.println("Calendar Updated");
         // Get the date we want to start with on the calendar
         LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
 
@@ -174,18 +188,7 @@ public class Calendar {
             calendarDate = calendarDate.minusDays(1);
         }
 
-        // Populate the days on the calendar with numbers and information (task and journal data)
-        for (Day currentDay : calendarDays) {
-            // TODO: Tag days which aren't in the currently selected month so they can be greyed out.
-            currentDay.getChildren().clear();
-
-            // Individual day's number
-            Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
-            currentDay.setDate(calendarDate);
-            currentDay.getChildren().add(txt);
-
-            calendarDate = calendarDate.plusDays(1); // Iterate to next day (Equivalent to: "days++;")
-        }
+        updateDays(calendarDate);
 
         // Change the title of the calendar
         calendarTitle.setText(yearMonth.getMonth().toString() + " " + (yearMonth.getYear()));
