@@ -14,13 +14,10 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import productivityplanner.data.Task;
-import productivityplanner.database.DatabaseHandler;
+import productivityplanner.database.DatabaseHelper;
 import productivityplanner.ui.main.Calendar;
 
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import static productivityplanner.ui.main.Main.getFXMLController;
@@ -50,21 +47,18 @@ public class AddNewTaskController implements Initializable {
     @FXML
     JFXButton btnAddTask;
 
-    // Create DatabaseHandler
-    DatabaseHandler databaseHandler;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        databaseHandler = DatabaseHandler.getInstance();
-        //checkData();
     }
 
     @FXML
+    // Adds a new task to the uncompleted task list.
     private void addNewTask(ActionEvent event){
-        // Get information from the form
+        // Get information from the form.
         String taskName = txtName.getText();
         Color taskColour = colourPicker.getValue();
 
+        // Validate the data.
         if (taskName.isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -73,45 +67,24 @@ public class AddNewTaskController implements Initializable {
             System.out.println("Error: The task was not given a name.");
             return;
         }
+        // Create task out of data.
+        Task task = new Task(Calendar.selectedDay.getDate(), taskName, taskColour);
 
-        String action = "INSERT INTO TASK VALUES ("+
-                "'"+ taskName + "'," +
-                "'"+ taskColour + "'," +
-                ""+ "false" + "," +
-                "'"+ Calendar.selectedDay.getDate().toString() + "'" +
-                ")";
-        System.out.println(action); // DEBUG
-
-        if (databaseHandler.executeAction(action)) {
-            getFXMLController().loadTasks();
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setHeaderText(null);
-//            alert.setContentText("Success.");
-//            alert.showAndWait();
-            addCancel(new ActionEvent());
+        // Insert the task.
+        if (DatabaseHelper.insertTask(task)) {  // Insert the task into the database.
+            getFXMLController().loadTasks();    // Reload the task lists so the new task is displayed.
+            addCancel(new ActionEvent());       // Close the window after successfully adding the task.
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setContentText("Failed.");
+            alert.setContentText("Unable to add new task.");
             alert.showAndWait();
-            System.out.println("Error: Unable to execute action.");
-        }
-    }
-
-    private void checkData(){
-        String query = "SELECT colour FROM TASK";
-        ResultSet results = databaseHandler.executeQuery(query);
-        try{
-            while(results.next()){
-                String name = results.getString("colour");
-                System.out.println(name);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error: Unable to add task.");
         }
     }
 
     @FXML
+    // Closes the stage when the user presses the cancel button.
     public void addCancel(ActionEvent actionEvent) {
         Stage stage = (Stage) rootPane.getScene().getWindow();
         stage.close();

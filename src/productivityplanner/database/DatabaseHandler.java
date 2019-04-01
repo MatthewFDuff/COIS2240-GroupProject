@@ -48,7 +48,7 @@ public class DatabaseHandler {
         }
     }
 
-    public ResultSet executeQuery(String query) { // Used to execute statements such as SELECT statements which return results.
+    public static ResultSet executeQuery(String query) { // Used to execute statements such as SELECT statements which return results.
         ResultSet result;
         try{
             statement = connection.createStatement();
@@ -78,29 +78,6 @@ public class DatabaseHandler {
             statement.setString(1, text);
             statement.setString(2, Calendar.selectedDay.getDate().toString());
             int result = statement.executeUpdate();
-            return (result > 0);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public boolean updateTask(String taskName, String taskColour, Task task){
-        String previousName = task.getName();
-        Color previousColor = task.getColor();
-        try{
-            String query = "UPDATE TASK SET NAME = ?, COLOUR = ? WHERE (NAME = ? AND COLOUR = ? AND DATE = ?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, taskName);
-            statement.setString(2, taskColour);
-            statement.setString(3,previousName);
-            statement.setString(4,previousColor.toString());
-            statement.setString(5, Calendar.selectedDay.getDate().toString());
-            int result = statement.executeUpdate();
-            if (result > 0)
-            {
-                getFXMLController().loadTasks();
-            }
             return (result > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -151,24 +128,6 @@ public class DatabaseHandler {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    // TODO: Requires more testing.
-    public boolean deleteTask(Task task) {
-        //TODO: Add confirmation before deleting? Or a way to see what was deleted.
-        try{
-            String query = "DELETE FROM TASK WHERE (NAME=? AND COLOUR=? AND DATE=?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, task.getName());
-            statement.setString(2, task.getColor().toString());
-            statement.setString(3, task.getDate().toString());
-            int result = statement.executeUpdate();
-            getFXMLController().loadTasks();
-            return (result > 0);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 
     public boolean toggleComplete(Task task) {

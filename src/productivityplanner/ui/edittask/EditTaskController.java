@@ -15,12 +15,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
-import productivityplanner.ui.main.Calendar;
-import productivityplanner.ui.main.FXMLDocumentController;
+import productivityplanner.database.DatabaseHelper;
 
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import static productivityplanner.ui.main.Main.getFXMLController;
@@ -50,17 +47,15 @@ public class EditTaskController implements Initializable {
     @FXML
     JFXButton btnSubmit;
 
-    // Create DatabaseHandler
-    DatabaseHandler databaseHandler;
     Task task;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        databaseHandler = DatabaseHandler.getInstance();
-
         task = getFXMLController().getSelectedTask();
+
         if (task != null)
         {
+            // Update the Edit form to display the task's pre-edit information.
             txtName.setText(task.getName());
             colourPicker.setValue(task.getColor());
         }
@@ -68,11 +63,11 @@ public class EditTaskController implements Initializable {
 
     @FXML
     private void editTask(ActionEvent event){
-        // Get the task which is selected for edit
-        // Get information from the form
+        // Get task information from the form.
         String taskName = txtName.getText();
         Color taskColour = colourPicker.getValue();
 
+        // Validate the information before editing.
         if (taskName.isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -82,8 +77,9 @@ public class EditTaskController implements Initializable {
             return;
         }
 
-        if (databaseHandler.updateTask(taskName, taskColour.toString(), task)) {
-            cancel(new ActionEvent());
+        // Update the task's information in the database.
+        if (DatabaseHelper.updateTask(taskName, taskColour.toString(), task)) {
+            cancel(new ActionEvent()); // Close the window when the task has been updated.
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
@@ -94,6 +90,7 @@ public class EditTaskController implements Initializable {
     }
 
     @FXML
+    // Close the window.
     public void cancel(ActionEvent actionEvent) {
         Stage stage = (Stage) rootPane.getScene().getWindow();
         stage.close();

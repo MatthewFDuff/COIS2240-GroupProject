@@ -1,6 +1,5 @@
 package productivityplanner.ui.main;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
@@ -14,17 +13,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import productivityplanner.data.JournalEntry;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
+import productivityplanner.database.DatabaseHelper;
 import productivityplanner.ui.taskcell.TaskCellController;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -32,84 +30,66 @@ import java.time.YearMonth;
 import java.util.ResourceBundle;
 
 public class FXMLDocumentController implements Initializable {
+    // Generally you don't need to instantiate buttons here because you reference their actions, not the button itself.
     @FXML
     private VBox calendarPane;
     @FXML
-    private JFXTabPane tabsMainBar;
-    @FXML
-    private Tab tabTasks;
-    @FXML
     private JFXTabPane tabsTasks;
-    @FXML
-    private Tab tabUncompletedTasks;
-    @FXML
-    private JFXButton btnAddTask;
     @FXML
     private JFXListView<Task> uncompletedTasks;
     @FXML
     private JFXListView<Task> completedTasks;
     @FXML
-    private Tab tabCompletedTasks;
-    @FXML
-    private Tab tabJournal;
-    @FXML
     private Label lblJournalDate;
     @FXML
-    private JFXButton btnSaveJournal;
-    @FXML
-    private Tab tabSettings;
-    @FXML
-    private Label lblUserAction;
-    @FXML
     private TextArea txtJournal;
-    @FXML
-    private JFXButton btnRefreshTaskList;
 
     public static ObservableList<Task> taskList = FXCollections.observableArrayList();
     ObservableList<JournalEntry> entryList = FXCollections.observableArrayList();
-    DatabaseHandler databaseHandler = DatabaseHandler.getInstance();
+
+    DatabaseHandler databaseHandler = DatabaseHandler.getInstance(); // DO NOT REMOVE (This instantiates the database handler on startup and is required)
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         YearMonth date = YearMonth.now();
-        // Generate the calendar
-        calendarPane.getChildren().add(new Calendar(date).getView());
 
-        updateSelectedDate(Calendar.selectedDay); // Highlight the current date.
+        calendarPane.getChildren().add(new Calendar(date).getView());   // Generate the calendar GUI.
+        updateSelectedDate(Calendar.selectedDay);                       // Highlight the current date.
+        updateJournalTitle();                                           // Update the journal view.
+        loadTasks();                                                    // Update the task lists.
 
-        updateJournalTitle(); // Update the journal view
-
-        loadTasks(); // Update the task lists.
+        // TODO: ELLA this will be changed when you restructure with one list.
         completedTasks.setCellFactory(completedListView -> new TaskCellController());
         uncompletedTasks.setCellFactory(uncompletedTaskView -> new TaskCellController());
     }
 
     @FXML
+    // Sets the title of the journal to the current date.
     private void updateJournalTitle() {
         lblJournalDate.setText(Calendar.selectedDay.getFormattedDate());
     }
 
     public void setSelectedDay(Day date){
-        System.out.println("The date of this day is: " + date.getDate());
-        // Create a border around the currently selected day
-        updateSelectedDate(date);
+        if (date != Calendar.selectedDay) { // The data should only be loaded if a new day is selected to prevent reloading the same day.
+            updateSelectedDate(date);
+        }
     }
 
+    // Changes the currently selected day and updates task and journal data to the new day.
     public void updateSelectedDate(Day currentSelectedDay){
-        //TODO: Don't update if the day is still the same as before.
         if (currentSelectedDay != null)
         {
-            // HIGHLIGHT/BORDER
+            // HIGHLIGHT/BORDER:
             // Clear the border from the current selected date.
             Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.NONE, CornerRadii.EMPTY, new BorderWidths(2))));
-            // Change the currently selected day to the one that's just been clicked on
+            // Change the currently selected day to the one that's just been clicked on.
             Calendar.selectedDay = currentSelectedDay;
-            // Add a border to the new selected date
+            // Add a border to the new selected date.
             Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("#292929"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(4))));
-            // UPDATE JOURNAL
-            loadJournal(Calendar.selectedDay.getDate());
+            // UPDATE JOURNAL:
+            DatabaseHelper.loadJournal(entryList);
             updateJournal();
-            // UPDATE TASKS
+            // UPDATE TASKS:
             loadTasks();
         }
         else {
@@ -118,50 +98,45 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @FXML
+    // Loads the stage for adding a new task
     public void loadAddNewTask(ActionEvent actionEvent) {
         loadWindow(getClass().getResource("/productivityplanner/ui/addtask/AddNewTask.fxml"), "Add New Task", null);
     }
 
     @FXML
+    // Loads the stage for editing an existing task
     public void loadEditTask(Task task) {
         updateSelectedTask(task);
         loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
     }
 
-    //TODO: create delete window method
     @FXML
     public void loadDeleteTask(Task task){
         updateSelectedTask(task);
         loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
     }
 
+    // Loads all tasks for the current day and sorts them into the appropriate task list.
+    // TODO: ELLA this will be changed when you restructure with one list.
     public void loadTasks() {
-        LocalDate dateToLoad = Calendar.selectedDay.getDate();
-        taskList.clear();
         completedTasks.getItems().clear();
         uncompletedTasks.getItems().clear();
-
-        String query = "SELECT * FROM TASK WHERE date=\'" + dateToLoad + "\'";
-        ResultSet results = databaseHandler.executeQuery(query);
-        try{
-            while(results.next()){
-                String name = results.getString("name");
-                String color = results.getString("colour");
-                Boolean compl = results.getBoolean("isComplete");
-                String date = results.getString("date");
-                //System.out.println(name + " " + color + " " + compl + " " + date);
-
-                taskList.add(new Task(LocalDate.parse(date), name, Color.web(color), compl));
+        try {
+            if (DatabaseHelper.loadTasks(taskList)){            // If the tasks were successfully loaded..
+                for(Task task : taskList){                      // Separate them into completed/uncompleted lists.
+                    if (task.getCompleted()){
+                        completedTasks.getItems().add(task);
+                    } else {
+                        uncompletedTasks.getItems().add(task);
+                    }
+                }
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }
-        for(Task task: taskList){
-            if (task.getCompleted()){
-                completedTasks.getItems().add(task);
-            } else {
-                uncompletedTasks.getItems().add(task);
-            }
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Unable to load tasks.");
+            alert.showAndWait();
         }
     }
 
@@ -170,18 +145,15 @@ public class FXMLDocumentController implements Initializable {
     }
 
     // Get the selected task from the uncomplete or completed listview.
+    // TODO: ELLA this will be changed when you restructure with one list.
     public Task getSelectedTask(){
         // Check which tab is open.. Completed or Uncomplete tasks
         String selectedTab = tabsTasks.getSelectionModel().getSelectedItem().getId();
 
-        if (selectedTab.equals("tabCompletedTasks")) // Complete
-        {
-            System.out.println("Complete Tab Selected");
+        if (selectedTab.equals("tabCompletedTasks")) {
             return completedTasks.getSelectionModel().getSelectedItem();
         }
-        else if (selectedTab.equals("tabUncompletedTasks")) // Uncompleted
-        {
-            System.out.println("UnComplete TabSelected");
+        else if (selectedTab.equals("tabUncompletedTasks")) {
             return uncompletedTasks.getSelectionModel().getSelectedItem();
         }
         return null;
@@ -212,39 +184,14 @@ public class FXMLDocumentController implements Initializable {
     // Save the journal entry to the database. (Requires an update/rewrite, because only one entry is allowed per day)
     public void saveJournal(ActionEvent actionEvent) {
         // Get journal text from the form.
-        String journalText = txtJournal.getText();
+        JournalEntry entry = new JournalEntry(txtJournal.getText(), Calendar.selectedDay.getDate());
 
-        // Should the user be allowed to save if there is nothing written?
-        // TODO: Add an alert which asks the user for confirmation when saving an empty entry.
-        if (journalText.isEmpty()){
-        }
         // Check if the database has a journal entry yet.
-        if (loadJournal(Calendar.selectedDay.getDate())){
-            databaseHandler.updateJournalEntry(journalText);
-        } else {
-            addNewJournalEntry(journalText);
+        if (DatabaseHelper.loadJournal(entryList)){     // If a journal entry already exists:
+            DatabaseHelper.updateJournalEntry(entry);   // Update the existing entry.
+        } else {                                        // OTHERWISE
+            DatabaseHelper.insertJournalEntry(entry);   // Create new journal entry.
         }
-    }
-
-
-    private boolean addNewJournalEntry(String text) {
-        try {
-            String action = "INSERT INTO JOURNAL VALUES (?, ?)";
-            PreparedStatement statement = databaseHandler.getConnection().prepareStatement(action);
-            statement.setString(1, Calendar.selectedDay.getDate().toString());
-            statement.setString(2, text);
-            int result = statement.executeUpdate();
-            if (result > 1)
-                lblUserAction.setText("Added new journal entry.");
-            return (result > 1);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Unable to add new entry.");
-            alert.showAndWait();
-        }
-        return false;
     }
 
     // Loads the current days journal (BUT DOES NOT UPDATE IT)
@@ -286,15 +233,10 @@ public class FXMLDocumentController implements Initializable {
         loadTasks();
     }
 
-    // TODO: Decide if this should show every task ever created or just the details of the current task (date created, date completed, etc).
-    public void viewAllTasks(ActionEvent actionEvent) {
-        loadTasks(); // Reload the full task list from the database TODO: Make this LoadAllTasks because currently it's only loading the current day's tasks.
-        loadWindow(getClass().getResource("/productivityplanner/ui/tasklist/TaskList.fxml"), "Task List", null);
-    }
-
-    // Finds the task cell that's provided and selects in in the appropriate list view.
+    // Finds the given task and selects it in the appropriate list view.
+    // TODO: ELLA this will be changed when you restructure with one list.
     public void updateSelectedTask(Task task) {
-        for(Task currentTask : taskList){ // Go through all the
+        for(Task currentTask : taskList){
             if (task.getCompleted()){
                 if (currentTask != null)
                 {
