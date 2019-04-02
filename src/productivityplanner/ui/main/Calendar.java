@@ -38,10 +38,12 @@ public class Calendar {
         // Create a new grid for the calendar.
         GridPane calendar = new GridPane();
         calendar.setMinSize(350, 550);
-        calendar.setPrefSize(CALENDAR_WIDTH, CALENDAR_HEIGHT);
+        //calendar.setPrefSize(CALENDAR_WIDTH, CALENDAR_HEIGHT);
         calendar.getStyleClass().add("calendar-grid");
         calendar.setGridLinesVisible(true);
         calendar.setAlignment(Pos.CENTER);
+
+
 
         // For every day in the calendar
         for(int i = 0; i < 6; i++){

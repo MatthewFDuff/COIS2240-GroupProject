@@ -8,7 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.HBox;
 import productivityplanner.data.Task;
-import productivityplanner.database.DatabaseHandler;
 import productivityplanner.database.DatabaseHelper;
 
 import java.io.IOException;
@@ -17,12 +16,7 @@ import static productivityplanner.ui.main.Main.getFXMLController;
 
 // References:  https://stackoverflow.com/questions/47511132/javafx-custom-listview
 //              https://www.turais.de/how-to-custom-listview-cell-in-javafx/
-public class TaskCellController extends ListCell<Task> {
-
-    public Task getTask() {
-        return task;
-    }
-
+public final class TaskCellController extends ListCell<Task> {
     @FXML
     HBox cell;
     @FXML
@@ -37,7 +31,14 @@ public class TaskCellController extends ListCell<Task> {
     Task task;
 
     public TaskCellController() {
-        loadFXML();
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskCell.fxml"));
+            fxmlLoader.setController(this);
+            fxmlLoader.setRoot(this);
+            fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         btnDelete.setOnAction(e -> getFXMLController().loadDeleteTask(this.task));
         btnEdit.setOnAction((e -> getFXMLController().loadEditTask(this.task)));
@@ -50,17 +51,6 @@ public class TaskCellController extends ListCell<Task> {
         setGraphic(cell);
     }
 
-    private void loadFXML(){
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskCell.fxml"));
-            fxmlLoader.setController(this);
-            fxmlLoader.setRoot(this);
-            fxmlLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     protected void updateItem(Task item, boolean empty){
         super.updateItem(item, empty);
@@ -69,9 +59,9 @@ public class TaskCellController extends ListCell<Task> {
         btnEdit.setMinSize(30,30);
 
         if (empty || item == null) {
-            setText(null);
             setGraphic(null);
         } else {
+
             task = item;
             String taskColour = item.getColor().toString().substring(2,8); // Substring makes "0xff66cc33" into this "ff66cc"
             lblTaskName.setMinWidth(cell.getMaxWidth());

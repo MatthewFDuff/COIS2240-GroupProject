@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 import productivityplanner.data.JournalEntry;
 import productivityplanner.data.Task;
+import productivityplanner.ui.calendar.CalendarController;
 import productivityplanner.ui.main.Calendar;
 
 import java.sql.PreparedStatement;
@@ -62,7 +63,7 @@ public class DatabaseHelper {
             statement.setString(2, taskColour);
             statement.setString(3,previousName);
             statement.setString(4,previousColor.toString());
-            statement.setString(5, Calendar.selectedDay.getDate().toString());
+            statement.setString(5, CalendarController.selectedDay.getDate().toString());
             int result = statement.executeUpdate();
             if (result > 0) // If it was successful, reload the task list.
             {
@@ -78,7 +79,7 @@ public class DatabaseHelper {
     public static boolean loadTasks(ObservableList<Task> taskList) {
         taskList.clear();
         try{
-            String query = "SELECT * FROM TASK WHERE date=\'" + Calendar.selectedDay.getDate() + "\'";
+            String query = "SELECT * FROM TASK WHERE date=\'" + CalendarController.selectedDay.getDate() + "\'";
             ResultSet results = DatabaseHandler.executeQuery(query);
 
             while(results.next()){
@@ -114,7 +115,7 @@ public class DatabaseHelper {
             statement.setString(1, complete.toString());
             statement.setString(2, task.getName());
             statement.setString(3, task.getColor().toString());
-            statement.setString(4, Calendar.selectedDay.getDate().toString());
+            statement.setString(4, CalendarController.selectedDay.getDate().toString());
             int result = statement.executeUpdate();
             if (result > 0){
                 getFXMLController().loadTasks();
@@ -165,7 +166,7 @@ public class DatabaseHelper {
     public static boolean loadJournal(ObservableList<JournalEntry> entryList){
         entryList.clear();
         try{
-            String query = "SELECT * FROM JOURNAL WHERE date=\'" + Calendar.selectedDay.getDate() + "\'";
+            String query = "SELECT * FROM JOURNAL WHERE date=\'" + CalendarController.selectedDay.getDate() + "\'";
             ResultSet results = DatabaseHandler.executeQuery(query);
             while(results.next()) {
                 String text = results.getString("text");

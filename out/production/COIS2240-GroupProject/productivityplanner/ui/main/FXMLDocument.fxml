@@ -18,20 +18,20 @@
    <children>
       <HBox alignment="CENTER" minHeight="600.0" minWidth="1024.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox HBox.hgrow="ALWAYS">
+            <VBox minWidth="700" HBox.hgrow="ALWAYS">
                <children>
-                  <Pane layoutX="10.0" layoutY="610.0" prefHeight="20.0" style="-fx-background-color: #292929;" />
-                  <HBox>
+                  <Pane prefHeight="20.0" VBox.vgrow="ALWAYS" style="-fx-background-color: #292929;" />
+                  <HBox VBox.vgrow="ALWAYS">
                      <children>
-                        <Pane minWidth="20.0" prefWidth="20.0" style="-fx-background-color: #292929;" HBox.hgrow="ALWAYS" />
-                        <VBox fx:id="calendarPane" alignment="CENTER_LEFT" minHeight="550.0" minWidth="350.0" />
-                        <Pane layoutX="10.0" layoutY="10.0" minWidth="20.0" prefWidth="20.0" style="-fx-background-color: #292929;" HBox.hgrow="ALWAYS" />
+                        <Pane minWidth="20.0" prefWidth="20.0" style="-fx-background-color: #292929;" HBox.hgrow="SOMETIMES" />
+                        <VBox fx:id="calendarPane" alignment="CENTER_LEFT" minHeight="550.0" minWidth="350.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
+                        <Pane layoutX="10.0" layoutY="10.0" minWidth="20.0" prefWidth="20.0" style="-fx-background-color: #292929;" HBox.hgrow="SOMETIMES" />
                      </children>
                   </HBox>
-                  <Pane prefHeight="20.0" style="-fx-background-color: #292929;" VBox.vgrow="ALWAYS" />
+                  <Pane prefHeight="20.0" VBox.vgrow="ALWAYS" style="-fx-background-color: #292929;"/>
                </children>
             </VBox>
-            <VBox minHeight="600.0" HBox.hgrow="ALWAYS">
+            <VBox minHeight="600.0" maxWidth="400" HBox.hgrow="ALWAYS">
                <children>
                   <JFXTabPane fx:id="tabsMainBar" tabMinHeight="40.0" VBox.vgrow="ALWAYS">
                      <tabs>

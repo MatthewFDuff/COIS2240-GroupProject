@@ -47,7 +47,7 @@ public class Main extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
             Parent root = fxmlLoader.load();
 
-            controller = (FXMLDocumentController) fxmlLoader.getController();
+            controller = fxmlLoader.getController();
 
             primaryStage.setTitle("Productivity Planner");
             Scene scene = new Scene(root, 1280, 800);

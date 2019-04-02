@@ -2,6 +2,7 @@ package productivityplanner.database;
 
 import javafx.scene.paint.Color;
 import productivityplanner.data.Task;
+import productivityplanner.ui.calendar.CalendarController;
 import productivityplanner.ui.main.Calendar;
 import productivityplanner.ui.taskcell.TaskCellController;
 
@@ -76,7 +77,7 @@ public class DatabaseHandler {
             String query = "UPDATE JOURNAL SET TEXT = ? WHERE DATE=?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, text);
-            statement.setString(2, Calendar.selectedDay.getDate().toString());
+            statement.setString(2, CalendarController.selectedDay.getDate().toString());
             int result = statement.executeUpdate();
             return (result > 0);
         } catch (SQLException e) {

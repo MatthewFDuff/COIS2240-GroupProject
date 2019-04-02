@@ -15,7 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHelper;
-import productivityplanner.ui.main.Calendar;
+import productivityplanner.ui.calendar.CalendarController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -68,7 +68,7 @@ public class AddNewTaskController implements Initializable {
             return;
         }
         // Create task out of data.
-        Task task = new Task(Calendar.selectedDay.getDate(), taskName, taskColour);
+        Task task = new Task(CalendarController.selectedDay.getDate(), taskName, taskColour);
 
         // Insert the task.
         if (DatabaseHelper.insertTask(task)) {  // Insert the task into the database.

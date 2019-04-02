@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHelper;
+import productivityplanner.ui.calendar.CalendarController;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -38,8 +39,8 @@ public class Day extends VBox {
 
     public void updateTasks(){
         ObservableList<Task> tasks = FXCollections.observableArrayList();
-        Day tempDay = Calendar.selectedDay; // Save the current selected day so we can revert back to it once we're done loading info for each day.
-        Calendar.selectedDay = this;
+        Day tempDay = CalendarController.selectedDay; // Save the current selected day so we can revert back to it once we're done loading info for each day.
+        CalendarController.selectedDay = this;
 
         DatabaseHelper.loadTasks(tasks);
 
@@ -81,6 +82,6 @@ public class Day extends VBox {
             this.getChildren().add(taskPane);
         }
 
-        Calendar.selectedDay = tempDay;
+        CalendarController.selectedDay = tempDay;
     }
 }
