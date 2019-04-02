@@ -23,14 +23,14 @@ public class Calendar {
     public static LocalDate currentDate;
     public static Day selectedDay;
 
-    public Calendar(YearMonth yearMonth){
-        int CALENDAR_WIDTH = 910;
-        int CALENDAR_HEIGHT = 720;
-        int DAY_WIDTH = CALENDAR_WIDTH / 7;     // 910/7 = 130
-        int DAY_HEIGHT = CALENDAR_HEIGHT / 6;    // 720/6 = 120
-        int MIN_DAY_HEIGHT = 75;
-        int MIN_DAY_WIDTH = 50;
+    private int CALENDAR_WIDTH = 910;
+    private int CALENDAR_HEIGHT = 720;
+    private int DAY_WIDTH = CALENDAR_WIDTH / 7;     // 910/7 = 130
+    private int DAY_HEIGHT = CALENDAR_HEIGHT / 6;    // 720/6 = 120
+    private int MIN_DAY_HEIGHT = 75;
+    private int MIN_DAY_WIDTH = 50;
 
+    public Calendar(YearMonth yearMonth){
         currentYearMonth = yearMonth; // Get the current year and month.
         currentDate = LocalDate.now();
         System.out.println(currentDate);
@@ -149,8 +149,9 @@ public class Calendar {
     // Used to update the calendar for a single day, rather than all the days.
     public void updateDay(Day day){
         // Then we can change it in the same way we do updateDays();
-        day.getChildren().clear();
-
+        if (day.getChildren().size() > 0){
+            day.getChildren().clear();
+        }
         // Individual day's number
         Text txt = new Text(String.valueOf(day.getDate().getDayOfMonth()));
         day.setDate(day.getDate());
@@ -163,7 +164,9 @@ public class Calendar {
         // Populate the days on the calendar with numbers and information (task and journal data)
         for (Day currentDay : calendarDays) {
             // TODO: OPTIONAL - Tag days which aren't in the currently selected month so they can be greyed out.
-            currentDay.getChildren().clear();
+            if (currentDay.getChildren().size() > 0){
+                currentDay.getChildren().clear();
+            }
 
             // Individual day's number
             Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
@@ -173,7 +176,6 @@ public class Calendar {
             currentDay.updateTasks();
 
             calendarDate = calendarDate.plusDays(1); // Iterate to next day (Equivalent to: "days++;")
-            currentDay.setClip(new Rectangle(currentDay.getWidth(), currentDay.getHeight()));
         }
     }
 
@@ -210,5 +212,12 @@ public class Calendar {
 
     public VBox getView() {
         return view;
+    }
+
+    // Prevents each day from going outside of its grid square.
+    public void setDayClips() {
+        for (Day day: calendarDays) {
+            day.setClip(new Rectangle(day.getWidth(), day.getHeight()));
+        }
     }
 }

@@ -63,6 +63,8 @@ public class Main extends Application {
             primaryStage.show();
             Utility.setProgramIcon(primaryStage);
 
+            getFXMLController().calendar.setDayClips();
+
             DatabaseHandler.getInstance(); // Instantiate new database
         } catch (IOException e) {
             e.printStackTrace();
