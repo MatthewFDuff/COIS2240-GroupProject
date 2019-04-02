@@ -9,6 +9,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.HBox;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
+import productivityplanner.ui.main.FXMLDocumentController;
 import productivityplanner.database.DatabaseHelper;
 
 import java.io.IOException;
@@ -77,7 +78,9 @@ public class TaskCellController extends ListCell<Task> {
             lblTaskName.setMinWidth(cell.getMaxWidth());
             lblTaskName.setText(item.getName());                    // Set the cell's name to the name of the task.
             cell.setStyle("-fx-background-color: #" + taskColour);  // Set the cell colour to the task colour.
-            cbComplete.setSelected(item.getCompleted());            // Set the cell's checkbox to be toggled on or off if the task is completed.
+
+            Boolean completed = item.getCompleted();
+            cbComplete.setSelected(completed);            // Set the cell's checkbox to be toggled on or off if the task is completed.
 
             setCellSelected(true);
 

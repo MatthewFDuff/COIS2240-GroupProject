@@ -7,7 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COIS2240-GroupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COIS2240-GroupProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/calendar/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/calendar/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Calendar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COIS2240-GroupProject/productivityplanner/ui/main/Calendar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,27 +75,48 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="283" column="68" selection-start-line="283" selection-start-column="68" selection-end-line="283" selection-end-column="68" />
+            <state relative-caret-position="575">
+              <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
+                <element signature="n#HBox#1;n#children#0;n#VBox#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="136" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="294">
+              <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#FindDay#0;class#Calendar#0" />
+                <element signature="e#8445#8446#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -172,22 +203,22 @@
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskListController.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/database/DatabaseHandler.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/style/test.css" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/style/tab-pane.css" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCell.fxml" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" />
-        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java" />
         <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java" />
+        <option value="$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1937" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -198,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,12 +265,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="productivityplanner" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="taskcell" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -259,7 +290,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552775829112" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Dependencies/jfoenix-8.0.8.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -405,9 +436,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17989418" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18255034" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -417,7 +449,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1797235" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17847025" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -428,7 +460,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -595,20 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="70" column="99" selection-start-line="70" selection-start-column="99" selection-end-line="70" selection-end-column="99" />
-          <folding>
-            <element signature="n#JFXTabPane#0;n#children#0;n#VBox#0;n#content#0;n#Tab#0;n#tabs#0;n#JFXTabPane#0;n#children#0;n#VBox#1;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#!!top" />
-            <element signature="n#content#0;n#Tab#0;n#tabs#0;n#JFXTabPane#0;n#children#0;n#VBox#0;n#content#0;n#Tab#0;n#tabs#0;n#JFXTabPane#0;n#children#0;n#VBox#1;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#!!top" />
-            <element signature="n#HBox#0;n#children#0;n#VBox#0;n#content#0;n#Tab#0;n#tabs#0;n#JFXTabPane#0;n#children#0;n#VBox#0;n#content#0;n#Tab#0;n#tabs#0;n#JFXTabPane#0;n#children#0;n#VBox#1;n#children#0;n#HBox#0;n#children#0;n#VBox#0;n#!!top" />
-            <element signature="n#HBox#1;n#children#0;n#VBox#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/style/tab-pane.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -654,20 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1042#1043#0" expanded="true" />
-            <element signature="e#1071#1072#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/tasklist/TaskList.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -684,17 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="283" column="68" selection-start-line="283" selection-start-column="68" selection-end-line="283" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadTasks#0;class#FXMLDocumentController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -707,11 +700,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/Calendar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="340">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocument.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+          <folding>
+            <element signature="n#HBox#1;n#children#0;n#VBox#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/taskcell/TaskCellController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#FindDay#0;class#Calendar#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productivityplanner/ui/main/FXMLDocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8445#8446#0" expanded="true" />
           </folding>
         </state>
       </provider>

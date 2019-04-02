@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Java/Libraries/derby.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Dependencies/derby.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Java/Libraries/derbyclient.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Dependencies/derbyclient.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Java/Libraries/jfoenix-8.0.8.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/Dependencies/jfoenix-8.0.8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
