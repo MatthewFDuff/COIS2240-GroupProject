@@ -132,12 +132,9 @@ public class FXMLDocumentController implements Initializable {
     }
 
     private void updateSelectedTask(Task task) {
-        for(Task currentTask : taskList){ // Go through all the tasks
-            if (currentTask != null)
-            {
-                if (currentTask.equals(task))
-                    tasks.getSelectionModel().select(currentTask);
-            }
+        for(Task currentTask : taskList){
+            if (currentTask.equals(task))
+                tasks.getSelectionModel().select(currentTask);
         }
     }
 
@@ -147,8 +144,16 @@ public class FXMLDocumentController implements Initializable {
 
         try {
             if (DatabaseHelper.loadTasks(taskList)){            // If the tasks were successfully loaded..
-                for(Task task : taskList){                      // Separate them into completed/uncompleted lists.
-                    tasks.getItems().add(task);
+                for(Task task : taskList){
+                    if (task.getCompleted()){
+                        if (toggleComplete)
+                            tasks.getItems().add(task);
+                    }
+                    else{
+                        if (toggleUncomplete)
+                            tasks.getItems().add(task);
+                    }
+
                 }
 
                 calendar.updateDay(Calendar.selectedDay, null);
@@ -224,6 +229,8 @@ public class FXMLDocumentController implements Initializable {
     }
 
     public void toggleCompleted(ActionEvent actionEvent) {
+        taskList.clear();
+
         if (toggleComplete) {
             toggleComplete = false;
             ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
@@ -239,10 +246,13 @@ public class FXMLDocumentController implements Initializable {
             image.setFitWidth(30);
             btnToggleCompleted.setGraphic(image);
         }
+
         refreshTaskList(null);
     }
     //TODO: Change the imageviews to be created ONCE and then ACCESSED, rather than created each time the button is pressed.
     public void toggleUncompleted(ActionEvent actionEvent) {
+        taskList.clear();
+
         if (toggleUncomplete) {
             toggleUncomplete = false;
             ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
