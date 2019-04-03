@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import productivityplanner.data.Task;
@@ -37,10 +38,17 @@ public class DeleteTaskController implements Initializable {
 
     @FXML
     private void deleteTask(ActionEvent event) {
-        DatabaseHelper.deleteTask(task);
 
-        Stage stage = (Stage) rootPane.getScene().getWindow();
-        stage.close();
+        // Update the task's information in the database.
+        if (DatabaseHelper.deleteTask(task)) {
+            cancel(new ActionEvent()); // Close the window when the task has been updated.
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Failed.");
+            alert.showAndWait();
+            System.out.println("Error: Unable to delete task.");
+        }
     }
 
     @FXML
