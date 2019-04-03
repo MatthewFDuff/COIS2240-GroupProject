@@ -3,9 +3,10 @@ package productivityplanner.ui.taskcell;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.CheckBox;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
@@ -30,7 +31,7 @@ public class TaskCellController extends ListCell<Task> {
     @FXML
     Label lblTaskName;
     @FXML
-    CheckBox cbComplete;
+    Button btnComplete;
     @FXML
     JFXButton btnDelete;
     @FXML
@@ -38,12 +39,38 @@ public class TaskCellController extends ListCell<Task> {
 
     Task task;
 
+    // Load image objects and set image height/widths
+    ImageView cbBlackCompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_black_48dp.png");
+    ImageView cbBlackUncompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_black_48dp.png");
+    ImageView cbWhiteCompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
+    ImageView cbWhiteUncompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
+
+    private Boolean lightColour = false;
+
     public TaskCellController() {
         loadFXML();
 
         btnDelete.setOnAction(e -> getFXMLController().loadDeleteTask(this.task));
         btnEdit.setOnAction((e -> getFXMLController().loadEditTask(this.task)));
-        cbComplete.setOnAction(e-> DatabaseHelper.toggleComplete(this.task));
+
+        btnComplete.setOnAction((event) -> {
+            DatabaseHelper.toggleComplete(this.task);
+
+            // Toggles between checked/unchecked image when clicked
+            if (lightColour) {
+                if (task.getCompleted()) {
+                    btnComplete.setGraphic(cbBlackCompleted);
+                } else {
+                    btnComplete.setGraphic(cbBlackUncompleted);
+                }
+            } else {
+                if (task.getCompleted()) {
+                    btnComplete.setGraphic(cbBlackCompleted);
+                } else {
+                    btnComplete.setGraphic(cbBlackUncompleted);
+                }
+            }
+        });
     }
 
     private void setCellSelected(boolean bool) {
@@ -78,14 +105,38 @@ public class TaskCellController extends ListCell<Task> {
             String taskColour = item.getColor().toString().substring(2,8); // Substring makes "0xff66cc33" into this "ff66cc"
 
             lblTaskName.setMinWidth(cell.getMaxWidth());
-            if (isBright(taskColour))
+
+            lightColour = isBright(taskColour);
+            if (lightColour)
                 lblTaskName.setStyle("-fx-text-fill: black;");
             else lblTaskName.setStyle("-fx-text-fill: white;");
+
             lblTaskName.setText(item.getName());                    // Set the cell's name to the name of the task.
             cell.setStyle("-fx-background-color: #" + taskColour);  // Set the cell colour to the task colour.
+            btnComplete.setStyle("-fx-background-color: #" + taskColour);  // Set the button colour to the task colour.
 
-            Boolean completed = item.getCompleted();
-            cbComplete.setSelected(completed);            // Set the cell's checkbox to be toggled on or off if the task is completed.
+            // Set the cell's button to display a check mark if it has been completed (set without by default)
+            if (lightColour) {
+                if (task.getCompleted()) {
+                    cbBlackCompleted.setFitHeight(30.0);
+                    cbBlackCompleted.setFitWidth(30.0);
+                    btnComplete.setGraphic(cbBlackCompleted);
+                } else {
+                    cbBlackUncompleted.setFitHeight(30.0);
+                    cbBlackUncompleted.setFitWidth(30.0);
+                    btnComplete.setGraphic(cbBlackUncompleted);
+                }
+            } else {
+                if (task.getCompleted()) {
+                    cbWhiteCompleted.setFitHeight(30.0);
+                    cbWhiteCompleted.setFitWidth(30.0);
+                    btnComplete.setGraphic(cbWhiteCompleted);
+                } else {
+                    cbWhiteUncompleted.setFitHeight(30.0);
+                    cbWhiteUncompleted.setFitWidth(30.0);
+                    btnComplete.setGraphic(cbWhiteUncompleted);
+                }
+            }
 
             setCellSelected(true);
 

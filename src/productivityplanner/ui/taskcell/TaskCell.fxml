@@ -13,7 +13,12 @@
     <graphic>
         <HBox fx:id="cell" minHeight="60" minWidth="300" spacing="10">
             <children>
-                <JFXCheckBox fx:id="cbComplete" minHeight="20.0" minWidth="20.0" HBox.hgrow="NEVER" />
+                <JFXButton fx:id="btnComplete" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" prefHeight="30.0" prefWidth="30.0" HBox.hgrow="NEVER">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" preserveRatio="true"/>
+                    </graphic>
+
+                </JFXButton>
                 <Label fx:id="lblTaskName" minWidth="-Infinity" wrapText="true" HBox.hgrow="ALWAYS" />
             <Pane fx:id="divider" HBox.hgrow="ALWAYS" />
                 <JFXButton fx:id="btnEdit" maxHeight="40.0" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" prefWidth="40.0" HBox.hgrow="NEVER">
