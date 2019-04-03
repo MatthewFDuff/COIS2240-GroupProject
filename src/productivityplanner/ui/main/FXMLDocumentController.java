@@ -190,7 +190,7 @@ public class FXMLDocumentController implements Initializable {
             FXMLLoader loader = new FXMLLoader(path);
             Parent parent = loader.load();
             controller = loader.getController();
-            Stage stage = null;
+            Stage stage;
             if (parentStage != null){
                 stage = parentStage;
             } else{

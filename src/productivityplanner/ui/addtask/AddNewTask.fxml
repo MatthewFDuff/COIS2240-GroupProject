@@ -1,43 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootPane" prefHeight="261.0" prefWidth="391.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.addtask.AddNewTaskController">
+<BorderPane fx:id="rootPane" prefHeight="261.0" prefWidth="391.0" stylesheets="@../style/test.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.addtask.AddNewTaskController">
    <center>
       <VBox fx:id="vbox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="titlePane" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER">
                <children>
-                  <Label fx:id="title" layoutX="49.0" layoutY="11.0" prefHeight="17.0" prefWidth="298.0" text="Add New Task">
+                  <Label fx:id="title" prefWidth="298.0" style="-fx-font-size: 20px;" text="Add New Task">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                </children>
-            </Pane>
-            <Pane fx:id="namePane" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </HBox>
+            <VBox style="-fx-background-color: #FFFFFF;">
                <children>
-                  <Label fx:id="lblName" layoutX="49.0" layoutY="11.0" prefHeight="17.0" prefWidth="85.0" text="Task Name" />
-                  <JFXTextField fx:id="txtName" layoutX="134.0" layoutY="2.0" prefHeight="25.0" prefWidth="234.0" promptText="Enter task name" />
+                  <HBox alignment="CENTER" prefHeight="50.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="lblName" prefHeight="17.0" prefWidth="85.0" style="-fx-text-fill: #292929;" text="Task Name" />
+                        <JFXTextField fx:id="txtName" prefHeight="25.0" prefWidth="234.0" promptText="Enter task name" style="-fx-background-color: #FFFFFF; -fx-font: 16px &quot;Roboto&quot;;" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="lblColour" prefHeight="17.0" prefWidth="85.0" style="-fx-text-fill: #292929;" text="Task Colour" />
+                        <JFXColorPicker fx:id="colourPicker" prefWidth="232.0" style="-fx-color-label-visible: false;" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
                </children>
-            </Pane>
-            <Pane fx:id="colourPane" layoutX="10.0" layoutY="42.0" prefHeight="50.0" prefWidth="200.0">
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="92.0" prefWidth="391.0" spacing="40.0">
                <children>
-                  <JFXColorPicker fx:id="colourPicker" layoutX="134.0" layoutY="7.0" prefWidth="232.0" />
-                  <Label fx:id="lblColour" layoutX="49.0" layoutY="11.0" prefHeight="17.0" prefWidth="85.0" text="Task Colour" />
+                  <JFXButton fx:id="btnAddTask" layoutX="135.0" layoutY="26.0" onAction="#addNewTask" prefHeight="40.0" prefWidth="121.0" text="Add Task" />
+                  <JFXButton fx:id="btnCancel" layoutX="135.0" layoutY="26.0" onAction="#addCancel" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: #FF5252;;" text="Cancel" />
                </children>
-            </Pane>
-            <HBox prefHeight="92.0" prefWidth="391.0">
-               <children>
-                  <JFXButton fx:id="btnAddTask" onAction="#addNewTask" layoutX="135.0" layoutY="26.0" prefHeight="40.0" prefWidth="121.0" text="Add Task" />
-                  <JFXButton fx:id="btnCancel" onAction="#addCancel" layoutX="135.0" layoutY="26.0" prefHeight="40.0" prefWidth="121.0" text="Cancel" />
-               </children>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
             </HBox>
          </children>
       </VBox>

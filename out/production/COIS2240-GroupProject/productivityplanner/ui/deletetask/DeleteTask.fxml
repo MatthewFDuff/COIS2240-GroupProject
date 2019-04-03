@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXColorPicker?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -15,45 +11,63 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootPane" prefHeight="261.0" prefWidth="391.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.deletetask.DeleteTaskController">
+<BorderPane fx:id="rootPane" prefHeight="261.0" prefWidth="391.0" stylesheets="@../style/test.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.deletetask.DeleteTaskController">
     <center>
         <VBox fx:id="vbox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
-                <Pane fx:id="titlePane" prefHeight="50.0" prefWidth="200.0">
-                    <children>
-                        <Label fx:id="title" layoutX="49.0" layoutY="11.0" prefHeight="17.0" prefWidth="298.0" text="Confirm Task Deletion">
+            <HBox alignment="CENTER">
+               <children>
+                        <Label fx:id="title" prefHeight="17.0" prefWidth="298.0" style="-fx-font: 24px &quot;Roboto&quot;;" text="Confirm Task Deletion">
                             <font>
                                 <Font size="18.0" />
                             </font>
                         </Label>
-                    </children>
-                </Pane>
-                <Pane fx:id="namePane" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0">
-                    <children>
-                        <Label fx:id="lblName" layoutX="49.0" layoutY="11.0" prefHeight="17.0" prefWidth="85.0" text="Task Name" />
-                        <JFXTextField fx:id="txtName" editable="false" layoutX="134.0" layoutY="2.0" prefHeight="25.0" prefWidth="234.0" promptText="Enter task name" />
-                    </children>
-                </Pane>
-                <Pane fx:id="colourPane" layoutX="10.0" layoutY="42.0" prefHeight="50.0" prefWidth="200.0">
-                    <children>
-                        <JFXColorPicker fx:id="colourPicker" disable="true" layoutX="134.0" layoutY="7.0" prefWidth="232.0" />
-                        <Label fx:id="lblColour" layoutX="49.0" layoutY="11.0" prefHeight="17.0" prefWidth="85.0" text="Task Colour" />
-                    </children>
-                </Pane>
-            <Pane fx:id="titlePane1" prefHeight="50.0" prefWidth="200.0">
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0" style="-fx-background-color: FFFFFF;">
                <children>
-                  <Label fx:id="lblAskDelete" graphicTextGap="3.0" layoutX="17.0" layoutY="11.0" prefHeight="57.0" prefWidth="352.0" text="Are you sure you would like the delete this task?" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="lblName" prefHeight="17.0" prefWidth="85.0" style="-fx-text-fill: #292929;" text="Task Name" />
+                        <JFXTextField fx:id="txtName" editable="false" prefHeight="25.0" prefWidth="234.0" style="-fx-font: 16px &quot;Roboto&quot;;" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="20.0" style="-fx-background-color: FFFFFF;">
+               <children>
+                        <Label fx:id="lblColour" prefHeight="17.0" prefWidth="85.0" style="-fx-text-fill: #292929;" text="Task Colour" />
+                        <JFXColorPicker fx:id="colourPicker" disable="true" prefWidth="232.0" style="-fx-color-label-visible: false;" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label fx:id="lblAskDelete" graphicTextGap="3.0" prefHeight="57.0" prefWidth="352.0" text="Are you sure you would like the delete this task?" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
                </children>
-            </Pane>
-                <HBox prefHeight="70.0" prefWidth="391.0">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
+                <HBox alignment="CENTER" prefHeight="92.0" prefWidth="391.0" spacing="40.0">
                     <children>
                         <JFXButton fx:id="btnConfirm" layoutX="135.0" layoutY="26.0" onAction="#deleteTask" prefHeight="40.0" prefWidth="121.0" text="Yes" />
-                        <JFXButton fx:id="btnCancel" layoutX="135.0" layoutY="26.0" onAction="#cancel" prefHeight="40.0" prefWidth="121.0" text="No" />
+                        <JFXButton fx:id="btnCancel" layoutX="135.0" layoutY="26.0" onAction="#cancel" prefHeight="40.0" prefWidth="121.0" text="No"  style="-fx-background-color: #FF5252;"/>
                     </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
                 </HBox>
             </children>
         </VBox>
