@@ -33,6 +33,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private VBox calendarPane;
     @FXML
+    private JFXButton btnUndoDelete;
+    @FXML
     private Tab tabTasks;
     @FXML
     private JFXListView<Task> tasks;
@@ -125,8 +127,12 @@ public class FXMLDocumentController implements Initializable {
         loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
     }
 
+    //holds the most recently deleted task so it can be undone
+    Task savedTask;
     @FXML
+    // Loads the stage for deleting a task
     public void loadDeleteTask(Task task){
+        savedTask = task;
         updateSelectedTask(task);
         loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
     }
@@ -226,6 +232,25 @@ public class FXMLDocumentController implements Initializable {
     // Refresh the task lists by reloading the date's tasks.
     public void refreshTaskList(ActionEvent actionEvent) {
         loadTasks();
+    }
+
+    @FXML
+    void undoDelete(ActionEvent event) {
+
+
+        // Insert the deleted task.
+        if(savedTask == null){
+
+        }else if (DatabaseHelper.insertTask(savedTask)) {  // Insert the task into the database.
+            savedTask = null;
+            loadTasks();    // Reload the task lists so the new task is displayed.
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Unable to add new task.");
+            alert.showAndWait();
+            System.out.println("Error: Unable to add task.");
+        }
     }
 
     public void toggleCompleted(ActionEvent actionEvent) {
