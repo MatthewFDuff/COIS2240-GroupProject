@@ -2,7 +2,6 @@ package productivityplanner.ui.main;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXTabPane;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -34,7 +33,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private VBox calendarPane;
     @FXML
-    private JFXTabPane tabsTasks;
+    private Tab tabTasks;
     @FXML
     private JFXListView<Task> tasks;
     @FXML
@@ -48,7 +47,6 @@ public class FXMLDocumentController implements Initializable {
 
     static public Boolean toggleComplete = true;
     static public Boolean toggleUncomplete = true;
-
 
     public ObservableList<Task> taskList = FXCollections.observableArrayList();
     ObservableList<JournalEntry> entryList = FXCollections.observableArrayList();
@@ -69,7 +67,7 @@ public class FXMLDocumentController implements Initializable {
         updateJournalTitle();                                           // Update the journal view.
         loadTasks();                                                    // Update the task lists.
 
-        tasks.setCellFactory(completedListView -> new TaskCellController());
+        tasks.setCellFactory(completedListView -> new TaskCellController()); // Cell factory creates new task cells for each task.
     }
 
     @FXML
@@ -90,11 +88,11 @@ public class FXMLDocumentController implements Initializable {
         {
             // HIGHLIGHT/BORDER:
             // Clear the border from the current selected date.
-            //Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.NONE, CornerRadii.EMPTY, new BorderWidths(2))));
+            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.NONE, CornerRadii.EMPTY, new BorderWidths(2))));
             // Change the currently selected day to the one that's just been clicked on.
             Calendar.selectedDay = currentSelectedDay;
             // Add a border to the new selected date.
-            //Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("#292929"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(4))));
+            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("#292929"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(4))));
             // UPDATE JOURNAL:
             DatabaseHelper.loadJournal(entryList);
             updateJournal();
@@ -103,6 +101,14 @@ public class FXMLDocumentController implements Initializable {
         }
         else {
             System.out.println("Unable to update selected date.");
+        }
+    }
+
+    public void toggleSelectionVisual(Day day, boolean selected){
+        if (selected){
+
+        } else {
+
         }
     }
 
@@ -125,23 +131,27 @@ public class FXMLDocumentController implements Initializable {
         loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
     }
 
+    private void updateSelectedTask(Task task) {
+        for(Task currentTask : taskList){ // Go through all the tasks
+            if (currentTask != null)
+            {
+                if (currentTask.equals(task))
+                    tasks.getSelectionModel().select(currentTask);
+            }
+        }
+    }
+
     // Loads all tasks for the current day and sorts them into the appropriate task list.
     public void loadTasks() {
         tasks.getItems().clear();
+
         try {
             if (DatabaseHelper.loadTasks(taskList)){            // If the tasks were successfully loaded..
                 for(Task task : taskList){                      // Separate them into completed/uncompleted lists.
-                    if (task.getCompleted())
-                    {
-                        if (toggleComplete)
-                            tasks.getItems().add(task);
-                    }
-                    else {
-                        if (toggleUncomplete)
-                            tasks.getItems().add(task);
-                    }
+                    tasks.getItems().add(task);
                 }
-                calendar.updateDay(Calendar.selectedDay);
+
+                calendar.updateDay(Calendar.selectedDay, null);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -157,11 +167,8 @@ public class FXMLDocumentController implements Initializable {
         return taskList;
     }
 
-    // Get the selected task from the uncomplete or completed listview.
+    // Get the selected task from the task list.
     public Task getSelectedTask(){
-        // Check which tab is open.. Completed or Uncomplete tasks
-        String selectedTab = tabsTasks.getSelectionModel().getSelectedItem().getId();
-
         return tasks.getSelectionModel().getSelectedItem();
     }
 
@@ -214,17 +221,6 @@ public class FXMLDocumentController implements Initializable {
     // Refresh the task lists by reloading the date's tasks.
     public void refreshTaskList(ActionEvent actionEvent) {
         loadTasks();
-    }
-
-    // Finds the given task and selects it in the appropriate list view.
-    public void updateSelectedTask(Task task) {
-        for(Task currentTask : taskList){ // Go through all the tasks
-            if (currentTask != null)
-            {
-                if (currentTask.equals(task))
-                    tasks.getSelectionModel().select(currentTask);
-            }
-        }
     }
 
     public void toggleCompleted(ActionEvent actionEvent) {

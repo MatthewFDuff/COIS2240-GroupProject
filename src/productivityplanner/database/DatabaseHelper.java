@@ -60,8 +60,8 @@ public class DatabaseHelper {
             PreparedStatement statement = DatabaseHandler.getConnection().prepareStatement(query);
             statement.setString(1, taskName);
             statement.setString(2, taskColour);
-            statement.setString(3,previousName);
-            statement.setString(4,previousColor.toString());
+            statement.setString(3, previousName);
+            statement.setString(4, previousColor.toString());
             statement.setString(5, Calendar.selectedDay.getDate().toString());
             int result = statement.executeUpdate();
             if (result > 0) // If it was successful, reload the task list.

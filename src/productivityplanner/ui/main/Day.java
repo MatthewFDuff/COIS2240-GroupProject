@@ -43,7 +43,7 @@ public class Day extends VBox {
 
         DatabaseHelper.loadTasks(tasks);
 
-        if (tasks != null && !tasks.isEmpty()) {
+        if (!tasks.isEmpty()) {
             int IMAGE_SIZE = 30;
             TilePane taskPane = new TilePane();
             taskPane.setPrefSize(this.getWidth(),this.getHeight());

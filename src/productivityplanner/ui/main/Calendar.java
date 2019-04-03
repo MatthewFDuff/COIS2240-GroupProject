@@ -147,14 +147,17 @@ public class Calendar {
     }
 
     // Used to update the calendar for a single day, rather than all the days.
-    public void updateDay(Day day){
+    public void updateDay(Day day, LocalDate date){
+        if (date == null){
+            date = day.getDate();
+        }
         // Then we can change it in the same way we do updateDays();
         if (day.getChildren().size() > 0){
             day.getChildren().clear();
         }
         // Individual day's number
-        Text txt = new Text(String.valueOf(day.getDate().getDayOfMonth()));
-        day.setDate(day.getDate());
+        Text txt = new Text(String.valueOf(date.getDayOfMonth()));
+        day.setDate(date);
         day.getChildren().add(txt);
         // Individual day's tasks if they exist.
         day.updateTasks();
@@ -163,17 +166,7 @@ public class Calendar {
     public void updateDays(LocalDate calendarDate){
         // Populate the days on the calendar with numbers and information (task and journal data)
         for (Day currentDay : calendarDays) {
-            // TODO: OPTIONAL - Tag days which aren't in the currently selected month so they can be greyed out.
-            if (currentDay.getChildren().size() > 0){
-                currentDay.getChildren().clear();
-            }
-
-            // Individual day's number
-            Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
-            currentDay.setDate(calendarDate);
-            currentDay.getChildren().add(txt);
-            // Individual day's tasks if they exist.
-            currentDay.updateTasks();
+            updateDay(currentDay, calendarDate);
 
             calendarDate = calendarDate.plusDays(1); // Iterate to next day (Equivalent to: "days++;")
         }
