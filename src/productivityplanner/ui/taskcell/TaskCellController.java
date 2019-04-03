@@ -12,6 +12,7 @@ import productivityplanner.database.DatabaseHandler;
 import productivityplanner.ui.main.FXMLDocumentController;
 import productivityplanner.database.DatabaseHelper;
 
+import java.awt.*;
 import java.io.IOException;
 
 import static productivityplanner.ui.main.Main.getFXMLController;
@@ -75,7 +76,11 @@ public class TaskCellController extends ListCell<Task> {
         } else {
             task = item;
             String taskColour = item.getColor().toString().substring(2,8); // Substring makes "0xff66cc33" into this "ff66cc"
+
             lblTaskName.setMinWidth(cell.getMaxWidth());
+            if (isBright(taskColour))
+                lblTaskName.setStyle("-fx-text-fill: black;");
+            else lblTaskName.setStyle("-fx-text-fill: white;");
             lblTaskName.setText(item.getName());                    // Set the cell's name to the name of the task.
             cell.setStyle("-fx-background-color: #" + taskColour);  // Set the cell colour to the task colour.
 
@@ -86,5 +91,59 @@ public class TaskCellController extends ListCell<Task> {
 
             setGraphic(cell);
         }
+    }
+
+    // Checks if a hex colour is bright
+    private Boolean isBright(String hexColour) {
+
+        Integer r, g, b;
+
+        r = 16 * hexToInt(hexColour.substring(0,1));
+        r += hexToInt(hexColour.substring(1,2));
+
+        g = 16 * hexToInt(hexColour.substring(2,3));
+        g += hexToInt(hexColour.substring(3,4));
+
+        b = 16 * hexToInt(hexColour.substring(4,5));
+        b += hexToInt(hexColour.substring(5,6));
+
+        Double brightness = Math.sqrt((r*r*0.241) + (g*g*0.691) + (b*b*0.068));
+
+        if (brightness > 160)
+            return true;
+        else return false;
+    }
+
+    // changes a single hexadecimal number (0-f) to decimal
+    private Integer hexToInt(String hex){
+
+        Integer result = 0;
+
+        try {
+            result = Integer.parseInt(hex);
+        } catch(NumberFormatException e){
+            switch(hex) {
+                case "a":
+                    result = 10;
+                    break;
+                case "b":
+                    result = 11;
+                    break;
+                case "c":
+                    result = 12;
+                    break;
+                case "d":
+                    result = 13;
+                    break;
+                case "e":
+                    result = 14;
+                    break;
+                case "f":
+                    result = 15;
+                    break;
+            }
+        }
+
+        return result;
     }
 }
