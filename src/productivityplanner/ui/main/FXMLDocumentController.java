@@ -47,9 +47,17 @@ public class FXMLDocumentController implements Initializable {
     private JFXButton btnToggleCompleted;
     @FXML
     private JFXButton btnToggleUncompleted;
+    @FXML
+    private HBox newTaskPane;
 
+    // booleans which tell what to show in the task list
+    // shows completed tasks if true
     static public Boolean toggleComplete = true;
+    // shows uncompleted tasks if true
     static public Boolean toggleUncomplete = true;
+
+    // holds the most recently deleted task so it can be undone
+    Task savedTask;
 
     public ObservableList<Task> taskList = FXCollections.observableArrayList();
     ObservableList<JournalEntry> entryList = FXCollections.observableArrayList();
@@ -59,6 +67,7 @@ public class FXMLDocumentController implements Initializable {
     Calendar calendar;
 
     @Override
+    // set up main window
     public void initialize(URL location, ResourceBundle resources) {
         YearMonth date = YearMonth.now();
 
@@ -115,6 +124,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     // Loads the stage for adding a new task
     public void loadAddNewTask(ActionEvent actionEvent) {
+        // load add window
         Utility.loadWindow(getClass().getResource("/productivityplanner/ui/addtask/AddNewTask.fxml"), "Add New Task", null);
     }
 
@@ -122,19 +132,20 @@ public class FXMLDocumentController implements Initializable {
     // Loads the stage for editing an existing task
     public void loadEditTask(Task task) {
         updateSelectedTask(task);
+        // load edit window
         Utility.loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
     }
 
-    //holds the most recently deleted task so it can be undone
-    Task savedTask;
     @FXML
     // Loads the stage for deleting a task
     public void loadDeleteTask(Task task){
-        savedTask = task;
+        savedTask = task; // save the deleted task in case the user wants to undo
         updateSelectedTask(task);
+        // load delete window
         Utility.loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
     }
 
+    //make the task given the one which is currently selected
     private void updateSelectedTask(Task task) {
         for(Task currentTask : taskList){
             if (currentTask.equals(task))
@@ -144,26 +155,26 @@ public class FXMLDocumentController implements Initializable {
 
     // Loads all tasks for the current day and sorts them into the appropriate task list.
     public void loadTasks() {
-        tasks.getItems().clear();
+        tasks.getItems().clear();                               //clear the prior task list
 
         try {
             if (DatabaseHelper.loadTasks(taskList)){            // If the tasks were successfully loaded..
                 for(Task task : taskList){
-                    if (task.getCompleted()){
-                        if (toggleComplete)
+                    if (task.getCompleted()){                   // check if task is completed
+                        if (toggleComplete)                     // add if task is completed and completed are to be shown
                             tasks.getItems().add(task);
                     }
                     else {
-                        if (toggleUncomplete)
+                        if (toggleUncomplete)                   // add if task is uncompleted and uncompleted are to be shown
                             tasks.getItems().add(task);
                     }
                 }
 
                 calendar.updateDay(Calendar.selectedDay, null);
             }
-        } catch (Exception e) {
+        } catch (Exception e) {                                 // If task list was not able to be loaded...
             e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR);     // Create an alert for being unable to load tasks
             alert.setHeaderText(null);
             alert.setContentText("Unable to load tasks.");
             alert.showAndWait();
@@ -201,60 +212,67 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void undoDelete(ActionEvent event) {
-        // Insert the deleted task.
-        if(savedTask == null){
 
-        }else if (DatabaseHelper.insertTask(savedTask)) {  // Insert the task into the database.
+        if(savedTask == null){                              // Stop if there had been no task deleted
+        }else if (DatabaseHelper.insertTask(savedTask)) {   // Insert the task into the database.
             savedTask = null;
-            loadTasks();    // Reload the task lists so the new task is displayed.
-        }else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            loadTasks();                                    // Reload the task lists so the new task is displayed.
+
+        }else {                                             // If task could not be re-added...
+            Alert alert = new Alert(Alert.AlertType.ERROR); // create alerts for being unable to re-add
             alert.setHeaderText(null);
-            alert.setContentText("Unable to add new task.");
+            alert.setContentText("Unable to re-add new task.");
             alert.showAndWait();
-            System.out.println("Error: Unable to add task.");
+            System.out.println("Error: Unable to re-add task.");
         }
     }
 
+    // Toggles button fot showing and hiding completed tasks
     public void toggleCompleted(ActionEvent actionEvent) {
-        taskList.clear();
+        taskList.clear();                                   // Empty task list
 
-        if (toggleComplete) {
-            toggleComplete = false;
-            ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
-            image.setFitHeight(30);
-            image.setFitWidth(30);
-            btnToggleCompleted.setGraphic(image);
-        }
-        else
-        {
-            toggleComplete = true;
-            ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
-            image.setFitHeight(30);
-            image.setFitWidth(30);
-            btnToggleCompleted.setGraphic(image);
-        }
+        ImageView image = new ImageView();                  // image to be set as the new button icon
 
-        refreshTaskList(null);
-    }
-    //TODO: Change the imageviews to be created ONCE and then ACCESSED, rather than created each time the button is pressed.
-    public void toggleUncompleted(ActionEvent actionEvent) {
-        taskList.clear();
 
-        ImageView image = new ImageView();
-        image.setFitHeight(30);
-        image.setFitHeight(30);
-
-        if (toggleUncomplete) {
-            toggleUncomplete = false;
+        if (toggleComplete) {                               // If set to show completed tasks
+            toggleComplete = false;                         // swap boolean
+                                                            // swap image
             image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
         }
-        else {
+        else                                                // If set to not show completed tasks
+        {
+            toggleComplete = true;
+            image = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
+        }
+        image.setFitHeight(30.0);                             // Size of image
+        image.setFitWidth(30.0);
+
+        btnToggleCompleted.setGraphic(image);               // Set graphic to be the new image
+        refreshTaskList(null);
+    }
+
+    //TODO: Change the imageviews to be created ONCE and then ACCESSED, rather than created each time the button is pressed.
+
+    // Toggles button fot showing and hiding uncompleted tasks
+    public void toggleUncompleted(ActionEvent actionEvent) {
+        taskList.clear();                                   // Empty task list
+
+        ImageView image = new ImageView();                  // image to be set as the new button icon
+
+        if (toggleUncomplete) {                             // If set to show uncompleted tasks
+            toggleUncomplete = false;                       // Swap boolean
+                                                            // Swap Image
+            image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
+        }
+        else {                                              // If set to not show uncompleted tasks
             toggleUncomplete = true;
             image = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
         }
 
-        btnToggleUncompleted.setGraphic(image);
+        image.setFitHeight(30.0);                             // Size of image
+        image.setFitWidth(30.0);
+
+        btnToggleUncompleted.setGraphic(image);             // Set graphic to be new image
         refreshTaskList(null);
     }
 }
