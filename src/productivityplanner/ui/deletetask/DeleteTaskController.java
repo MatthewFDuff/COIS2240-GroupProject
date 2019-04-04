@@ -33,6 +33,7 @@ public class DeleteTaskController implements Initializable {
         {
             txtName.setText(task.getName());
             colourPicker.setValue(task.getColor());
+            colourPicker.setOpacity(1.0);
         }
     }
 
