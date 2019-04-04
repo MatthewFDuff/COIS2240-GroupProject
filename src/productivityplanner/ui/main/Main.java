@@ -1,7 +1,6 @@
 package productivityplanner.ui.main;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,12 +21,10 @@ public class Main extends Application {
     // TODO: Delete database (fresh start)
 
     // JOURNAL
-    // TODO: Add save confirmation when the text area is empty (Because it will overwrite the previous entry if it existed)
 
     // TASKS/TASKLISTS
 
     // PROJECT CODE
-    // TODO: Cleanup database and controllers so the methods they use are suited to them/make sense
     // TODO: Rename variables to follow a standard because right now it's a mess. (Colour/color, or txtVariable vs variableTextbox)
     // CSS
     // TODO: Create on main file for all CSS and organize the components appropriately
@@ -36,8 +33,7 @@ public class Main extends Application {
     // TODO: ALL
 
     // OPTIONAL
-    // TODO: Settings: Add the ability to switch colour schemes?
-
+    // TODO: Settings: Add the ability to switch colour schemes
 
     static FXMLDocumentController controller;
 
@@ -47,7 +43,7 @@ public class Main extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
             Parent root = fxmlLoader.load();
 
-            controller = (FXMLDocumentController) fxmlLoader.getController();
+            controller = fxmlLoader.getController();
 
             primaryStage.setTitle("Productivity Planner");
             Scene scene = new Scene(root, 1280, 800);
@@ -59,7 +55,12 @@ public class Main extends Application {
 
             primaryStage.setMinWidth(1175);
             primaryStage.setMinHeight(725);
+
+            primaryStage.setMaxWidth(1280); // There are a few bugs that make the full-size window look bad. Such as the day panes not filling their grid (which is annoying).
+            primaryStage.setMaxHeight(800);
+
             primaryStage.setScene(scene);
+
             primaryStage.show();
             Utility.setProgramIcon(primaryStage);
 

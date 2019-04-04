@@ -10,6 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHelper;
+import productivityplanner.ui.taskcell.TaskCellController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,7 +29,7 @@ public class DeleteTaskController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        task = getFXMLController().getSelectedTask();
+        task = TaskCellController.getSelected().getTask();
         if (task != null)
         {
             txtName.setText(task.getName());

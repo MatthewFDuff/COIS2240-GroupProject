@@ -22,6 +22,7 @@ import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
 import productivityplanner.database.DatabaseHelper;
 import productivityplanner.ui.taskcell.TaskCellController;
+import productivityplanner.utility.Utility;
 
 import java.io.IOException;
 import java.net.URL;
@@ -63,11 +64,11 @@ public class FXMLDocumentController implements Initializable {
 
         this.calendar = new Calendar(date);
         Node calendarView = calendar.getView();
-        calendarPane.getChildren().add(calendarView);   // Generate the calendar GUI.
+        calendarPane.getChildren().add(calendarView);  // Generate the calendar GUI.
 
-        updateSelectedDate(Calendar.selectedDay);                       // Highlight the current date.
-        updateJournalTitle();                                           // Update the journal view.
-        loadTasks();                                                    // Update the task lists.
+        updateSelectedDate(Calendar.selectedDay);   // Highlight the current date.
+        updateJournalTitle();                       // Update the journal view.
+        loadTasks();                                // Update the task lists.
 
         tasks.setCellFactory(completedListView -> new TaskCellController()); // Cell factory creates new task cells for each task.
     }
@@ -90,11 +91,16 @@ public class FXMLDocumentController implements Initializable {
         {
             // HIGHLIGHT/BORDER:
             // Clear the border from the current selected date.
-            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.TRANSPARENT, BorderStrokeStyle.NONE, CornerRadii.EMPTY, new BorderWidths(2))));
+            //Calendar.selectedDay.getBanner().setStyle("-fx-background-color: #FFFFFF");
+            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("TRANSPARENT"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
+
             // Change the currently selected day to the one that's just been clicked on.
             Calendar.selectedDay = currentSelectedDay;
+
             // Add a border to the new selected date.
-            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("#292929"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(4))));
+            Calendar.selectedDay.setBorder(new Border(new BorderStroke(Color.web("#292929"), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
+            //Calendar.selectedDay.getBanner().setStyle("-fx-background-color: #FF9800");
+
             // UPDATE JOURNAL:
             DatabaseHelper.loadJournal(entryList);
             updateJournal();
@@ -106,25 +112,17 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
-    public void toggleSelectionVisual(Day day, boolean selected){
-        if (selected){
-
-        } else {
-
-        }
-    }
-
     @FXML
     // Loads the stage for adding a new task
     public void loadAddNewTask(ActionEvent actionEvent) {
-        loadWindow(getClass().getResource("/productivityplanner/ui/addtask/AddNewTask.fxml"), "Add New Task", null);
+        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/addtask/AddNewTask.fxml"), "Add New Task", null);
     }
 
     @FXML
     // Loads the stage for editing an existing task
     public void loadEditTask(Task task) {
         updateSelectedTask(task);
-        loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
+        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
     }
 
     //holds the most recently deleted task so it can be undone
@@ -134,7 +132,7 @@ public class FXMLDocumentController implements Initializable {
     public void loadDeleteTask(Task task){
         savedTask = task;
         updateSelectedTask(task);
-        loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
+        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
     }
 
     private void updateSelectedTask(Task task) {
@@ -155,11 +153,10 @@ public class FXMLDocumentController implements Initializable {
                         if (toggleComplete)
                             tasks.getItems().add(task);
                     }
-                    else{
+                    else {
                         if (toggleUncomplete)
                             tasks.getItems().add(task);
                     }
-
                 }
 
                 calendar.updateDay(Calendar.selectedDay, null);
@@ -171,38 +168,6 @@ public class FXMLDocumentController implements Initializable {
             alert.setContentText("Unable to load tasks.");
             alert.showAndWait();
         }
-    }
-
-    public ObservableList<Task> getTaskList(){
-        loadTasks();
-        return taskList;
-    }
-
-    // Get the selected task from the task list.
-    public Task getSelectedTask(){
-        return tasks.getSelectionModel().getSelectedItem();
-    }
-
-    // Loads a new window (such as for then window for adding a new task).
-    public static Object loadWindow(URL path, String title, Stage parentStage) {
-        Object controller = null;
-        try{
-            FXMLLoader loader = new FXMLLoader(path);
-            Parent parent = loader.load();
-            controller = loader.getController();
-            Stage stage;
-            if (parentStage != null){
-                stage = parentStage;
-            } else{
-                stage = new Stage(StageStyle.DECORATED);
-            }
-            stage.setTitle(title);
-            stage.setScene(new Scene(parent));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return controller;
     }
 
     // Save the journal entry to the database. (Requires an update/rewrite, because only one entry is allowed per day)
@@ -236,8 +201,6 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void undoDelete(ActionEvent event) {
-
-
         // Insert the deleted task.
         if(savedTask == null){
 
@@ -278,21 +241,20 @@ public class FXMLDocumentController implements Initializable {
     public void toggleUncompleted(ActionEvent actionEvent) {
         taskList.clear();
 
+        ImageView image = new ImageView();
+        image.setFitHeight(30);
+        image.setFitHeight(30);
+
         if (toggleUncomplete) {
             toggleUncomplete = false;
-            ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
-            image.setFitHeight(30);
-            image.setFitWidth(30);
-            btnToggleUncompleted.setGraphic(image);
+            image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
         }
-        else
-        {
+        else {
             toggleUncomplete = true;
-            ImageView image = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
-            image.setFitHeight(30);
-            image.setFitWidth(30);
-            btnToggleUncompleted.setGraphic(image);
+            image = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
         }
+
+        btnToggleUncompleted.setGraphic(image);
         refreshTaskList(null);
     }
 }

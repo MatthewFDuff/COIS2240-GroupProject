@@ -1,5 +1,6 @@
 package productivityplanner.ui.main;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -157,10 +158,20 @@ public class Calendar {
         }
         // Individual day's number
         Text txt = new Text(String.valueOf(date.getDayOfMonth()));
+        HBox banner = new HBox(txt);
+        banner.setAlignment(Pos.CENTER_LEFT);
+        banner.setPadding(new Insets(0,3,0,3));
+        day.setBanner(banner);
+
         day.setDate(date);
-        day.getChildren().add(txt);
+        day.getChildren().add(banner);
+
         // Individual day's tasks if they exist.
         day.updateTasks();
+    }
+
+    public void updateSelectedDay(){
+
     }
 
     public void updateDays(LocalDate calendarDate){

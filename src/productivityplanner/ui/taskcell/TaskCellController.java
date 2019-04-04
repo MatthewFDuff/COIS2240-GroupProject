@@ -9,11 +9,9 @@ import javafx.scene.control.ListCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import productivityplanner.data.Task;
-import productivityplanner.database.DatabaseHandler;
-import productivityplanner.ui.main.FXMLDocumentController;
 import productivityplanner.database.DatabaseHelper;
+import productivityplanner.utility.Utility;
 
-import java.awt.*;
 import java.io.IOException;
 
 import static productivityplanner.ui.main.Main.getFXMLController;
@@ -37,13 +35,14 @@ public class TaskCellController extends ListCell<Task> {
     @FXML
     JFXButton btnEdit;
 
-    Task task;
+    private Task task;
+    private static TaskCellController selected;
 
     // Load image objects and set image height/widths
-    ImageView cbBlackCompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_black_48dp.png");
-    ImageView cbBlackUncompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_black_48dp.png");
-    ImageView cbWhiteCompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
-    ImageView cbWhiteUncompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
+    private ImageView cbBlackCompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_black_48dp.png");
+    private ImageView cbBlackUncompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_black_48dp.png");
+    private ImageView cbWhiteCompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
+    private ImageView cbWhiteUncompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
 
     private Boolean lightColour = false;
 
@@ -52,6 +51,18 @@ public class TaskCellController extends ListCell<Task> {
 
         btnDelete.setOnAction(e -> getFXMLController().loadDeleteTask(this.task));
         btnEdit.setOnAction((e -> getFXMLController().loadEditTask(this.task)));
+
+        cell.setOnMouseClicked(e -> {
+            TaskCellController previousSelection = null;
+            if (selected != null)
+              previousSelection = selected;
+
+            selected = this;
+            updateItem(task, false);
+
+            if (previousSelection != null)
+                previousSelection.updateItem(task, false);
+        });
 
         btnComplete.setOnAction((event) -> {
             DatabaseHelper.toggleComplete(this.task);
@@ -71,6 +82,10 @@ public class TaskCellController extends ListCell<Task> {
                 }
             }
         });
+    }
+
+    public static TaskCellController getSelected(){
+        return selected;
     }
 
     private void setCellSelected(boolean bool) {
@@ -106,7 +121,7 @@ public class TaskCellController extends ListCell<Task> {
 
             lblTaskName.setMinWidth(cell.getMaxWidth());
 
-            lightColour = isBright(taskColour);
+            lightColour = Utility.isBright(taskColour);
             if (lightColour)
                 lblTaskName.setStyle("-fx-text-fill: black;");
             else lblTaskName.setStyle("-fx-text-fill: white;");
@@ -138,63 +153,12 @@ public class TaskCellController extends ListCell<Task> {
                 }
             }
 
-            setCellSelected(true);
+            if (this == selected)
+                setCellSelected(true);
+            else
+                setCellSelected(false);
 
             setGraphic(cell);
         }
-    }
-
-    // Checks if a hex colour is bright
-    private Boolean isBright(String hexColour) {
-
-        Integer r, g, b;
-
-        r = 16 * hexToInt(hexColour.substring(0,1));
-        r += hexToInt(hexColour.substring(1,2));
-
-        g = 16 * hexToInt(hexColour.substring(2,3));
-        g += hexToInt(hexColour.substring(3,4));
-
-        b = 16 * hexToInt(hexColour.substring(4,5));
-        b += hexToInt(hexColour.substring(5,6));
-
-        Double brightness = Math.sqrt((r*r*0.241) + (g*g*0.691) + (b*b*0.068));
-
-        if (brightness > 160)
-            return true;
-        else return false;
-    }
-
-    // changes a single hexadecimal number (0-f) to decimal
-    private Integer hexToInt(String hex){
-
-        Integer result = 0;
-
-        try {
-            result = Integer.parseInt(hex);
-        } catch(NumberFormatException e){
-            switch(hex) {
-                case "a":
-                    result = 10;
-                    break;
-                case "b":
-                    result = 11;
-                    break;
-                case "c":
-                    result = 12;
-                    break;
-                case "d":
-                    result = 13;
-                    break;
-                case "e":
-                    result = 14;
-                    break;
-                case "f":
-                    result = 15;
-                    break;
-            }
-        }
-
-        return result;
     }
 }

@@ -4,8 +4,8 @@ CSS/JavaFX Reference:
 */
 
 * {
-    dark-primary-color: #1976D2;
-    default-primary-color: #2196F3;
+    dark-primary-color: #1976D2;        /* DARK BLUE */
+    default-primary-color: #2196F3;     /* BLUE */
     default-secondary-color: #FF9800;
     light-primary-color: #BBDEFB;
     text-primary-color: #FFFFFF;
@@ -88,4 +88,8 @@ CSS/JavaFX Reference:
 
 #newTaskPane {
     -fx-background-color: default-primary-color;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: TRANSPARENT;
 }

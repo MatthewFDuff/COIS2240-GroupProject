@@ -8,20 +8,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import productivityplanner.data.Task;
-import productivityplanner.database.DatabaseHandler;
 import productivityplanner.database.DatabaseHelper;
+import productivityplanner.ui.taskcell.TaskCellController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static productivityplanner.ui.main.Main.getFXMLController;
 
 public class EditTaskController implements Initializable {
 
@@ -52,7 +49,7 @@ public class EditTaskController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        task = getFXMLController().getSelectedTask();
+        task = TaskCellController.getSelected().getTask();
 
         if (task != null)
         {
