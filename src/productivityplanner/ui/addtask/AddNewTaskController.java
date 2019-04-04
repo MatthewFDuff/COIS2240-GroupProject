@@ -54,28 +54,27 @@ public class AddNewTaskController implements Initializable {
     @FXML
     // Adds a new task to the uncompleted task list.
     private void addNewTask(ActionEvent event){
-        // Get information from the form.
-        String taskName = txtName.getText();
+
+        String taskName = txtName.getText();                        // Get information from the form.
         Color taskColour = colourPicker.getValue();
 
-        // Validate the data.
-        if (taskName.isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+        if (taskName.isEmpty()){                                    // Validate the data.
+            Alert alert = new Alert(Alert.AlertType.ERROR);         // Create an alerts for fields not being complete
             alert.setHeaderText(null);
             alert.setContentText("Please enter in all fields.");
             alert.showAndWait();
             System.out.println("Error: The task was not given a name.");
             return;
         }
-        // Create task out of data.
-        Task task = new Task(Calendar.selectedDay.getDate(), taskName, taskColour);
+
+        Task task = new Task(Calendar.selectedDay.getDate(), taskName, taskColour); // Create task out of data.
 
         // Insert the task.
         if (DatabaseHelper.insertTask(task)) {  // Insert the task into the database.
             getFXMLController().loadTasks();    // Reload the task lists so the new task is displayed.
             addCancel(new ActionEvent());       // Close the window after successfully adding the task.
         }else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR); // Create alert for being unable to add the task
             alert.setHeaderText(null);
             alert.setContentText("Unable to add new task.");
             alert.showAndWait();
@@ -86,8 +85,8 @@ public class AddNewTaskController implements Initializable {
     @FXML
     // Closes the stage when the user presses the cancel button.
     public void addCancel(ActionEvent actionEvent) {
-        Stage stage = (Stage) rootPane.getScene().getWindow();
-        stage.close();
+        Stage stage = (Stage) rootPane.getScene().getWindow(); // Get access to the window
+        stage.close();                                         // Close the window
     }
 }
 
