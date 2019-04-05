@@ -60,7 +60,7 @@
                                                      </ImageView>
                                                  </graphic>
                                              </JFXButton>
-                                             <JFXButton fx:id="btnToggleCompleted" layoutX="249.0" layoutY="7.0" onAction="#toggleCompleted" prefHeight="40.0" text="Toggle" HBox.hgrow="ALWAYS">
+                                             <JFXButton fx:id="btnToggleCompleted" layoutX="249.0" layoutY="7.0" onAction="#toggleCompleted" prefHeight="40.0" text="Completed" HBox.hgrow="ALWAYS">
                                                  <graphic>
                                                      <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                                                          <image>
@@ -69,7 +69,7 @@
                                                      </ImageView>
                                                  </graphic>
                                              </JFXButton>
-                                             <JFXButton fx:id="btnToggleUncompleted" layoutX="249.0" layoutY="7.0" onAction="#toggleUncompleted" prefHeight="40.0" text="Toggle" HBox.hgrow="ALWAYS">
+                                             <JFXButton fx:id="btnToggleUncompleted" layoutX="249.0" layoutY="7.0" onAction="#toggleUncompleted" prefHeight="40.0" text="Uncompleted" HBox.hgrow="ALWAYS">
                                                  <graphic>
                                                      <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                                                          <image>
