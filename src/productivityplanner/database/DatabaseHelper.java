@@ -16,6 +16,7 @@ import static productivityplanner.ui.main.Main.getFXMLController;
 
 public class DatabaseHelper {
 
+    // Insert task into database.
     public static boolean insertTask(Task task){
         try{
             String query = "INSERT INTO TASK VALUES (?,?,?,?)";
@@ -36,6 +37,7 @@ public class DatabaseHelper {
         return false;
     }
 
+    // Remove a task from the database.
     public static boolean deleteTask(Task task) {
         try{
             String query = "DELETE FROM TASK WHERE (NAME=? AND COLOUR=? AND DATE=?)";
@@ -52,6 +54,7 @@ public class DatabaseHelper {
         return false;
     }
 
+    // Update a task's information within the database.
     public static boolean updateTask(String taskName, String taskColour, Task task){
         String previousName = task.getName();
         Color previousColor = task.getColor();
@@ -75,6 +78,7 @@ public class DatabaseHelper {
         return false;
     }
 
+    // Loads all tasks of the current day from the database.
     public static boolean loadTasks(ObservableList<Task> taskList) {
         taskList.clear();
         try{
@@ -100,6 +104,7 @@ public class DatabaseHelper {
         return false;
     }
 
+    // Toggles the completion status of a task.
     public static boolean toggleComplete(Task task) {
         Boolean complete = task.getCompleted();
 
@@ -117,6 +122,7 @@ public class DatabaseHelper {
             statement.setString(4, Calendar.selectedDay.getDate().toString());
             int result = statement.executeUpdate();
             if (result > 0){
+                // Reload the task list to update the graphics.
                 getFXMLController().loadTasks();
             }
             return (result > 0);
@@ -126,6 +132,7 @@ public class DatabaseHelper {
         return false;
     }
 
+    // Insert a new journal entry into the database.
     public static boolean insertJournalEntry(JournalEntry entry){
         try {
             String action = "INSERT INTO JOURNAL VALUES (?, ?)";
@@ -144,6 +151,7 @@ public class DatabaseHelper {
         return false;
     }
 
+    // Change an existing journal entry if the user presses the save button.
     public static boolean updateJournalEntry(JournalEntry entry){
         try{
             String query = "UPDATE JOURNAL SET TEXT = ? WHERE DATE=?";
@@ -162,6 +170,7 @@ public class DatabaseHelper {
         return false;
     }
 
+    // Loads the current day's journal entry from the database.
     public static boolean loadJournal(ObservableList<JournalEntry> entryList){
         entryList.clear();
         try{

@@ -13,9 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHelper;
-import productivityplanner.utility.Utility;
 
-import javax.rmi.CORBA.Util;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -23,19 +21,18 @@ import static productivityplanner.ui.main.Main.getFXMLController;
 
 public class Day extends VBox {
 
-    private LocalDate date;         // Hold the date of the day
+    private LocalDate date; // Holds the day's date.
 
-    private HBox banner;            //
+    private HBox banner; // Technically this isn't being used TODO: Remove banner (and related code) or implement new selection visual.
 
     public Day(Node... children)
     {
         super(children);
         this.setOnMouseClicked(e -> getFXMLController().setSelectedDay(this));
         this.setPadding(new Insets(1, 1, 1, 1));
-        //this.setSpacing(10);
     }
 
-    // Getters and Setters for date and banner
+    // Getters and Setters for date and banner.
     public LocalDate getDate(){ return date; }
     public String getFormattedDate() { return date.format(DateTimeFormatter.ofPattern("MMMM dd, YYYY")); }
     public void setDate(LocalDate date) {
@@ -46,7 +43,7 @@ public class Day extends VBox {
     }
     public HBox getBanner(){ return banner; }
 
-    // Puts out the tasks of a given day on the calender
+    // Puts out the tasks of a given day on the calender.
     public void updateTasks(){
         ObservableList<Task> tasks = FXCollections.observableArrayList();
         Day tempDay = Calendar.selectedDay; // Save the current selected day so we can revert back to it once we're done loading info for each day.
@@ -55,23 +52,23 @@ public class Day extends VBox {
 
         DatabaseHelper.loadTasks(tasks);
 
-        if (!tasks.isEmpty()) {                                     // If the day has at least 1 task
+        if (!tasks.isEmpty()) {  // If the day has at least 1 task.
             int IMAGE_SIZE = 30;
             TilePane taskPane = new TilePane();
             taskPane.setPrefSize(this.getWidth(),this.getHeight());
             ObservableList<ImageView> taskList = FXCollections.observableArrayList();
 
-            for (Task task: tasks){                                 // Go through each task of the day
+            for (Task task: tasks){ // Go through each task of the day.
                 ImageView box;
                 Image image;
 
-                if (task.getCompleted()){                           // Set appropriate image based on whether task is completed
+                if (task.getCompleted()){ // Set appropriate image based on whether task is completed.
                     image = new Image("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
                 } else {
                     image = new Image("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
                 }
 
-                box = new ImageView(image);                         // Setup box which holds the image
+                box = new ImageView(image); // Setup box which holds the image
                 ImageView boxClip = new ImageView(image);
                 boxClip.setFitWidth(IMAGE_SIZE);
                 boxClip.setFitHeight(IMAGE_SIZE);
@@ -81,18 +78,18 @@ public class Day extends VBox {
                 box.setFitWidth(IMAGE_SIZE);
                 box.setPreserveRatio(true);
 
-                ColorAdjust monochrome = new ColorAdjust();         // Change the colour to match the task colour.
+                ColorAdjust monochrome = new ColorAdjust(); // Change the colour to match the task colour.
                 monochrome.setSaturation(-1.0);
                 Blend colour = new Blend(BlendMode.MULTIPLY, monochrome, new ColorInput(0,0,box.getFitWidth(), box.getFitHeight(), task.getColor()));
                 box.setEffect(colour);
 
-                taskList.add(box);                                  // Add current box to the list of tasks
+                taskList.add(box); // Add current box to the list of tasks.
             }
 
             taskPane.getChildren().addAll(taskList);
             this.getChildren().add(taskPane);
         }
 
-        Calendar.selectedDay = tempDay;                             // Reset the selected day back
+        Calendar.selectedDay = tempDay; // Reset the selected day back to its original value.
     }
 }

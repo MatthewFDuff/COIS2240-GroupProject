@@ -50,7 +50,7 @@
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <Label fx:id="lblAskDelete" graphicTextGap="3.0" prefHeight="57.0" prefWidth="352.0" text="Are you sure you would like the delete this task?" textAlignment="CENTER" wrapText="true">
+                  <Label fx:id="lblAskDelete" graphicTextGap="3.0" prefHeight="57.0" prefWidth="352.0" text="Are you sure you would like to delete this task?" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -62,8 +62,8 @@
             </HBox>
                 <HBox alignment="CENTER" prefHeight="92.0" prefWidth="391.0" spacing="40.0">
                     <children>
-                        <JFXButton fx:id="btnConfirm" layoutX="135.0" layoutY="26.0" onAction="#deleteTask" prefHeight="40.0" prefWidth="121.0" text="Yes" />
-                        <JFXButton fx:id="btnCancel" layoutX="135.0" layoutY="26.0" onAction="#cancel" prefHeight="40.0" prefWidth="121.0" text="No"  style="-fx-background-color: #FF5252;"/>
+                        <JFXButton fx:id="btnConfirm" layoutX="135.0" layoutY="26.0" onAction="#deleteTask" prefHeight="40.0" prefWidth="121.0" text="Yes" style="-fx-background-color: #FF5252;" />
+                        <JFXButton fx:id="btnCancel" layoutX="135.0" layoutY="26.0" onAction="#cancel" prefHeight="40.0" prefWidth="121.0" text="No" />
                     </children>
                <padding>
                   <Insets bottom="20.0" />

@@ -15,39 +15,32 @@ import productivityplanner.ui.taskcell.TaskCellController;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static productivityplanner.ui.main.Main.getFXMLController;
-
 public class DeleteTaskController implements Initializable {
-    @FXML
-    private JFXTextField txtName;
-    @FXML
-    private JFXColorPicker colourPicker;
-    @FXML
-    private BorderPane rootPane;
+    @FXML private BorderPane rootPane;
+    @FXML private JFXTextField txtName;
+    @FXML private JFXColorPicker colourPicker;
 
-    Task task;                                               // Focused task up for deletion
+    private Task task;                                               // Focused task up for deletion
 
     @Override
     // Setup the delete window
     public void initialize(URL location, ResourceBundle resources) {
-        task = TaskCellController.getSelected().getTask();           // Set focused task
+        task = TaskCellController.getSelected().getTask();           // Set focused task.
         if (task != null)                                            // If the task exists...
         {
-            txtName.setText(task.getName());                         // Update the Edit form to display the task's pre-edit information.
+            txtName.setText(task.getName());                         // Update the Edit form to display the task's information.
             colourPicker.setValue(task.getColor());
-            colourPicker.setOpacity(1.0);                            //Since the colour picker isn't in use, it fades the colour
-        }                                                            //This line counteracts that change
+            colourPicker.setOpacity(1.0);                            // Since the colour picker is disabled, it fades the colour:
+        }                                                            // This line counteracts that change.
     }
 
     @FXML
-    // Runs once the confirm delete is pressed
+    // Runs once the confirm delete is pressed.
     private void deleteTask(ActionEvent event) {
-
-
         if (DatabaseHelper.deleteTask(task)) {              // Update the task's information in the database.
             cancel(new ActionEvent());                      // Close the window when the task has been updated.
-        }else {                                             // If It can not delete task
-            Alert alert = new Alert(Alert.AlertType.ERROR); // Create Alert for failing to delete
+        }else {                                             // If It can not delete task.
+            Alert alert = new Alert(Alert.AlertType.ERROR); // Create Alert for failing to delete.
             alert.setHeaderText(null);
             alert.setContentText("Failed to delete task.");
             alert.showAndWait();
@@ -58,7 +51,7 @@ public class DeleteTaskController implements Initializable {
     @FXML
     // Closes the window, Runs if cancel is hit and after deletion
     public void cancel(ActionEvent event) {
-        Stage stage = (Stage) rootPane.getScene().getWindow(); // Get access to the window
-        stage.close();                                         // Close the window
+        Stage stage = (Stage) rootPane.getScene().getWindow(); // Get access to the window.
+        stage.close();                                         // Close the window.
     }
 }

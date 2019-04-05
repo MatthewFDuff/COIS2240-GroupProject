@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
@@ -24,28 +23,14 @@ import static productivityplanner.ui.main.Main.getFXMLController;
 
 public class AddNewTaskController implements Initializable {
 
-    @FXML
-    BorderPane rootPane;
-    @FXML
-    VBox vbox;
-    @FXML
-    Pane titlePane;
-    @FXML
-    Pane namePane;
-    @FXML
-    Pane colourPane;
-    @FXML
-    Label title;
-    @FXML
-    Label lblName;
-    @FXML
-    JFXTextField txtName;
-    @FXML
-    Label lblColour;
-    @FXML
-    JFXColorPicker colourPicker;
-    @FXML
-    JFXButton btnAddTask;
+    @FXML BorderPane rootPane;
+    @FXML VBox vbox;
+    @FXML Label title;
+    @FXML Label lblName;
+    @FXML JFXTextField txtName;
+    @FXML Label lblColour;
+    @FXML JFXColorPicker colourPicker;
+    @FXML JFXButton btnAddTask;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -54,12 +39,12 @@ public class AddNewTaskController implements Initializable {
     @FXML
     // Adds a new task to the uncompleted task list.
     private void addNewTask(ActionEvent event){
-
-        String taskName = txtName.getText();                        // Get information from the form.
+        // Get information from the form.
+        String taskName = txtName.getText();
         Color taskColour = colourPicker.getValue();
 
-        if (taskName.isEmpty()){                                    // Validate the data.
-            Alert alert = new Alert(Alert.AlertType.ERROR);         // Create an alerts for fields not being complete
+        if (taskName.isEmpty()){                            // Validate the data. Task Name cannot be empty.
+            Alert alert = new Alert(Alert.AlertType.ERROR); // Create an alerts for fields not being complete
             alert.setHeaderText(null);
             alert.setContentText("Please enter in all fields.");
             alert.showAndWait();
@@ -83,7 +68,7 @@ public class AddNewTaskController implements Initializable {
     }
 
     @FXML
-    // Closes the stage when the user presses the cancel button.
+    // Closes the stage when the user presses the cancel button or when a task has been successfully added.
     public void addCancel(ActionEvent actionEvent) {
         Stage stage = (Stage) rootPane.getScene().getWindow(); // Get access to the window
         stage.close();                                         // Close the window

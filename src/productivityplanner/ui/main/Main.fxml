@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER_LEFT" minHeight="800.0" minWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.FXMLDocumentController">
+<VBox alignment="CENTER_LEFT" minHeight="800.0" minWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productivityplanner.ui.main.MainController">
    <children>
       <HBox alignment="CENTER" minHeight="600.0" minWidth="1024.0" VBox.vgrow="ALWAYS">
          <children>
@@ -60,7 +60,7 @@
                                                      </ImageView>
                                                  </graphic>
                                              </JFXButton>
-                                             <JFXButton fx:id="btnToggleCompleted" layoutX="249.0" layoutY="7.0" onAction="#toggleCompleted" prefHeight="40.0" text="Toggle" HBox.hgrow="ALWAYS">
+                                             <JFXButton fx:id="btnToggleCompleted" layoutX="249.0" layoutY="7.0" onAction="#toggleCompleted" prefHeight="40.0" text="Completed" HBox.hgrow="ALWAYS">
                                                  <graphic>
                                                      <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                                                          <image>
@@ -69,7 +69,7 @@
                                                      </ImageView>
                                                  </graphic>
                                              </JFXButton>
-                                             <JFXButton fx:id="btnToggleUncompleted" layoutX="249.0" layoutY="7.0" onAction="#toggleUncompleted" prefHeight="40.0" text="Toggle" HBox.hgrow="ALWAYS">
+                                             <JFXButton fx:id="btnToggleUncompleted" layoutX="249.0" layoutY="7.0" onAction="#toggleUncompleted" prefHeight="40.0" text="Uncompleted" HBox.hgrow="ALWAYS">
                                                  <graphic>
                                                      <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
                                                          <image>

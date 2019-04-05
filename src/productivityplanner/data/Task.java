@@ -1,14 +1,14 @@
 package productivityplanner.data;
 
-import java.awt.*;
 import java.time.LocalDate;
 import javafx.scene.paint.Color;
 
+// Represents a task for the user to complete.
 public class Task {
-    private LocalDate date;
-    private String name;
-    private Color color;
-    private boolean isCompleted;
+    private LocalDate date;         // The date the task was created.
+    private String name;            // The name of the task (eg. Laundry, Do Dishes, etc).
+    private Color color;            // The colour of the task's GUI.
+    private boolean isCompleted;    // The completion status of the task (Done, Not Done).
 
     public Task(LocalDate dateCreated, String taskName, Color taskColor)
     {

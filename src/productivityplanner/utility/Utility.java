@@ -11,9 +11,10 @@ import java.io.IOException;
 import java.net.URL;
 
 public class Utility {
-    private static String ICON_PATH = "productivityplanner/ui/icons/outline_check_box_white_48dp.png";
 
+    // Sets the icon of a window to a checkbox.
     public static void setProgramIcon(Stage stage){
+        String ICON_PATH = "productivityplanner/ui/icons/outline_check_box_black_48dp.png";
         stage.getIcons().add(new Image(ICON_PATH));
     }
 
@@ -39,7 +40,7 @@ public class Utility {
         return controller;
     }
 
-    // Checks if a hex colour is bright
+    // Checks if a hex colour is bright.
     public static Boolean isBright(String hexColour) {
         Integer r, g, b;
 
@@ -59,7 +60,7 @@ public class Utility {
         else return false;
     }
 
-    // changes a single hexadecimal number (0-f) to decimal
+    // Changes a single hexadecimal number (0-f) to decimal.
     public static Integer hexToInt(String hex){
         Integer result = 0;
 

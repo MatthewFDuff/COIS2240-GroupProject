@@ -29,7 +29,7 @@ import java.net.URL;
 import java.time.YearMonth;
 import java.util.ResourceBundle;
 
-public class FXMLDocumentController implements Initializable {
+public class MainController implements Initializable {
     // Generally you don't need to instantiate buttons here because you reference their actions, not the button itself.
     @FXML
     private VBox calendarPane;

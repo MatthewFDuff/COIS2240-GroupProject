@@ -2,6 +2,7 @@ package productivityplanner.data;
 
 import java.time.LocalDate;
 
+// Represents a single journal entry which contains the entry's date and text.
 public class JournalEntry {
     private String text;
     private LocalDate date;

@@ -23,28 +23,22 @@ public class TaskCellController extends ListCell<Task> {
     public Task getTask() {
         return task;
     }
+    @FXML HBox cell;
+    @FXML Label lblTaskName;
+    @FXML Button btnComplete;
+    @FXML JFXButton btnDelete;
+    @FXML JFXButton btnEdit;
 
-    @FXML
-    HBox cell;
-    @FXML
-    Label lblTaskName;
-    @FXML
-    Button btnComplete;
-    @FXML
-    JFXButton btnDelete;
-    @FXML
-    JFXButton btnEdit;
+    private static TaskCellController selected; // Keeps track of which task is selected within the list.
 
-    private Task task;
-    private static TaskCellController selected;
-
-    // Load image objects and set image height/widths
+    // Load image objects and set image height/widths.
     private ImageView cbBlackCompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_black_48dp.png");
     private ImageView cbBlackUncompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_black_48dp.png");
     private ImageView cbWhiteCompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
     private ImageView cbWhiteUncompleted = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
 
-    private Boolean lightColour = false;
+    private Task task;                      // The current cell's task.
+    private Boolean lightColour = false;    // Used to change both the task name and checkbox colour based on the task colour.
 
     public TaskCellController() {
         loadFXML();
@@ -84,16 +78,7 @@ public class TaskCellController extends ListCell<Task> {
         });
     }
 
-    public static TaskCellController getSelected(){
-        return selected;
-    }
-
-    private void setCellSelected(boolean bool) {
-        btnDelete.setVisible(bool);
-        btnEdit.setVisible(bool);
-        setGraphic(cell);
-    }
-
+    // Load the design of the task cell.
     private void loadFXML(){
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskCell.fxml"));
@@ -103,6 +88,17 @@ public class TaskCellController extends ListCell<Task> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static TaskCellController getSelected(){
+        return selected;
+    }
+
+    // Sets the delete and edit buttons visible within the task cell (Used only when a task is selected).
+    private void setButtonsVisible(boolean bool) {
+        btnDelete.setVisible(bool);
+        btnEdit.setVisible(bool);
+        setGraphic(cell);
     }
 
     @Override
@@ -117,20 +113,21 @@ public class TaskCellController extends ListCell<Task> {
             setGraphic(null);
         } else {
             task = item;
-            String taskColour = item.getColor().toString().substring(2,8); // Substring makes "0xff66cc33" into this "ff66cc"
+            String taskColour = item.getColor().toString().substring(2,8); // Substring makes "0xff66cc33" into "ff66cc"
 
             lblTaskName.setMinWidth(cell.getMaxWidth());
 
+            // Determine the brightness of the task's colour.
             lightColour = Utility.isBright(taskColour);
             if (lightColour)
                 lblTaskName.setStyle("-fx-text-fill: black;");
             else lblTaskName.setStyle("-fx-text-fill: white;");
 
-            lblTaskName.setText(item.getName());                    // Set the cell's name to the name of the task.
-            cell.setStyle("-fx-background-color: #" + taskColour);  // Set the cell colour to the task colour.
-            btnComplete.setStyle("-fx-background-color: #" + taskColour);  // Set the button colour to the task colour.
+            lblTaskName.setText(item.getName());                        // Set the cell's name to the name of the task.
+            cell.setStyle("-fx-background-color: #" + taskColour);      // Set the cell colour to the task colour.
+            btnComplete.setStyle("-fx-background-color: TRANSPARENT");  // Set the button's background transparent.
 
-            // Set the cell's button to display a check mark if it has been completed (set without by default)
+            // Set the cell's button to display a check mark if it has been completed (set without checkmark by default).
             if (lightColour) {
                 if (task.getCompleted()) {
                     cbBlackCompleted.setFitHeight(30.0);
@@ -153,11 +150,13 @@ public class TaskCellController extends ListCell<Task> {
                 }
             }
 
+            // Set the Edit and Delete buttons visible if the task is currently selected.
             if (this == selected)
-                setCellSelected(true);
+                setButtonsVisible(true);
             else
-                setCellSelected(false);
+                setButtonsVisible(false);
 
+            // Display the cell.
             setGraphic(cell);
         }
     }

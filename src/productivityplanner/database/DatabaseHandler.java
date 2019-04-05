@@ -1,13 +1,6 @@
 package productivityplanner.database;
 
-import javafx.scene.paint.Color;
-import productivityplanner.data.Task;
-import productivityplanner.ui.main.Calendar;
-import productivityplanner.ui.taskcell.TaskCellController;
-
 import java.sql.*;
-
-import static productivityplanner.ui.main.Main.getFXMLController;
 
 // Reference: https://github.com/afsalashyana/Library-Assistant
 // Video Explanation: https://www.youtube.com/watch?v=XZAQxZcjSVE
@@ -24,6 +17,10 @@ public class DatabaseHandler {
         setupJournalTable();
     }
 
+    public static Connection getConnection() {
+        return connection;
+    }
+
     // Creates a new handler the first time it's called and returns it each time it's called.
     public static DatabaseHandler getInstance(){
         if (handler == null) {
@@ -33,22 +30,18 @@ public class DatabaseHandler {
         return handler;
     }
 
-    void createConnection(){
+    // Create a connection to the database.
+    private void createConnection(){
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
             connection = DriverManager.getConnection(DB_URL);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (IllegalAccessException | InstantiationException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static ResultSet executeQuery(String query) { // Used to execute statements such as SELECT statements which return results.
+    // Used to execute statements such as SELECT statements which return results.
+    static ResultSet executeQuery(String query) {
         ResultSet result;
         try{
             statement = connection.createStatement();
@@ -57,10 +50,12 @@ public class DatabaseHandler {
             e.printStackTrace();
             return null;
         }
+
         return result;
     }
 
-    public boolean executeAction(String action) { // Used to execute statements such as INSERT/CREATE_TABLE which don't return results.
+    // Used to execute statements such as INSERT/CREATE_TABLE which don't return results.
+    public boolean executeAction(String action) {
         try {
             statement = connection.createStatement();
             statement.execute(action);
@@ -71,24 +66,7 @@ public class DatabaseHandler {
         }
     }
 
-    public boolean updateJournalEntry(String text){
-        try{
-            String query = "UPDATE JOURNAL SET TEXT = ? WHERE DATE=?";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, text);
-            statement.setString(2, Calendar.selectedDay.getDate().toString());
-            int result = statement.executeUpdate();
-            return (result > 0);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public static Connection getConnection() {
-        return connection;
-    }
-
+    // Creates a new table to store tasks if the table doesn't exist.
     void setupTaskTable(){
         String TABLE_NAME = "TASK";
         try{
@@ -103,7 +81,7 @@ public class DatabaseHandler {
                             + "colour varchar(200), \n"
                             + "isComplete boolean default false, \n"
                             + "date varchar(20), \n"
-                            + "primary key(name, colour, date))");
+                            + "primary key(name, colour, date))"); // This could be done with an auto-incremented ID instead.
                 System.out.println("Database successfully created.");
             }
         } catch (SQLException e) {
@@ -111,6 +89,7 @@ public class DatabaseHandler {
         }
     }
 
+    // Creates a new table to store journal entries if the table doesn't exist yet.
     void setupJournalTable(){
         String TABLE_NAME = "JOURNAL";
         try{
