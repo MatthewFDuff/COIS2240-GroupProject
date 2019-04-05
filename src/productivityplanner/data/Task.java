@@ -1,5 +1,6 @@
 package productivityplanner.data;
 
+import java.awt.*;
 import java.time.LocalDate;
 import javafx.scene.paint.Color;
 
@@ -10,6 +11,8 @@ public class Task {
     private Color color;            // The colour of the task's GUI.
     private boolean isCompleted;    // The completion status of the task (Done, Not Done).
 
+
+    // Constructor for creating a new task from the identifier information
     public Task(LocalDate dateCreated, String taskName, Color taskColor)
     {
         this.date = dateCreated;
@@ -18,6 +21,7 @@ public class Task {
         this.isCompleted = false;
     }
 
+    // Constructor which allows isCompleted to be defined
     public Task(LocalDate dateCreated, String taskName, Color taskColor, boolean complete)
     {
         this.date = dateCreated;
@@ -26,6 +30,7 @@ public class Task {
         this.isCompleted = complete;
     }
 
+    // Getters and Setters for the important variables
     public LocalDate getDate() { return date; }
     public void setDate(LocalDate date) { this.date = date; }
     public String getName() { return name; }
