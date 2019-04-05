@@ -35,7 +35,7 @@ public class Main extends Application {
             // Add CSS files
             scene.getStylesheets().add("productivityplanner/ui/style/tab-pane.css");
             scene.getStylesheets().add("productivityplanner/ui/style/calendar.css");
-            scene.getStylesheets().add("productivityplanner/ui/style/test.css");
+            scene.getStylesheets().add("productivityplanner/ui/style/style.css");
 
             primaryStage.setMinWidth(1175);
             primaryStage.setMinHeight(725);
@@ -46,14 +46,14 @@ public class Main extends Application {
             primaryStage.show();
             Utility.setProgramIcon(primaryStage);
 
-            getFXMLController().calendar.setDayClips(); // Day clips prevent info from extending past the size of a day pane, which needs to be done after everything is created/sized.
+            getMainController().calendar.setDayClips(); // Day clips prevent info from extending past the size of a day pane, which needs to be done after everything is created/sized.
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     // Allows other controller classes to communicate with our main controller.
-    public static MainController getFXMLController()
+    public static MainController getMainController()
     {
         return controller;
     }

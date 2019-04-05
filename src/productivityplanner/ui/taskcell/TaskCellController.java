@@ -14,7 +14,7 @@ import productivityplanner.utility.Utility;
 
 import java.io.IOException;
 
-import static productivityplanner.ui.main.Main.getFXMLController;
+import static productivityplanner.ui.main.Main.getMainController;
 
 // References:  https://stackoverflow.com/questions/47511132/javafx-custom-listview
 //              https://www.turais.de/how-to-custom-listview-cell-in-javafx/
@@ -39,8 +39,8 @@ public class TaskCellController extends ListCell<Task> {
     public TaskCellController() {
         loadFXML();
 
-        btnDelete.setOnAction(e -> getFXMLController().loadDeleteTask(this.task));
-        btnEdit.setOnAction((e -> getFXMLController().loadEditTask(this.task)));
+        btnDelete.setOnAction(e -> getMainController().loadDeleteTask(this.task));
+        btnEdit.setOnAction((e -> getMainController().loadEditTask(this.task)));
 
         // Toggle the task cell as selected.
         cell.setOnMouseClicked(e -> {

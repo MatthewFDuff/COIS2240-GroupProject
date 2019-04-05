@@ -1,6 +1,5 @@
 package productivityplanner.data;
 
-import java.awt.*;
 import java.time.LocalDate;
 import javafx.scene.paint.Color;
 

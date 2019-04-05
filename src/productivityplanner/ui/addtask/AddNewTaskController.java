@@ -19,7 +19,7 @@ import productivityplanner.ui.main.Calendar;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static productivityplanner.ui.main.Main.getFXMLController;
+import static productivityplanner.ui.main.Main.getMainController;
 
 public class AddNewTaskController implements Initializable {
 
@@ -56,8 +56,8 @@ public class AddNewTaskController implements Initializable {
 
         // Insert the task.
         if (DatabaseHelper.insertTask(task)) {  // Insert the task into the database.
-            getFXMLController().loadTasks();    // Reload the task lists so the new task is displayed.
-            addCancel(new ActionEvent());       // Close the window after successfully adding the task.
+            getMainController().loadTasks();    // Reload the task lists so the new task is displayed.
+            cancel(new ActionEvent());       // Close the window after successfully adding the task.
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR); // Create alert for being unable to add the task
             alert.setHeaderText(null);
@@ -69,7 +69,7 @@ public class AddNewTaskController implements Initializable {
 
     @FXML
     // Closes the stage when the user presses the cancel button or when a task has been successfully added.
-    public void addCancel(ActionEvent actionEvent) {
+    public void cancel(ActionEvent actionEvent) {
         Stage stage = (Stage) rootPane.getScene().getWindow(); // Get access to the window
         stage.close();                                         // Close the window
     }

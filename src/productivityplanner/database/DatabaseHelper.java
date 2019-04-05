@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-import static productivityplanner.ui.main.Main.getFXMLController;
+import static productivityplanner.ui.main.Main.getMainController;
 
 
 // Class which allows the program to change Tasks and JournalEntry's saved into the database
@@ -48,7 +48,7 @@ public class DatabaseHelper {
             statement.setString(2, task.getColor().toString());
             statement.setString(3, task.getDate().toString());
             int result = statement.executeUpdate();                                     // send out the statement
-            getFXMLController().loadTasks();
+            getMainController().loadTasks();
             return (result > 0);
         } catch (SQLException e) {                                  // If the task wasn't able to be deleted
             e.printStackTrace();                                    // Create alert for failing to delete
@@ -75,7 +75,7 @@ public class DatabaseHelper {
             int result = statement.executeUpdate();               // send out the statement
             if (result > 0)         // If it was successful, reload the task list.
             {
-                getFXMLController().loadTasks();
+                getMainController().loadTasks();
             }
             return (result > 0);
         } catch (SQLException e) {                          // If task was unable to be edited
@@ -132,7 +132,7 @@ public class DatabaseHelper {
             statement.setString(4, Calendar.selectedDay.getDate().toString());
             int result = statement.executeUpdate();                                           // send out the statement
             if (result > 0){                        // If swapped successfully, re-load the tasks
-                getFXMLController().loadTasks();    // Reload the task list to update the graphics.
+                getMainController().loadTasks();    // Reload the task list to update the graphics.
             }
             return (result > 0);
         } catch (SQLException e) {

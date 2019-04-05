@@ -148,7 +148,7 @@
             </VBox>
          </children>
       </HBox>
-    <HBox id="HBox" alignment="BOTTOM_CENTER" minHeight="25.0" prefHeight="25.0" prefWidth="1279.0" spacing="5.0" style="-fx-background-color: #1976D2;" stylesheets="@../style/test.css" VBox.vgrow="NEVER">
+    <HBox id="HBox" alignment="BOTTOM_CENTER" minHeight="25.0" prefHeight="25.0" prefWidth="1279.0" spacing="5.0" style="-fx-background-color: #1976D2;" stylesheets="@../style/style.css" VBox.vgrow="NEVER">
         <children>
             <Pane HBox.hgrow="ALWAYS" />
         </children>

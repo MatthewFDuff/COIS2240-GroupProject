@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
 
-import static productivityplanner.ui.main.Main.getFXMLController;
+import static productivityplanner.ui.main.Main.getMainController;
 
 // Reference: https://github.com/SirGoose3432/javafx-calendar
 public class Calendar {
@@ -135,16 +135,26 @@ public class Calendar {
         titlePane.setMinSize((view.getMinWidth()/1.8), titleBar.getMinHeight());
     }
 
-    // Checks to see if the given date is currently being displayed on the calendar and returns that day, otherwise null.
-    private static Day FindDay(LocalDate newDay)
-    {
-        for(Day day: calendarDays) { // Find the current day.
-            if (day.getDate().compareTo(newDay) == 0) {
-                return day;
-            }
+    // Sets up each day that is currently visible, including setting their dates.
+    public void updateCalendar(YearMonth yearMonth) {
+        System.out.println("Calendar Updated");
+        // Get the date we want to start with on the calendar
+        LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
+
+        // Go back one day at a time until it is SUNDAY (unless the month starts on a sunday)
+        while (!calendarDate.getDayOfWeek().toString().equals("SUNDAY") ) {
+            calendarDate = calendarDate.minusDays(1);
         }
-        System.out.println("FindDay: Could not find day.");
-        return null;
+
+        // Populate the days on the calendar with numbers and information (task and journal data).
+        for (Day currentDay : calendarDays) {
+            updateDay(currentDay, calendarDate);
+
+            calendarDate = calendarDate.plusDays(1); // Iterate to next day (Equivalent to: "days++;").
+        }
+
+        // Change the title of the calendar
+        calendarTitle.setText(yearMonth.getMonth().toString() + " " + (yearMonth.getYear()));
     }
 
     // Used to update the calendar for a single day, rather than all the days.
@@ -170,44 +180,30 @@ public class Calendar {
         day.updateTasks();
     }
 
-    public void updateDays(LocalDate calendarDate){
-        // Populate the days on the calendar with numbers and information (task and journal data).
-        for (Day currentDay : calendarDays) {
-            updateDay(currentDay, calendarDate);
-
-            calendarDate = calendarDate.plusDays(1); // Iterate to next day (Equivalent to: "days++;").
+    // Checks to see if the given date is currently being displayed on the calendar and returns that day, otherwise null.
+    private static Day FindDay(LocalDate newDay)
+    {
+        for(Day day: calendarDays) { // Find the current day.
+            if (day.getDate().compareTo(newDay) == 0) {
+                return day;
+            }
         }
-    }
-
-    // Sets up each day that is currently visible, including setting their dates.
-    public void updateCalendar(YearMonth yearMonth) {
-        System.out.println("Calendar Updated");
-        // Get the date we want to start with on the calendar
-        LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
-
-        // Go back one day at a time until it is SUNDAY (unless the month starts on a sunday)
-        while (!calendarDate.getDayOfWeek().toString().equals("SUNDAY") ) {
-            calendarDate = calendarDate.minusDays(1);
-        }
-
-        updateDays(calendarDate);
-
-        // Change the title of the calendar
-        calendarTitle.setText(yearMonth.getMonth().toString() + " " + (yearMonth.getYear()));
+        System.out.println("FindDay: Could not find day.");
+        return null;
     }
 
     // Switch the calendar to the previous month and update the calendar.
     private void previousMonth() {
         currentYearMonth = currentYearMonth.minusMonths(1);
         updateCalendar(currentYearMonth);
-        getFXMLController().updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
+        getMainController().updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
     }
 
     // Switch the calendar to the next month and update the calendar.
     private void nextMonth() {
         currentYearMonth = currentYearMonth.plusMonths(1);
         updateCalendar(currentYearMonth);
-        getFXMLController().updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
+        getMainController().updateSelectedDate(FindDay(LocalDate.of(currentYearMonth.getYear(), currentYearMonth.getMonthValue(), 1))); // Highlight the current date.
     }
 
     public VBox getView() {

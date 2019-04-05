@@ -17,7 +17,7 @@ import productivityplanner.database.DatabaseHelper;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static productivityplanner.ui.main.Main.getFXMLController;
+import static productivityplanner.ui.main.Main.getMainController;
 
 public class Day extends VBox {
 
@@ -28,7 +28,7 @@ public class Day extends VBox {
     public Day(Node... children)
     {
         super(children);
-        this.setOnMouseClicked(e -> getFXMLController().setSelectedDay(this));
+        this.setOnMouseClicked(e -> getMainController().setSelectedDay(this));
         this.setPadding(new Insets(1, 1, 1, 1));
     }
 
