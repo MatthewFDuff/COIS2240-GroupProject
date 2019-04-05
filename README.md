@@ -1,5 +1,5 @@
 # COIS2240-GroupProject
-# Mattew Duff
+# Matthew Duff
 # Ella Morgan
 # Hugo Hood
 # Rylan Crooks
