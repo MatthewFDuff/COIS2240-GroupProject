@@ -217,31 +217,34 @@ public class MainController implements Initializable {
 
     // Toggles button fot showing and hiding uncompleted tasks
     public void toggleUncompleted(ActionEvent actionEvent) {
-        taskList.clear();                                   // Empty task list
+        taskList.clear();                                   // Empty task list.
 
-        ImageView image = new ImageView();                  // image to be set as the new button icon
+        ImageView image = new ImageView();                  // image to be set as the new button icon.
 
-        if (toggleUncomplete) {                             // If set to show uncompleted tasks
-            toggleUncomplete = false;                       // Swap boolean
-                                                            // Swap Image
+        if (toggleUncomplete) {                             // If set to show uncompleted tasks.
+            toggleUncomplete = false;                       // Swap boolean.
+                                                            // Swap Image.
             image = new ImageView("productivityplanner/ui/icons/outline_check_box_outline_blank_white_48dp.png");
         }
-        else {                                              // If set to not show uncompleted tasks
+        else {                                              // If set to not show uncompleted tasks.
             toggleUncomplete = true;
             image = new ImageView("productivityplanner/ui/icons/outline_check_box_white_48dp.png");
         }
 
-        image.setFitHeight(30.0);                             // Size of image
+        image.setFitHeight(30.0);                           // Size of image.
         image.setFitWidth(30.0);
 
-        btnToggleUncompleted.setGraphic(image);             // Set graphic to be new image
+        btnToggleUncompleted.setGraphic(image);             // Set graphic to be new image.
         loadTasks();
     }
 
     public void toggleTaskList(ActionEvent actionEvent) {
-        if (tasks.isDisabled())
+        if (tasks.isDisabled()){    // Enable the tasklist.
             tasks.setDisable(false);
-        else
+        }
+        else{   // Disable the tasklist.
             tasks.setDisable(true);
+            tasks.setOpacity(1); // Removes effect on disable which makes the list darker.
+        }
     }
 }
