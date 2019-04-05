@@ -6,17 +6,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import productivityplanner.data.JournalEntry;
 import productivityplanner.data.Task;
 import productivityplanner.database.DatabaseHandler;
@@ -24,31 +19,18 @@ import productivityplanner.database.DatabaseHelper;
 import productivityplanner.ui.taskcell.TaskCellController;
 import productivityplanner.utility.Utility;
 
-import java.io.IOException;
 import java.net.URL;
 import java.time.YearMonth;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
     // Generally you don't need to instantiate buttons here because you reference their actions, not the button itself.
-    @FXML
-    private VBox calendarPane;
-    @FXML
-    private JFXButton btnUndoDelete;
-    @FXML
-    private Tab tabTasks;
-    @FXML
-    private JFXListView<Task> tasks;
-    @FXML
-    private Label lblJournalDate;
-    @FXML
-    private TextArea txtJournal;
-    @FXML
-    private JFXButton btnToggleCompleted;
-    @FXML
-    private JFXButton btnToggleUncompleted;
-    @FXML
-    private HBox newTaskPane;
+    @FXML private VBox calendarPane;
+    @FXML private JFXListView<Task> tasks;
+    @FXML private Label lblJournalDate;
+    @FXML private TextArea txtJournal;
+    @FXML private JFXButton btnToggleCompleted;
+    @FXML private JFXButton btnToggleUncompleted;
 
     // booleans which tell what to show in the task list
     // shows completed tasks if true
@@ -88,14 +70,15 @@ public class MainController implements Initializable {
         lblJournalDate.setText(Calendar.selectedDay.getFormattedDate());
     }
 
-    public void setSelectedDay(Day date){
+    void setSelectedDay(Day date){
         if (date != Calendar.selectedDay) { // The data should only be loaded if a new day is selected to prevent reloading the same day.
+            TaskCellController.setSelected(null);   // The task that was selected no longer exists.
             updateSelectedDate(date);
         }
     }
 
     // Changes the currently selected day and updates task and journal data to the new day.
-    public void updateSelectedDate(Day currentSelectedDay){
+    void updateSelectedDate(Day currentSelectedDay){
         if (currentSelectedDay != null)
         {
             // HIGHLIGHT/BORDER:
@@ -124,15 +107,12 @@ public class MainController implements Initializable {
     @FXML
     // Loads the stage for adding a new task
     public void loadAddNewTask(ActionEvent actionEvent) {
-        // load add window
         Utility.loadWindow(getClass().getResource("/productivityplanner/ui/addtask/AddNewTask.fxml"), "Add New Task", null);
     }
 
     @FXML
     // Loads the stage for editing an existing task
     public void loadEditTask(Task task) {
-        updateSelectedTask(task);
-        // load edit window
         Utility.loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
     }
 
@@ -140,32 +120,22 @@ public class MainController implements Initializable {
     // Loads the stage for deleting a task
     public void loadDeleteTask(Task task){
         savedTask = task; // save the deleted task in case the user wants to undo
-        updateSelectedTask(task);
-        // load delete window
         Utility.loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
-    }
-
-    //make the task given the one which is currently selected
-    private void updateSelectedTask(Task task) {
-        for(Task currentTask : taskList){
-            if (currentTask.equals(task))
-                tasks.getSelectionModel().select(currentTask);
-        }
     }
 
     // Loads all tasks for the current day and sorts them into the appropriate task list.
     public void loadTasks() {
-        tasks.getItems().clear();                               //clear the prior task list
+        tasks.getItems().clear();                               // Clear the prior task list.
 
         try {
             if (DatabaseHelper.loadTasks(taskList)){            // If the tasks were successfully loaded..
                 for(Task task : taskList){
-                    if (task.getCompleted()){                   // check if task is completed
-                        if (toggleComplete)                     // add if task is completed and completed are to be shown
+                    if (task.getCompleted()){                   // Check if task is completed.
+                        if (toggleComplete)                     // Add if task is completed and completed are to be shown.
                             tasks.getItems().add(task);
                     }
                     else {
-                        if (toggleUncomplete)                   // add if task is uncompleted and uncompleted are to be shown
+                        if (toggleUncomplete)                   // Add if task is uncompleted and uncompleted are to be shown.
                             tasks.getItems().add(task);
                     }
                 }
@@ -174,14 +144,14 @@ public class MainController implements Initializable {
             }
         } catch (Exception e) {                                 // If task list was not able to be loaded...
             e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.ERROR);     // Create an alert for being unable to load tasks
+            Alert alert = new Alert(Alert.AlertType.ERROR);     // Create an alert for being unable to load tasks.
             alert.setHeaderText(null);
             alert.setContentText("Unable to load tasks.");
             alert.showAndWait();
         }
     }
 
-    // Save the journal entry to the database. (Requires an update/rewrite, because only one entry is allowed per day)
+    // Save the journal entry to the database. (Requires an update/rewrite, because only one entry is allowed per day).
     public void saveJournal(ActionEvent actionEvent) {
         // Get journal text from the form.
         JournalEntry entry = new JournalEntry(txtJournal.getText(), Calendar.selectedDay.getDate());
@@ -198,16 +168,10 @@ public class MainController implements Initializable {
     private void updateJournal(){
         updateJournalTitle();
         if (!entryList.isEmpty()){
-            txtJournal.setText(entryList.get(0).getText()); // entryList is the journal entry list, which should only be length 1 (index 0)
+            txtJournal.setText(entryList.get(0).getText()); // entryList is the journal entry list, which should only be length 1 (index 0).
         } else{
             txtJournal.clear();
         }
-    }
-
-    @FXML
-    // Refresh the task lists by reloading the date's tasks.
-    public void refreshTaskList(ActionEvent actionEvent) {
-        loadTasks();
     }
 
     @FXML
@@ -248,10 +212,8 @@ public class MainController implements Initializable {
         image.setFitWidth(30.0);
 
         btnToggleCompleted.setGraphic(image);               // Set graphic to be the new image
-        refreshTaskList(null);
+        loadTasks();
     }
-
-    //TODO: Change the imageviews to be created ONCE and then ACCESSED, rather than created each time the button is pressed.
 
     // Toggles button fot showing and hiding uncompleted tasks
     public void toggleUncompleted(ActionEvent actionEvent) {
@@ -273,6 +235,13 @@ public class MainController implements Initializable {
         image.setFitWidth(30.0);
 
         btnToggleUncompleted.setGraphic(image);             // Set graphic to be new image
-        refreshTaskList(null);
+        loadTasks();
+    }
+
+    public void toggleTaskList(ActionEvent actionEvent) {
+        if (tasks.isDisabled())
+            tasks.setDisable(false);
+        else
+            tasks.setDisable(true);
     }
 }

@@ -19,10 +19,6 @@ import static productivityplanner.ui.main.Main.getFXMLController;
 // References:  https://stackoverflow.com/questions/47511132/javafx-custom-listview
 //              https://www.turais.de/how-to-custom-listview-cell-in-javafx/
 public class TaskCellController extends ListCell<Task> {
-
-    public Task getTask() {
-        return task;
-    }
     @FXML HBox cell;
     @FXML Label lblTaskName;
     @FXML Button btnComplete;
@@ -46,18 +42,23 @@ public class TaskCellController extends ListCell<Task> {
         btnDelete.setOnAction(e -> getFXMLController().loadDeleteTask(this.task));
         btnEdit.setOnAction((e -> getFXMLController().loadEditTask(this.task)));
 
+        // Toggle the task cell as selected.
         cell.setOnMouseClicked(e -> {
             TaskCellController previousSelection = null;
-            if (selected != null)
+            if (selected != null) // Used to save what was previously selected in order to update it once we change the selected task.
               previousSelection = selected;
 
-            selected = this;
+            if (previousSelection == this) // If the task is already selected, deselect it.
+                selected = null;
+            else
+                selected = this;            // Otherwise, select it.
             updateItem(task, false);
 
             if (previousSelection != null)
                 previousSelection.updateItem(task, false);
         });
 
+        // Toggles the task being completed if the checkbox button is pressed.
         btnComplete.setOnAction((event) -> {
             DatabaseHelper.toggleComplete(this.task);
 
@@ -90,8 +91,14 @@ public class TaskCellController extends ListCell<Task> {
         }
     }
 
+    public static void setSelected(TaskCellController taskCellController) {
+        selected = taskCellController;
+    }
     public static TaskCellController getSelected(){
         return selected;
+    }
+    public Task getTask() {
+        return task;
     }
 
     // Sets the delete and edit buttons visible within the task cell (Used only when a task is selected).

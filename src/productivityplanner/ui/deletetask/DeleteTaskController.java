@@ -38,6 +38,7 @@ public class DeleteTaskController implements Initializable {
     // Runs once the confirm delete is pressed.
     private void deleteTask(ActionEvent event) {
         if (DatabaseHelper.deleteTask(task)) {              // Update the task's information in the database.
+            TaskCellController.setSelected(null);           // The task that was selected no longer exists.
             cancel(new ActionEvent());                      // Close the window when the task has been updated.
         }else {                                             // If It can not delete task.
             Alert alert = new Alert(Alert.AlertType.ERROR); // Create Alert for failing to delete.

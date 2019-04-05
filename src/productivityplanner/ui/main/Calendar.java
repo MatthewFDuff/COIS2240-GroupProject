@@ -21,10 +21,10 @@ public class Calendar {
     private VBox view;
     private Text calendarTitle;
     private YearMonth currentYearMonth;
-    public static LocalDate currentDate;
+    private static LocalDate currentDate;
     public static Day selectedDay;
 
-    public Calendar(YearMonth yearMonth){
+    Calendar(YearMonth yearMonth){
         currentYearMonth = yearMonth; // Get the current year and month.
         currentDate = LocalDate.now();
         System.out.println(currentDate);
