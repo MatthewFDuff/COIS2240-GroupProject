@@ -70,8 +70,9 @@ public class MainController implements Initializable {
         lblJournalDate.setText(Calendar.selectedDay.getFormattedDate());
     }
 
+    // Checks if a new day was selected and sets the new selected day.
     void setSelectedDay(Day date){
-        if (date != Calendar.selectedDay) { // The data should only be loaded if a new day is selected to prevent reloading the same day.
+        if (date != Calendar.selectedDay) {         // The data should only be loaded if a new day is selected to prevent reloading the same day.
             TaskCellController.setSelected(null);   // The task that was selected no longer exists.
             updateSelectedDate(date);
         }
@@ -102,25 +103,6 @@ public class MainController implements Initializable {
         else {
             System.out.println("Unable to update selected date.");
         }
-    }
-
-    @FXML
-    // Loads the stage for adding a new task
-    public void loadAddNewTask(ActionEvent actionEvent) {
-        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/addtask/AddNewTask.fxml"), "Add New Task", null);
-    }
-
-    @FXML
-    // Loads the stage for editing an existing task
-    public void loadEditTask(Task task) {
-        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
-    }
-
-    @FXML
-    // Loads the stage for deleting a task
-    public void loadDeleteTask(Task task){
-        savedTask = task; // save the deleted task in case the user wants to undo
-        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
     }
 
     // Loads all tasks for the current day and sorts them into the appropriate task list.
@@ -175,6 +157,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
+    // Undo the last deleted task and restore it in the task list.
     void undoDelete(ActionEvent event) {
 
         if(savedTask == null){                              // Stop if there had been no task deleted
@@ -189,6 +172,25 @@ public class MainController implements Initializable {
             alert.showAndWait();
             System.out.println("Error: Unable to re-add task.");
         }
+    }
+
+    @FXML
+    // Loads the stage for adding a new task
+    public void loadAddNewTask(ActionEvent actionEvent) {
+        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/addtask/AddNewTask.fxml"), "Add New Task", null);
+    }
+
+    @FXML
+    // Loads the stage for editing an existing task
+    public void loadEditTask(Task task) {
+        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/edittask/EditTask.fxml"), "Edit Task", null);
+    }
+
+    @FXML
+    // Loads the stage for deleting a task
+    public void loadDeleteTask(Task task){
+        savedTask = task; // save the deleted task in case the user wants to undo
+        Utility.loadWindow(getClass().getResource("/productivityplanner/ui/deletetask/DeleteTask.fxml"), "Delete Confirmation", null);
     }
 
     // Toggles button fot showing and hiding completed tasks
@@ -238,6 +240,7 @@ public class MainController implements Initializable {
         loadTasks();
     }
 
+    // Toggle whether the task list is enabled or disabled (Button found in Settings tab within program).
     public void toggleTaskList(ActionEvent actionEvent) {
         if (tasks.isDisabled()){    // Enable the tasklist.
             tasks.setDisable(false);
