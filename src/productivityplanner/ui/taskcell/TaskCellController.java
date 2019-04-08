@@ -24,6 +24,8 @@ public class TaskCellController extends ListCell<Task> {
     @FXML Button btnComplete;
     @FXML JFXButton btnDelete;
     @FXML JFXButton btnEdit;
+    @FXML JFXButton btnMoveLeft;
+    @FXML JFXButton btnMoveRight;
 
     private static TaskCellController selected; // Keeps track of which task is selected within the list.
 
@@ -41,6 +43,8 @@ public class TaskCellController extends ListCell<Task> {
 
         btnDelete.setOnAction(e -> getMainController().loadDeleteTask(this.task));
         btnEdit.setOnAction((e -> getMainController().loadEditTask(this.task)));
+        btnMoveLeft.setOnAction(e -> getMainController().updateTaskDate(this.task, task.getDate().minusDays(1)));
+        btnMoveRight.setOnAction(e -> getMainController().updateTaskDate(this.task, task.getDate().plusDays(1)));
 
         // Toggle the task cell as selected.
         cell.setOnMouseClicked(e -> {
@@ -103,6 +107,8 @@ public class TaskCellController extends ListCell<Task> {
 
     // Sets the delete and edit buttons visible within the task cell (Used only when a task is selected).
     private void setButtonsVisible(boolean bool) {
+        btnMoveLeft.setVisible(bool);
+        btnMoveRight.setVisible(bool);
         btnDelete.setVisible(bool);
         btnEdit.setVisible(bool);
         setGraphic(cell);

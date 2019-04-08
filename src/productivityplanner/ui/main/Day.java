@@ -46,11 +46,8 @@ public class Day extends VBox {
     // Puts out the tasks of a given day on the calender.
     public void updateTasks(){
         ObservableList<Task> tasks = FXCollections.observableArrayList();
-        Day tempDay = Calendar.selectedDay; // Save the current selected day so we can revert back to it once we're done loading info for each day.
 
-        Calendar.selectedDay = this;
-
-        DatabaseHelper.loadTasks(tasks);
+        DatabaseHelper.loadTasksFromDate(tasks, this.getDate());
 
         if (!tasks.isEmpty()) {  // If the day has at least 1 task.
             int IMAGE_SIZE = 30;
@@ -89,7 +86,5 @@ public class Day extends VBox {
             taskPane.getChildren().addAll(taskList);
             this.getChildren().add(taskPane);
         }
-
-        Calendar.selectedDay = tempDay; // Reset the selected day back to its original value.
     }
 }

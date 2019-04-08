@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Wed Apr 03 19:18:17 EDT 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0169-e57e-f992-000005d02b00 
-on database directory C:\Users\Ella\Documents\GitHub\COIS2240-GroupProject\database\calendar with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/C:/Users/Ella/Desktop/Dependencies/derby.jar
+Mon Apr 08 17:53:37 EDT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0169-fef1-4130-00000d64f510 
+on database directory D:\Documents\GitHub\COIS2240-GroupProject\database\calendar with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/D:/Documents/GitHub/COIS2240-GroupProject/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_191-b12
-user.dir=C:\Users\Ella\Documents\GitHub\COIS2240-GroupProject
+user.dir=D:\Documents\GitHub\COIS2240-GroupProject
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

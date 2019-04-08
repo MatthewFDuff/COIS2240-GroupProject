@@ -375,23 +375,22 @@ BCP 175: Procedure for Maintaining the Time Zone Database section 7.
 ***************************************************************************
 
 %%The following software may be included in this product:
-Independent JPEG Group (IJG) JPEG v9c
+Independent JPEG Group (IJG) JPEG v7
 
 /*
  * jcapimin.c
  *
  * Copyright (C) 1994-1998, Thomas G. Lane.
- * Modified 2003-2010 by Guido Vollbeding.
  * This file is part of the Independent JPEG Group's software.
  * For conditions of distribution and use, see the accompanying README file.
  */
 [From the README file]
 The authors make NO WARRANTY or representation, either express or implied,
 with respect to this software, its quality, accuracy, merchantability, or
-fitness for a particular purpose.  This software is provided "AS IS", and you,
+fitness for a particular purpose. This software is provided "AS IS", and you,
 its user, assume the entire risk as to its quality and accuracy.
 
-This software is copyright (C) 1991-2018, Thomas G. Lane, Guido Vollbeding.
+This software is copyright (C) 1991-2009, Thomas G. Lane, Guido Vollbeding.
 All Rights Reserved except as specified below.
 
 Permission is hereby granted to use, copy, modify, and distribute this
@@ -409,12 +408,12 @@ full responsibility for any undesirable consequences; the authors accept
 NO LIABILITY for damages of any kind.
 
 These conditions apply to any software derived from or based on the IJG code,
-not just to the unmodified library.  If you use our work, you ought to
+not just to the unmodified library. If you use our work, you ought to
 acknowledge us.
 
 Permission is NOT granted for the use of any IJG author's name or company name
 in advertising or publicity relating to this software or products derived from
-it.  This software may be referred to only as "the Independent JPEG Group's
+it. This software may be referred to only as "the Independent JPEG Group's
 software".
 
 We specifically permit and encourage the use of this software as the basis of
@@ -1514,7 +1513,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ***************************************************************************
 
 %%The following software may be included in this product:
-Webkit v606.1
+Webkit v604.1
 
 You are receiving a copy of WebKit in either source or
 object code in the JavaFX runtime or JavaFX SDK. The terms of the
@@ -2046,7 +2045,7 @@ That's all there is to it!
 ***************************************************************************
 
 %%The following software may be included in this product:
-libxml2 v2.9.7
+libxml2 v2.7.2
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -2069,7 +2068,7 @@ SOFTWARE.
 ***************************************************************************
 
 %%The following software may be included in this product:
-libxslt v1.1.32
+libxslt v1.1.28
 
 Copyright (C) 1998-2012 Daniel Veillard.  All Rights Reserved.
 

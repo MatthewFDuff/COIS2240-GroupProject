@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="COIS2240_GroupProject.jar" size="133463" download="eager" />
+    <jar href="COIS2240_GroupProject.jar" size="146229" download="eager" />
     <jar href="derby.jar" size="3232770" download="eager" />
     <jar href="derbyclient.jar" size="588394" download="eager" />
     <jar href="jfoenix-8.0.8.jar" size="2708772" download="eager" />

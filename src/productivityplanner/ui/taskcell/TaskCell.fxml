@@ -19,6 +19,24 @@
                 </JFXButton>
                 <Label fx:id="lblTaskName" minWidth="-Infinity" maxWidth="300" wrapText="true" HBox.hgrow="ALWAYS" />
             <Pane fx:id="divider" HBox.hgrow="ALWAYS"/>
+                <JFXButton fx:id="btnMoveLeft" maxHeight="40.0" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" prefWidth="40.0" HBox.hgrow="NEVER">
+                    <graphic>
+                        <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
+                            <image>
+                                <Image url="/productivityplanner/ui/icons/outline_arrow_left_white_48dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnMoveRight" maxHeight="40.0" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" prefWidth="40.0" HBox.hgrow="NEVER">
+                    <graphic>
+                        <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">
+                            <image>
+                                <Image url="/productivityplanner/ui/icons/outline_arrow_right_white_48dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
                 <JFXButton fx:id="btnEdit" maxHeight="40.0" maxWidth="40" minHeight="40" minWidth="40.0" prefHeight="40.0" prefWidth="40.0" HBox.hgrow="NEVER">
                     <graphic>
                         <ImageView fitHeight="30" fitWidth="30.0" preserveRatio="true">

@@ -20,6 +20,7 @@ import productivityplanner.ui.taskcell.TaskCellController;
 import productivityplanner.utility.Utility;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ResourceBundle;
 
@@ -133,13 +134,29 @@ public class MainController implements Initializable {
         }
     }
 
+    public void loadTasksFromDate(LocalDate date){
+        // Loads all tasks for the current day and sorts them into the appropriate task list.
+        ObservableList<Task> tempTaskList = FXCollections.observableArrayList();
+        try {
+            if (DatabaseHelper.loadTasksFromDate(tempTaskList, date)){            // If the tasks were successfully loaded..
+                calendar.updateDay(Calendar.FindDay(date), null);
+            }
+        } catch (Exception e) {                                 // If task list was not able to be loaded...
+            e.printStackTrace();
+            Alert alert = new Alert(Alert.AlertType.ERROR);     // Create an alert for being unable to load tasks.
+            alert.setHeaderText(null);
+            alert.setContentText("Unable to load tasks.");
+            alert.showAndWait();
+        }
+    }
+
     // Save the journal entry to the database. (Requires an update/rewrite, because only one entry is allowed per day).
     public void saveJournal(ActionEvent actionEvent) {
         // Get journal text from the form.
         JournalEntry entry = new JournalEntry(txtJournal.getText(), Calendar.selectedDay.getDate());
 
         // Check if the database has a journal entry yet.
-        if (DatabaseHelper.loadJournal(entryList)){     // If a journal entry already exists:
+        if (!entryList.isEmpty()){     // If a journal entry already exists:
             DatabaseHelper.updateJournalEntry(entry);   // Update the existing entry.
         } else {                                        // OTHERWISE
             DatabaseHelper.insertJournalEntry(entry);   // Create new journal entry.
@@ -248,6 +265,19 @@ public class MainController implements Initializable {
         else{   // Disable the tasklist.
             tasks.setDisable(true);
             tasks.setOpacity(1); // Removes effect on disable which makes the list darker.
+        }
+    }
+
+    public void updateTaskDate(Task task, LocalDate newDate) {
+        if (DatabaseHelper.updateTaskDate(task, newDate)){
+            loadTasksFromDate(newDate); // Load and update the tasks from the date the task was moved to.
+            loadTasks();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR); // create alerts for being unable to re-add
+            alert.setHeaderText(null);
+            alert.setContentText("Unable to move task.");
+            alert.showAndWait();
+            System.out.println("Error: Unable to move task.");
         }
     }
 }

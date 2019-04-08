@@ -181,7 +181,7 @@ public class Calendar {
     }
 
     // Checks to see if the given date is currently being displayed on the calendar and returns that day, otherwise null.
-    private static Day FindDay(LocalDate newDay)
+    public static Day FindDay(LocalDate newDay)
     {
         for(Day day: calendarDays) { // Find the current day.
             if (day.getDate().compareTo(newDay) == 0) {

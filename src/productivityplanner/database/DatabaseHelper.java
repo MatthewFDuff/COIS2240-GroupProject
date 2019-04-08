@@ -88,11 +88,56 @@ public class DatabaseHelper {
         return false;
     }
 
+    // Update the date of a task within the database.
+    public static boolean updateTaskDate(Task task, LocalDate newDate){
+        String previousName = task.getName();    // Get information of the task up for editing
+        Color previousColor = task.getColor();
+        try{
+            String query = "UPDATE TASK SET DATE = ? WHERE (NAME = ? AND COLOUR = ? AND DATE = ?)";
+            PreparedStatement statement = DatabaseHandler.getConnection().prepareStatement(query);
+            statement.setString(1, newDate.toString());
+            statement.setString(2, previousName);                 // Add old values to the statement
+            statement.setString(3, previousColor.toString());
+            statement.setString(4, Calendar.selectedDay.getDate().toString());
+            int result = statement.executeUpdate();
+            return (result > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     // Loads all tasks of the current day from the database.
     public static boolean loadTasks(ObservableList<Task> taskList) {
         taskList.clear();
         try{
             String query = "SELECT * FROM TASK WHERE date=\'" + Calendar.selectedDay.getDate() + "\'"; // Setup query for task
+            ResultSet results = DatabaseHandler.executeQuery(query);            // Setup ResultSet for query
+
+            while(results.next()){                                              // Go through all task found of the selected day
+                String name = results.getString("name");             // store values of task
+                String color = results.getString("colour");
+                Boolean complete = results.getBoolean("isComplete");
+                String date = results.getString("date");
+
+                taskList.add(new Task(LocalDate.parse(date), name, Color.web(color), complete)); //store task into list
+            }
+            return true;
+        } catch (SQLException e) {                          // If task couldn't be loaded
+            e.printStackTrace();                            // Create alert for failing to load
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Unable to load tasks.");
+            alert.showAndWait();
+        }
+        return false;
+    }
+
+    // Loads all tasks of the current day from the database.
+    public static boolean loadTasksFromDate(ObservableList<Task> taskList, LocalDate dateToLoad) {
+        taskList.clear();
+        try{
+            String query = "SELECT * FROM TASK WHERE date=\'" + dateToLoad + "\'"; // Setup query for task
             ResultSet results = DatabaseHandler.executeQuery(query);            // Setup ResultSet for query
 
             while(results.next()){                                              // Go through all task found of the selected day
